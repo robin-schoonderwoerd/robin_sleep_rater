@@ -71,7 +71,7 @@
 
             
         class pokemonRater():
-            SPECIES_TO_SPECIALTY = {
+            SPECIES_TO_SPECIALTY = {  # TODO
                 'cyndaquil':'berry'
             }
         
@@ -82,11 +82,21 @@
                 'allrounder': 3
             }
         
-            NATURE_PER_SPECIALTY = {
+            NATURE_PER_SPECIALTY = {  # TODO
                 'jolly': [0.7, 0.1, 0.6, 0.2]
             }
         
-            COMBINATION_WEIGHTS = [
+            SUBSKILL_PER_SPECIALTY = {
+                'berry finding s': [1, 0.5, 0.8, 0.8],
+                'helping bonus': [0.5, 1, 1, 1],
+                'helping speed m': [0.5, 0.7, 0.8, 0.8],
+                'skill trigger m': [0.3, 0.5, 1, 0.8],
+                'ingredient finder m': [0, 1, 0.2, 0.7],
+            }
+        
+            SUBSKILL_UNLOCK_WEIGHTS = [1, 0.9, 0.6, 0.3, 0.2]
+        
+            RATING_WEIGHTS = [
                 [0.2, 0.6, 0, 0.2],  # berry
                 [0.1, 0.4, 0.3, 0.2],  # ingredient
                 [0.2, 0.6, 0, 0.2],  # skill
@@ -109,22 +119,30 @@
                 self.specialty = pokemonRater.SPECIES_TO_SPECIALTY[self.species]
                 self.specialty_code = pokemonRater.SPECIALTY_CODES[self.specialty]
         
-            def rate_nature(self):
+            def rate_nature(self):  # TODO add xp_hard
                 self.nature_rating = pokemonRater.NATURE_PER_SPECIALTY[self.nature][self.specialty_code]
         
-            def rate_subskills(self):
-                self.subskill_rating = 0.9
+            def _get_max_subskill_score(self):
+                all_scores_per_speciality = [subskill_ratings[self.specialty_code] for subskill_ratings in pokemonRater.SUBSKILL_PER_SPECIALTY.values()]
+                largest_5_scores = sorted(all_scores_per_speciality, reverse=True)[:5]
+                return sum([score*weight for score, weight in zip(largest_5_scores, pokemonRater.SUBSKILL_UNLOCK_WEIGHTS)])
         
-            def rate_ingredients(self):
+            def rate_subskills(self):
+                subskills = [self.ss10, self.ss25, self.ss50, self.ss75, self.ss100]
+                subskills_unweighted = [pokemonRater.SUBSKILL_PER_SPECIALTY[subskill][self.specialty_code] for subskill in subskills]
+                subskills_weighted = [score*weight for score, weight in zip(subskills_unweighted, pokemonRater.SUBSKILL_UNLOCK_WEIGHTS)]
+                self.subskill_rating = sum(subskills_weighted) / self._get_max_subskill_score()
+        
+            def rate_ingredients(self):  # TODO
                 self.ingredient_rating = 0.2
         
-            def rate_tierlist(self):
+            def rate_tierlist(self):  # TODO
                 self.tierlist_rating = 1
         
             def combine_scores(self):
-                combination_weights = pokemonRater.COMBINATION_WEIGHTS[self.specialty_code]
+                rating_weights = pokemonRater.RATING_WEIGHTS[self.specialty_code]
                 subscores = [self.nature_rating, self.subskill_rating, self.ingredient_rating, self.tierlist_rating]
-                self.score = sum([weight * subscore for weight, subscore in zip(combination_weights, subscores)])
+                self.score = sum([weight * subscore for weight, subscore in zip(rating_weights, subscores)])
             
             def rate_pokemon(self):
                 self.rate_nature()
@@ -137,11 +155,11 @@
         test_cyndaquil = pokemonRater(
             species='cyndaquil',
             nature = 'jolly',
-            ss10 = 'berry finding s',
-            ss25 = 'helping bonus',
-            ss50 = 'helping speed m',
+            ss10 = 'helping bonus',
+            ss25 = 'berry finding s',
+            ss50 = 'ingredient finder m',
             ss75 = 'skill trigger m',
-            ss100 = 'ingredient finder m',
+            ss100 = 'helping speed m',
             ing30 = 'fiery herb',
             ing60 = 'ginger'
         )
