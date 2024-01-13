@@ -4,11 +4,149 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script defer src="https://pyscript.net/latest/pyscript.js"></script>
     <head>
         
     <body>
-        <h1>Robin Pokemon Sleep Rater</h1>
-        <py-script>print("Hello, World!")</py-script>
+        <h1>Robin's Pokemon Sleep Rater</h1>
+
+            <div id="date"></div>
+            <div id="pokemon-list"></div>
+            <div id="pokemon-selector-div"></div>
+            <br>
+            <button py-click="evaluate()">Evaluate</button>
+
+            <div id="output"></div>
+            <div id="score"></div>
+
+
+
+        <!-- <py-script src="./main.py"></py-script> -->
     </body>
+
+    <script>
+        var optionsData = {
+            venusaur: "Venusaur",
+            charizard: "Charizard",
+            blastoise: "Blastoise"
+            // Add more options as needed
+        };
+
+        // Function to create selectpicker
+        function createSelectPicker(data) {
+            var select = $('<select id="pokemon-selector"></select>');
+
+            for (var key in data) {
+                if (data.hasOwnProperty(key)) {
+                    var option = $('<option></option>');
+                    option.val(key).text(data[key]);
+                    select.append(option);
+                }
+            }
+
+            // Append the select to the body or a specific container
+            $('#pokemon-selector-div').append(select);
+
+            // Initialize the Bootstrap SelectPicker
+            select.selectpicker();
+        }
+
+        // Call the function with your data
+        createSelectPicker(optionsData);
+    </script>
+
+    <py-script>
+        import datetime as dt
+
+        pokemon_list = ['bulbasaur', 'charmander', 'squirtle']
+
+        Element('date').write(dt.datetime.today().strftime('%Y-%m-%d'))
+        Element('pokemon-list').write(pokemon_list[1])
+
+        selected_pokemon = Element('pokemon-selector').value
+
+        def evaluate():
+            Element('output').write(f'The Pokemon you have selected is {selected_pokemon}')
+
+            
+        class pokemonRater():
+            SPECIES_TO_SPECIALTY = {
+                'cyndaquil':'berry'
+            }
+        
+            SPECIALTY_CODES = {
+                'berry': 0,
+                'ingredient': 1,
+                'skill': 2,
+                'allrounder': 3
+            }
+        
+            NATURE_PER_SPECIALTY = {
+                'jolly': [0.7, 0.1, 0.6, 0.2]
+            }
+        
+            COMBINATION_WEIGHTS = [
+                [0.2, 0.6, 0, 0.2],  # berry
+                [0.1, 0.4, 0.3, 0.2],  # ingredient
+                [0.2, 0.6, 0, 0.2],  # skill
+                [0.1, 0.5, 0.2, 0.2]  # allrounder
+            ]
+        
+            def __init__(self, species, nature, ss10, ss25, ss50, ss75, ss100, ing30, ing60):
+                self.species = species
+                self.nature = nature 
+                self.ss10 = ss10 
+                self.ss25 = ss25 
+                self.ss50 = ss50 
+                self.ss75 = ss75 
+                self.ss100 = ss100 
+                self.ing30 = ing30 
+                self.ing60 = ing60 
+                self.match_specialty()
+        
+            def match_specialty(self):
+                self.specialty = pokemonRater.SPECIES_TO_SPECIALTY[self.species]
+                self.specialty_code = pokemonRater.SPECIALTY_CODES[self.specialty]
+        
+            def rate_nature(self):
+                self.nature_rating = pokemonRater.NATURE_PER_SPECIALTY[self.nature][self.specialty_code]
+        
+            def rate_subskills(self):
+                self.subskill_rating = 0.9
+        
+            def rate_ingredients(self):
+                self.ingredient_rating = 0.2
+        
+            def rate_tierlist(self):
+                self.tierlist_rating = 1
+        
+            def combine_scores(self):
+                combination_weights = pokemonRater.COMBINATION_WEIGHTS[self.specialty_code]
+                subscores = [self.nature_rating, self.subskill_rating, self.ingredient_rating, self.tierlist_rating]
+                self.score = sum([weight * subscore for weight, subscore in zip(combination_weights, subscores)])
+            
+            def rate_pokemon(self):
+                self.rate_nature()
+                self.rate_subskills()
+                self.rate_ingredients()
+                self.rate_tierlist()
+                self.combine_scores()
+        
+        
+        test_cyndaquil = pokemonRater(
+            species='cyndaquil',
+            nature = 'jolly',
+            ss10 = 'berry finding s',
+            ss25 = 'helping bonus',
+            ss50 = 'helping speed m',
+            ss75 = 'skill trigger m',
+            ss100 = 'ingredient finder m',
+            ing30 = 'fiery herb',
+            ing60 = 'ginger'
+        )
+        test_cyndaquil.rate_pokemon()
+        Element('score').write(f'Final score of {test_cyndaquil.species} is: {round(test_cyndaquil.score*100, 1)}%')
+
+    </py-script>
 </html>
