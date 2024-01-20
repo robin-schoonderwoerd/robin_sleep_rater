@@ -174,31 +174,68 @@
 
 <py-script>
     import datetime as dt
-    from js import document
 
     class pokemonRater():
-        SPECIES_TO_SPECIALTY = {  # TODO
-            'cyndaquil':'berry',
-            'charmander':'ingredient'
+        SPECIES_TO_SPECIALTY = {
+            'Bulbasaur':'Ingredient', 'Ivysaur':'Ingredient', 'Venusaur':'Ingredient',
+            'Charmander':'Ingredient', 'Charmeleon':'Ingredient', 'Charizard':'Ingredient',
+            'Squirtle':'Ingredient', 'Wartortle':'Ingredient', 'Blastoise':'Ingredient',
+            'Caterpie':'Berry', 'Metapod':'Berry', 'Butterfree':'Berry',
+            'Rattata':'Berry', 'Raticate':'Berry','Ekans':'Berry', 
+            'Arbok':'Berry','Pikachu':'Berry', 'Raichu':'Berry',
+            'Pikachu - Halloween':'Berry','Pikachu - Holiday':'Skill','Clefairy':'Berry', 
+            'Clefable':'Berry','Jigglypuff':'Skill', 'Wigglytuff':'Skill',
+            'Diglett':'Ingredient', 'Dugtrio':'Ingredient','Meowth':'Skill', 
+            'Persian':'Skill', 'Psyduck':'Skill', 'Golduck':'Skill',
+            'Mankey':'Berry', 'Primeape':'Berry','Growlithe':'Skill', 
+            'Arcanine':'Skill','Bellsprout':'Ingredient', 'Weepinbell':'Ingredient', 
+            'Victreebel':'Ingredient','Geodude':'Ingredient', 'Graveler':'Ingredient', 
+            'Golem':'Ingredient', 'Slowpoke':'Ingredient', 'Slowbro':'Ingredient',
+            'Magnemite':'Skill', 'Magneton':'Skill','Doduo':'Berry', 
+            'Dodrio':'Berry','Gastly':'Ingredient', 'Haunter':'Ingredient', 
+            'Gengar':'Ingredient','Onix':'Berry','Cubone':'Berry', 
+            'Marowak':'Berry','Kangaskhan':'Ingredient','Mr. Mime':'Ingredient',
+            'Pinsir':'Ingredient','Ditto':'Ingredient','Eevee':'Skill', 
+            'Vaporeon':'Skill', 'Jolteon':'Skill', 'Flareon':'Skill',
+            'Chikorita':'Berry', 'Bayleef':'Berry', 'Meganium':'Berry',
+            'Cyndaquil':'Berry', 'Quilava':'Berry', 'Typhlosion':'Berry',
+            'Totodile':'Berry', 'Croconaw':'Berry', 'Feraligatr':'Berry',
+            'Pichu':'Berry','Cleffa':'Berry','Igglybuff':'Skill',
+            'Togepi':'Skill', 'Togetic':'Skill','Mareep':'Skill', 
+            'Flaaffy':'Skill', 'Ampharos':'Skill','Sudowoodo':'Skill',
+            'Espeon':'Skill', 'Umbreon':'Skill','Slowking':'Ingredient',
+            'Wobbuffet':'Skill','Steelix':'Berry','Heracross':'Skill',
+            'Delibird':'Ingredient','Houndour':'Berry', 'Houndoom':'Berry',
+            'Larvitar':'Ingredient', 'Pupitar':'Ingredient', 'Tyranitar':'Ingredient',
+            'Slakoth':'Berry', 'Vigoroth':'Berry', 'Slaking':'Berry',
+            'Sableye':'Skill','Gulpin':'Skill', 'Swalot':'Skill',
+            'Swablu':'Berry', 'Altaria':'Berry','Shuppet':'Berry', 
+            'Banette':'Berry', 'Absol':'Ingredient','Wynaut':'Skill',
+            'Spheal':'Berry', 'Sealeo':'Berry', 'Walrein':'Berry',
+            'Bonsly':'Skill','Mime Jr.':'Ingredient','Riolu':'Skill', 
+            'Lucario':'Skill','Croagunk':'Ingredient', 'Toxicroak':'Ingredient',
+            'Snover':'Ingredient', 'Abomasnow':'Ingredient','Magnezone':'Skill',
+            'Togekiss':'Skill','Leafeon':'Skill', 'Glaceon':'Skill',
+            'Sylveon':'Skill'
         }
-    
+
         SPECIALTY_CODES = {
-            'berry': 0,
-            'ingredient': 1,
-            'skill': 2,
-            'allrounder': 3
+            'Berry': 0,
+            'Ingredient': 1,
+            'Skill': 2,
+            'Allrounder': 3
         }
-    
+
         NATURE_PER_SPECIALTY = {  # TODO
-            'jolly': [0.7, 0.1, 0.6, 0.2]
+            'Jolly': [0.7, 0.1, 0.6, 0.2]
         }
-    
+
         SUBSKILL_PER_SPECIALTY = {
-            'berry finding s': [1, 0.5, 0.8, 0.8],
-            'helping bonus': [0.5, 1, 1, 1],
-            'helping speed m': [0.5, 0.7, 0.8, 0.8],
-            'skill trigger m': [0.3, 0.5, 1, 0.8],
-            'ingredient finder m': [0, 1, 0.2, 0.7],
+            'Berry Finding S': [1, 0.5, 0.8, 0.8],
+            'Helping Bonus': [0.5, 1, 1, 1],
+            'Helping Speed M': [0.5, 0.7, 0.8, 0.8],
+            'Skill Trigger M': [0.3, 0.5, 1, 0.8],
+            'Ingredient Finder M': [0, 1, 0.2, 0.7],
         }
     
         SUBSKILL_UNLOCK_WEIGHTS = [1, 0.9, 0.6, 0.3, 0.2]
@@ -208,6 +245,15 @@
             [0.1, 0.4, 0.3, 0.2],  # ingredient
             [0.2, 0.6, 0, 0.2],  # skill
             [0.1, 0.5, 0.2, 0.2]  # allrounder
+        ]
+
+        ING_SPECIES = [
+            'Bulbasaur', 'Ivysaur', 'Venusaur','Charmander', 'Charmeleon', 
+            'Charizard','Squirtle', 'Wartortle', 'Blastoise','Diglett', 'Dugtrio',
+            'Bellsprout', 'Weepinbell', 'Victreebel','Geodude', 'Graveler', 'Golem',
+            'Slowpoke', 'Slowbro','Gastly','Haunter', 'Gengar','Kangaskhan','Mr. Mime',
+            'Pinsir','Ditto','Slowking','Delibird', 'Larvitar', 'Pupitar', 'Tyranitar',
+            'Absol','Mime Jr.','Croagunk', 'Toxicroak','Snover', 'Abomasnow'
         ]
     
         def __init__(self, species, nature, ss10, ss25, ss50, ss75, ss100, ing30, ing60):
@@ -257,7 +303,10 @@
             self.rate_ingredients()
             self.rate_tierlist()
             self.combine_scores()
-            Element('score').write(f'Final score of {self.species} is: {round(self.score*100, 1)}%')
+            if self.species in pokemonRater.ING_SPECIES:
+                Element('score').write(f"Sorry, I can't rate ingredient Pokkies yet")
+            else:
+                Element('score').write(f'Final score of {self.species} is: {round(self.score*100, 1)}%')
 
     
     def _extract_stats():
