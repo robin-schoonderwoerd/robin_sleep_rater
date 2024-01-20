@@ -110,7 +110,19 @@
     ]
 
     var all_ingredients = [
-        
+        '', 'Large Leek', 'Tasty Mushroom', 'Fancy Egg', 'Soft Potato', 
+        'Fancy Apple','Fiery Herb', 'Bean Sausage', 'Moomoo Milk', 'Honey', 
+        'Pure Oil','Warming Ginger', 'Snoozy Tomato', 'Soothing Cacao', 
+        'Slowpoke Tail','Greengrass Soybeans'
+    ]
+
+    var ing_species = [
+        'Bulbasaur', 'Ivysaur', 'Venusaur','Charmander', 'Charmeleon', 
+        'Charizard','Squirtle', 'Wartortle', 'Blastoise','Diglett', 'Dugtrio',
+        'Bellsprout', 'Weepinbell', 'Victreebel','Geodude', 'Graveler', 'Golem',
+        'Slowpoke', 'Slowbro','Gastly','Haunter', 'Gengar','Kangaskhan','Mr. Mime',
+        'Pinsir','Ditto','Slowking','Delibird', 'Larvitar', 'Pupitar', 'Tyranitar',
+        'Absol','Mime Jr.','Croagunk', 'Toxicroak','Snover', 'Abomasnow'
     ]
 
     // Function to populate select dropdown
@@ -137,11 +149,11 @@
         var ing60 = document.getElementById(ing60);
 
         // Enable/disable ing30 based on the selected species
-        ing30.disabled = selected_species !== 'Ingredient';
+        ing30.disabled = !ing_species.includes(selected_species);
         ing30.selectedIndex = 0; // Reset selection
 
         // Enable/disable ing60 based on the selected species
-        ing60.disabled = selected_species !== 'Ingredient';
+        ing60.disabled = !ing_species.includes(selected_species);
         ing60.selectedIndex = 0; // Reset selection
     }
 
@@ -151,6 +163,10 @@
     var subskills = ['ss10','ss25','ss50','ss75','ss100']
     for (let i = 0; i < subskills.length; i++) {
         populateSelect(subskills[i], all_subskills)
+    }
+    var ingredients = ['ing30', 'ing60']
+    for (let i = 0; i < ingredients.length; i++) {
+        populateSelect(ingredients[i], all_ingredients)
     }
 
 
