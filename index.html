@@ -263,8 +263,8 @@
             'Helping Bonus': [0.5, 1.0, 1.0, 1.0],
             'Helping Speed S': [0.4, 0.5, 0.6, 0.6],
             'Helping Speed M': [0.5, 0.7, 0.8, 0.8],
-            'Ingredient Finder S': [0.0, 0.6, 0.6, 0.6],
-            'Ingredient Finder M': [0.0, 1.0, 0.2, 0.7],
+            'Ingredient Finder S': [0.0, 0.8, 0.0, 0.6],
+            'Ingredient Finder M': [0.0, 1.0, 0.1, 0.7],
             'Inventory Up S': [0.1, 0.6, 0.5, 0.6],
             'Inventory Up M': [0.1, 0.7, 0.6, 0.7],
             'Inventory Up L': [0.1, 0.8, 0.7, 0.8],
@@ -372,17 +372,21 @@
             except KeyError:
                 Element('warning').write(f"No nature selected")
 
-        def _get_max_subskill_score(self):
+        def _get_subskill_score_bounds(self):
             all_scores_per_speciality = [subskill_ratings[self.specialty_code] for subskill_ratings in pokemonRater.SUBSKILL_PER_SPECIALTY.values()]
-            largest_5_scores = sorted(all_scores_per_speciality, reverse=True)[:5]
-            return sum([score*weight for score, weight in zip(largest_5_scores, pokemonRater.SUBSKILL_UNLOCK_WEIGHTS)])
-
+            subskill_scores_sorted = sorted(all_scores_per_speciality, reverse=True)
+            largest_5_scores = subskill_scores_sorted[:5]
+            smallest_5_scores = subskill_scores_sorted[-5:]
+            self.max_subskill_score = sum([score*weight for score, weight in zip(largest_5_scores, pokemonRater.SUBSKILL_UNLOCK_WEIGHTS)])
+            self.min_subskill_score = sum([score*weight for score, weight in zip(sorted(smallest_5_scores), pokemonRater.SUBSKILL_UNLOCK_WEIGHTS)]) 
+    
         def rate_subskills(self):
             subskills = [self.ss10, self.ss25, self.ss50, self.ss75, self.ss100]
             try:
                 subskills_unweighted = [pokemonRater.SUBSKILL_PER_SPECIALTY[subskill][self.specialty_code] for subskill in subskills]
                 subskills_weighted = [score*weight for score, weight in zip(subskills_unweighted, pokemonRater.SUBSKILL_UNLOCK_WEIGHTS)]
-                self.subskill_rating = sum(subskills_weighted) / self._get_max_subskill_score()
+                self._get_subskill_score_bounds()
+                self.subskill_rating = (sum(subskills_weighted) - self.min_subskill_score) / (self.max_subskill_score - self.min_subskill_score)
             except KeyError:
                 Element('warning').write(f"Not all subskills selected")
 
