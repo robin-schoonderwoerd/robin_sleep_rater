@@ -175,6 +175,7 @@
 
 <py-script>
     import datetime as dt
+    import math
 
     class pokemonRater():
         SPECIES_TO_SPECIALTY = {
@@ -399,6 +400,10 @@
             subscores = [self.nature_rating, self.subskill_rating, self.ingredient_rating, self.tierlist_rating]
             self.score = sum([weight * subscore for weight, subscore in zip(rating_weights, subscores)])
         
+        def apply_feelgoodfactor(self):
+            k = 8
+            self.score = 1 / (1 + math.exp(-k * (self.score - 0.5)))
+
         def rate_pokemon(self):
             try:
                 self.rate_nature()
@@ -406,6 +411,7 @@
                 self.rate_ingredients()
                 self.rate_tierlist()
                 self.combine_scores()
+                self.apply_feelgoodfactor()
                 Element('warning').write(f"")
                 if self.species in pokemonRater.ING_SPECIES:
                     Element('score').write(f"Sorry, I can't rate ingredient Pokkies yet")
