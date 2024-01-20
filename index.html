@@ -65,6 +65,7 @@
         <button py-click="evaluate()">Evaluate</button>
         <br>
 
+        <div id="warning"></div>
         <div id="score"></div>
 
     </body>
@@ -226,20 +227,99 @@
             'Allrounder': 3
         }
 
-        NATURE_PER_SPECIALTY = {  # TODO
-            'Jolly': [0.7, 0.1, 0.6, 0.2]
+        NATURE_PER_SPECIALTY = {
+            'Adamant': [1.0, 0.1, 0.7, 0.4],
+            'Bashful': [0.5, 0.5, 0.5, 0.5],
+            'Bold': [0.0, 0.1, 0.1, 0.1],
+            'Brave': [0.9, 0.5, 0.5, 0.5],
+            'Calm': [0.0, 0.1, 0.6, 0.3],
+            'Careful': [0.6, 0.1, 1.0, 0.4],
+            'Docile': [0.5, 0.5, 0.5, 0.5],
+            'Gentle': [0.5, 0.5, 0.9, 0.6],
+            'Hardy': [0.5, 0.5, 0.5, 0.5],
+            'Hasty': [0.5, 0.5, 0.5, 0.5],
+            'Impish': [0.5, 0.0, 0.5, 0.5],
+            'Jolly': [0.7, 0.1, 0.5, 0.2],
+            'Lax': [0.5, 0.5, 0.0, 0.2],
+            'Lonely': [0.9, 0.5, 0.5, 0.5],
+            'Mild': [0.1, 0.9, 0.2, 1.0],
+            'Modest': [0.0, 0.7, 0.1, 0.3],
+            'Naive': [0.5, 0.5, 0.1, 0.2],
+            'Naughty': [0.9, 0.7, 0.2, 0.5],
+            'Quiet': [0.1, 1.0, 0.2, 0.9],
+            'Quirky': [0.5, 0.5, 0.5, 0.5],
+            'Rash': [0.1, 1.0, 0.0, 0.5],
+            'Relaxed': [0.4, 0.4, 0.4, 0.4],
+            'Sassy': [0.2, 0.2, 1.0, 0.6],
+            'Serious': [0.5, 0.5, 0.5, 0.5],
+            'Timid': [0.0, 0.1, 0.1, 0.1]
         }
 
         SUBSKILL_PER_SPECIALTY = {
-            'Berry Finding S': [1, 0.5, 0.8, 0.8],
-            'Helping Bonus': [0.5, 1, 1, 1],
+            'Berry Finding S': [1.0, 0.5, 0.8, 0.8],
+            'Dream Shard Bonus': [0.3, 0.6, 0.6, 0.6],
+            'Energy Recovery Bonus': [0.3, 0.6, 0.6, 0.6],
+            'Helping Bonus': [0.5, 1.0, 1.0, 1.0],
+            'Helping Speed S': [0.4, 0.5, 0.6, 0.6],
             'Helping Speed M': [0.5, 0.7, 0.8, 0.8],
+            'Ingredient Finder S': [0.0, 0.6, 0.6, 0.6],
+            'Ingredient Finder M': [0.0, 1.0, 0.2, 0.7],
+            'Inventory Up S': [0.1, 0.6, 0.5, 0.6],
+            'Inventory Up M': [0.1, 0.7, 0.6, 0.7],
+            'Inventory Up L': [0.1, 0.8, 0.7, 0.8],
+            'Research EXP Bonus': [0.3, 0.6, 0.6, 0.6],
+            'Skill Level Up S': [0.3, 0.5, 0.8, 0.7],
+            'Skill Level Up M': [0.4, 0.6, 0.9, 0.8],
+            'Skill Trigger S': [0.2, 0.4, 0.9, 0.7],
             'Skill Trigger M': [0.3, 0.5, 1, 0.8],
-            'Ingredient Finder M': [0, 1, 0.2, 0.7],
+            'Sleep EXP Bonus': [0.3, 0.6, 0.6, 0.6]
         }
-    
+
+        SPECIES_TO_TIERLIST = {
+            'Bulbasaur':0.8, 'Ivysaur':0.8, 'Venusaur':0.8,
+            'Charmander':1.0, 'Charmeleon':1.0, 'Charizard':1.0,
+            'Squirtle':1.0, 'Wartortle':1.0, 'Blastoise':1.0,
+            'Caterpie':0.6, 'Metapod':0.6, 'Butterfree':0.6,
+            'Rattata':0.4, 'Raticate':0.4,'Ekans':0.2, 
+            'Arbok':0.2,'Pikachu':1.0, 'Raichu':1.0,
+            'Pikachu - Halloween':0.4,'Pikachu - Holiday':0.4,'Clefairy':0.6, 
+            'Clefable':0.6,'Jigglypuff':1.0, 'Wigglytuff':1.0,
+            'Diglett':0.6, 'Dugtrio':0.6,'Meowth':0.0, 
+            'Persian':0.0, 'Psyduck':0.0, 'Golduck':0.0,
+            'Mankey':0.6, 'Primeape':0.6,'Growlithe':0.4, 
+            'Arcanine':0.4,'Bellsprout':0.8, 'Weepinbell':0.8, 
+            'Victreebel':0.8,'Geodude':0.8, 'Graveler':0.8, 
+            'Golem':0.8, 'Slowpoke':0.2, 'Slowbro':0.2,
+            'Magnemite':0.4, 'Magneton':0.4,'Doduo':0.8, 
+            'Dodrio':0.8,'Gastly':0.8, 'Haunter':0.8, 
+            'Gengar':0.8,'Onix':0.8,'Cubone':0.4, 
+            'Marowak':0.4,'Kangaskhan':0.4,'Mr. Mime':0.6,
+            'Pinsir':1.0,'Ditto':0.6,'Eevee':1.0, 
+            'Vaporeon':0.8, 'Jolteon':0.4, 'Flareon':0.6,
+            'Chikorita':1.0, 'Bayleef':1.0, 'Meganium':1.0,
+            'Cyndaquil':1.0, 'Quilava':1.0, 'Typhlosion':1.0,
+            'Totodile':1.0, 'Croconaw':1.0, 'Feraligatr':1.0,
+            'Pichu':1.0,'Cleffa':0.6,'Igglybuff':1.0,
+            'Togepi':0.2, 'Togetic':0.2,'Mareep':0.4, 
+            'Flaaffy':0.4, 'Ampharos':0.4,'Sudowoodo':0.0,
+            'Espeon':0.6, 'Umbreon':0.2,'Slowking':0.2,
+            'Wobbuffet':0.0,'Steelix':0.6,'Heracross':0.4,
+            'Delibird':0.8,'Houndour':0.8, 'Houndoom':0.8,
+            'Larvitar':0.8, 'Pupitar':0.8, 'Tyranitar':0.8,
+            'Slakoth':0.8, 'Vigoroth':0.8, 'Slaking':0.8,
+            'Sableye':0.0,'Gulpin':0.0, 'Swalot':0.0,
+            'Swablu':0.4, 'Altaria':0.4,'Shuppet':0.6, 
+            'Banette':0.6, 'Absol':0.8,'Wynaut':0.0,
+            'Spheal':1.0, 'Sealeo':1.0, 'Walrein':1.0,
+            'Bonsly':0.0,'Mime Jr.':0.0,'Riolu':0.0, 
+            'Lucario':0.0,'Croagunk':0.2, 'Toxicroak':0.2,
+            'Snover':0.8, 'Abomasnow':0.8,'Magnezone':0.4,
+            'Togekiss':0.2,'Leafeon':0.0, 'Glaceon':0.6,
+            'Sylveon':1.0
+        }
+
         SUBSKILL_UNLOCK_WEIGHTS = [1, 0.9, 0.6, 0.3, 0.2]
-    
+
         RATING_WEIGHTS = [
             [0.2, 0.6, 0, 0.2],  # berry
             [0.1, 0.4, 0.3, 0.2],  # ingredient
@@ -247,15 +327,18 @@
             [0.1, 0.5, 0.2, 0.2]  # allrounder
         ]
 
-        ING_SPECIES = [
-            'Bulbasaur', 'Ivysaur', 'Venusaur','Charmander', 'Charmeleon', 
-            'Charizard','Squirtle', 'Wartortle', 'Blastoise','Diglett', 'Dugtrio',
-            'Bellsprout', 'Weepinbell', 'Victreebel','Geodude', 'Graveler', 'Golem',
-            'Slowpoke', 'Slowbro','Gastly','Haunter', 'Gengar','Kangaskhan','Mr. Mime',
-            'Pinsir','Ditto','Slowking','Delibird', 'Larvitar', 'Pupitar', 'Tyranitar',
-            'Absol','Mime Jr.','Croagunk', 'Toxicroak','Snover', 'Abomasnow'
+        NATURE_XP_FACTOR = 0.3
+
+        ING_SPECIES = [species for species, specialty in SPECIES_TO_SPECIALTY.items() if specialty == 'Ingredient']
+
+        XP_HARD_SPECIES = [
+            'Onix', 'Kangaskhan', 'Pinsir','Ditto','Steelix','Heracross',
+            'Delibird','Larvitar', 'Pupitar', 'Tyranitar', 'Absol'
         ]
-    
+
+        XP_NATURE_UP = ['Timid', 'Hasty', 'Jolly', 'Naive']
+        XP_NATURE_DOWN = ['Brave', 'Relaxed', 'Quiet', 'Sassy']
+
         def __init__(self, species, nature, ss10, ss25, ss50, ss75, ss100, ing30, ing60):
             self.species = species
             self.nature = nature 
@@ -267,47 +350,69 @@
             self.ing30 = ing30 
             self.ing60 = ing60 
             self.match_specialty()
-    
+
         def match_specialty(self):
-            self.specialty = pokemonRater.SPECIES_TO_SPECIALTY[self.species]
-            self.specialty_code = pokemonRater.SPECIALTY_CODES[self.specialty]
-    
-        def rate_nature(self):  # TODO add xp_hard
-            self.nature_rating = pokemonRater.NATURE_PER_SPECIALTY[self.nature][self.specialty_code]
-    
+            try:
+                self.specialty = pokemonRater.SPECIES_TO_SPECIALTY[self.species]
+                self.specialty_code = pokemonRater.SPECIALTY_CODES[self.specialty]
+            except KeyError:
+                Element('warning').write(f"No Pokemon selected")
+
+        def rate_nature(self):
+            try:
+                self.nature_rating = pokemonRater.NATURE_PER_SPECIALTY[self.nature][self.specialty_code]
+                if self.species in pokemonRater.XP_HARD_SPECIES:
+                    if self.nature in pokemonRater.XP_NATURE_UP:
+                        nature_rating_corrected = self.nature_rating + pokemonRater.NATURE_XP_FACTOR
+                        self.nature_rating = 1.0 if nature_rating_corrected > 1.0 else nature_rating_corrected
+                    if self.nature in pokemonRater.XP_NATURE_DOWN:
+                        nature_rating_corrected = self.nature_rating - pokemonRater.NATURE_XP_FACTOR
+                        self.nature_rating = 0.0 if nature_rating_corrected < 0.0 else nature_rating_corrected
+            except KeyError:
+                Element('warning').write(f"No nature selected")
+
         def _get_max_subskill_score(self):
             all_scores_per_speciality = [subskill_ratings[self.specialty_code] for subskill_ratings in pokemonRater.SUBSKILL_PER_SPECIALTY.values()]
             largest_5_scores = sorted(all_scores_per_speciality, reverse=True)[:5]
             return sum([score*weight for score, weight in zip(largest_5_scores, pokemonRater.SUBSKILL_UNLOCK_WEIGHTS)])
-    
+
         def rate_subskills(self):
             subskills = [self.ss10, self.ss25, self.ss50, self.ss75, self.ss100]
-            subskills_unweighted = [pokemonRater.SUBSKILL_PER_SPECIALTY[subskill][self.specialty_code] for subskill in subskills]
-            subskills_weighted = [score*weight for score, weight in zip(subskills_unweighted, pokemonRater.SUBSKILL_UNLOCK_WEIGHTS)]
-            self.subskill_rating = sum(subskills_weighted) / self._get_max_subskill_score()
-    
+            try:
+                subskills_unweighted = [pokemonRater.SUBSKILL_PER_SPECIALTY[subskill][self.specialty_code] for subskill in subskills]
+                subskills_weighted = [score*weight for score, weight in zip(subskills_unweighted, pokemonRater.SUBSKILL_UNLOCK_WEIGHTS)]
+                self.subskill_rating = sum(subskills_weighted) / self._get_max_subskill_score()
+            except KeyError:
+                Element('warning').write(f"Not all subskills selected")
+
         def rate_ingredients(self):  # TODO
-            self.ingredient_rating = 0.2
-    
-        def rate_tierlist(self):  # TODO
-            self.tierlist_rating = 1
-    
+            self.ingredient_rating = 0.5
+
+        def rate_tierlist(self):
+            try:
+                self.tierlist_rating = pokemonRater.SPECIES_TO_TIERLIST[self.species]
+            except KeyError:
+                Element('warning').write(f"No Pokemon selected")
+
         def combine_scores(self):
             rating_weights = pokemonRater.RATING_WEIGHTS[self.specialty_code]
             subscores = [self.nature_rating, self.subskill_rating, self.ingredient_rating, self.tierlist_rating]
             self.score = sum([weight * subscore for weight, subscore in zip(rating_weights, subscores)])
         
         def rate_pokemon(self):
-            self.rate_nature()
-            self.rate_subskills()
-            self.rate_ingredients()
-            self.rate_tierlist()
-            self.combine_scores()
-            if self.species in pokemonRater.ING_SPECIES:
-                Element('score').write(f"Sorry, I can't rate ingredient Pokkies yet")
-            else:
-                Element('score').write(f'Final score of {self.species} is: {round(self.score*100, 1)}%')
-
+            try:
+                self.rate_nature()
+                self.rate_subskills()
+                self.rate_ingredients()
+                self.rate_tierlist()
+                self.combine_scores()
+                Element('warning').write(f"")
+                if self.species in pokemonRater.ING_SPECIES:
+                    Element('score').write(f"Sorry, I can't rate ingredient Pokkies yet")
+                else:
+                    Element('score').write(f'Final score of {self.species} is: {round(self.score*100, 1)}%')
+            except AttributeError:
+                Element('score').write(f"Data missing. Please fill required fields")
     
     def _extract_stats():
         return {
@@ -330,18 +435,3 @@
         
 </py-script>
 </html>
-
-
-<!-- test_cyndaquil = pokemonRater(
-            species='cyndaquil',
-            nature = 'jolly',
-            ss10 = 'helping bonus',
-            ss25 = 'berry finding s',
-            ss50 = 'ingredient finder m',
-            ss75 = 'skill trigger m',
-            ss100 = 'helping speed m',
-            ing30 = 'fiery herb',
-            ing60 = 'ginger'
-        )
-        test_cyndaquil.rate_pokemon()
-        Element('score').write(f'Final score of {test_cyndaquil.species} (of style {species}) is: {round(test_cyndaquil.score*100, 1)}%') -->
