@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <title>Robin's Pokemon Sleep Rater</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
@@ -11,148 +12,262 @@
     <body>
         <h1>Robin's Pokemon Sleep Rater</h1>
 
-            <div id="date"></div>
-            <div id="pokemon-list"></div>
-            <div id="pokemon-selector-div"></div>
-            <br>
-            <button py-click="evaluate()">Evaluate</button>
-
-            <div id="output"></div>
-            <div id="score"></div>
-
 
 
         <!-- <py-script src="./main.py"></py-script> -->
+    
+
+        <label for="species">Select a Pokemon:</label>
+        <select id="species" onchange="updateOptions('species', 'ing30', 'ing60')">
+        </select>
+        <br>
+
+        <label for="nature">Nature:</label>
+        <select id="nature">
+        </select>
+        <br>
+
+        <label for="ss10">Lvl 10 subskill:</label>
+        <select id="ss10">
+        </select>
+        <br>
+
+        <label for="ss25">Lvl 25 subskill:</label>
+        <select id="ss25">
+        </select>
+        <br>
+
+        <label for="ss50">Lvl 50 subskill:</label>
+        <select id="ss50">
+        </select>
+        <br>
+
+        <label for="ss75">Lvl 75 subskill:</label>
+        <select id="ss75">
+        </select>
+        <br>
+
+        <label for="ss100">Lvl 100 subskill:</label>
+        <select id="ss100">
+        </select>
+        <br>
+
+        <label for="ing30">Lvl 30 ingredient:</label>
+        <select id="ing30" disabled>
+        </select>
+        <br>
+
+        <label for="ing60">Lvl 60 ingredient:</label>
+        <select id="ing60" disabled>
+        </select>
+        <br>
+
+        <button py-click="evaluate()">Evaluate</button>
+        <br>
+
+        <div id="score"></div>
+
     </body>
 
-    <script>
-        var optionsData = {
-            venusaur: "Venusaur",
-            charizard: "Charizard",
-            blastoise: "Blastoise"
-            // Add more options as needed
-        };
+<script>
+    // Define data array
+    var all_species = [
+        '', 'Bulbasaur', 'Ivysaur', 'Venusaur','Charmander', 'Charmeleon', 
+        'Charizard','Squirtle', 'Wartortle', 'Blastoise','Caterpie', 'Metapod', 
+        'Butterfree','Rattata', 'Raticate','Ekans', 'Arbok','Pikachu', 'Raichu',
+        'Pikachu - Halloween','Pikachu - Holiday','Clefairy', 'Clefable',
+        'Jigglypuff', 'Wigglytuff','Diglett', 'Dugtrio','Meowth', 'Persian',
+        'Psyduck', 'Golduck','Mankey', 'Primeape','Growlithe', 'Arcanine',
+        'Bellsprout', 'Weepinbell', 'Victreebel','Geodude', 'Graveler', 'Golem',
+        'Slowpoke', 'Slowbro','Magnemite', 'Magneton','Doduo', 'Dodrio','Gastly', 
+        'Haunter', 'Gengar','Onix','Cubone', 'Marowak','Kangaskhan','Mr. Mime',
+        'Pinsir','Ditto','Eevee', 'Vaporeon', 'Jolteon', 'Flareon','Chikorita', 
+        'Bayleef', 'Meganium','Cyndaquil', 'Quilava', 'Typhlosion','Totodile', 
+        'Croconaw', 'Feraligatr','Pichu','Cleffa','Igglybuff','Togepi', 'Togetic',
+        'Mareep', 'Flaaffy', 'Ampharos','Sudowoodo','Espeon', 'Umbreon','Slowking',
+        'Wobbuffet','Steelix','Heracross','Delibird','Houndour', 'Houndoom',
+        'Larvitar', 'Pupitar', 'Tyranitar','Slakoth', 'Vigoroth', 'Slaking',
+        'Sableye','Gulpin', 'Swalot','Swablu', 'Altaria','Shuppet', 'Banette',
+        'Absol','Wynaut','Spheal', 'Sealeo', 'Walrein','Bonsly','Mime Jr.',
+        'Riolu', 'Lucario','Croagunk', 'Toxicroak','Snover', 'Abomasnow',
+        'Magnezone','Togekiss','Leafeon', 'Glaceon','Sylveon'
+    ];
 
-        // Function to create selectpicker
-        function createSelectPicker(data) {
-            var select = $('<select id="pokemon-selector"></select>');
+    var all_natures = [
+        '', 'Adamant','Bashful','Bold','Brave','Calm','Careful','Docile',
+        'Gentle','Hardy','Hasty','Impish','Jolly','Lax','Lonely','Mild',
+        'Modest','Naive','Naughty','Quiet','Quirky','Rash','Relaxed',
+        'Sassy','Serious','Timid'
+    ]
 
-            for (var key in data) {
-                if (data.hasOwnProperty(key)) {
-                    var option = $('<option></option>');
-                    option.val(key).text(data[key]);
-                    select.append(option);
-                }
-            }
+    var all_subskills = [
+        '','Berry Finding S', 'Dream Shard Bonus','Energy Recovery Bonus',
+        'Helping Bonus', 'Helping Speed S', 'Helping Speed M',
+        'Ingredient Finder S', 'Ingredient Finder M','Inventory Up S', 
+        'Inventory Up M', 'Inventory Up L','Research EXP Bonus',
+        'Skill Level Up S', 'Skill Level Up M', 'Skill Trigger S', 
+        'Skill Trigger M','Sleep EXP Bonus'
+    ]
 
-            // Append the select to the body or a specific container
-            $('#pokemon-selector-div').append(select);
+    var all_ingredients = [
+        
+    ]
 
-            // Initialize the Bootstrap SelectPicker
-            select.selectpicker();
+    // Function to populate select dropdown
+    function populateSelect(elementId, data) {
+        var selectElement = document.getElementById(elementId);
+
+        // Clear existing options
+        selectElement.innerHTML = '';
+
+        // Add options from data array
+        data.forEach(function(item) {
+            console.log(item)
+            var option = document.createElement('option');
+            option.value = item;
+            option.text = item;
+            selectElement.add(option);
+        });
+    }
+
+    // Function to update options based on selected species
+    function updateOptions(species, ing30, ing60) {
+        var selected_species = document.getElementById(species).value;
+        var ing30 = document.getElementById(ing30);
+        var ing60 = document.getElementById(ing60);
+
+        // Enable/disable ing30 based on the selected species
+        ing30.disabled = selected_species !== 'Ingredient';
+        ing30.selectedIndex = 0; // Reset selection
+
+        // Enable/disable ing60 based on the selected species
+        ing60.disabled = selected_species !== 'Ingredient';
+        ing60.selectedIndex = 0; // Reset selection
+    }
+
+    // Initial population of species
+    populateSelect('species', all_species);
+    populateSelect('nature', all_natures);
+    var subskills = ['ss10','ss25','ss50','ss75','ss100']
+    for (let i = 0; i < subskills.length; i++) {
+        populateSelect(subskills[i], all_subskills)
+    }
+
+
+</script>
+
+<py-script>
+    import datetime as dt
+    from js import document
+
+    class pokemonRater():
+        SPECIES_TO_SPECIALTY = {  # TODO
+            'cyndaquil':'berry',
+            'charmander':'ingredient'
         }
+    
+        SPECIALTY_CODES = {
+            'berry': 0,
+            'ingredient': 1,
+            'skill': 2,
+            'allrounder': 3
+        }
+    
+        NATURE_PER_SPECIALTY = {  # TODO
+            'jolly': [0.7, 0.1, 0.6, 0.2]
+        }
+    
+        SUBSKILL_PER_SPECIALTY = {
+            'berry finding s': [1, 0.5, 0.8, 0.8],
+            'helping bonus': [0.5, 1, 1, 1],
+            'helping speed m': [0.5, 0.7, 0.8, 0.8],
+            'skill trigger m': [0.3, 0.5, 1, 0.8],
+            'ingredient finder m': [0, 1, 0.2, 0.7],
+        }
+    
+        SUBSKILL_UNLOCK_WEIGHTS = [1, 0.9, 0.6, 0.3, 0.2]
+    
+        RATING_WEIGHTS = [
+            [0.2, 0.6, 0, 0.2],  # berry
+            [0.1, 0.4, 0.3, 0.2],  # ingredient
+            [0.2, 0.6, 0, 0.2],  # skill
+            [0.1, 0.5, 0.2, 0.2]  # allrounder
+        ]
+    
+        def __init__(self, species, nature, ss10, ss25, ss50, ss75, ss100, ing30, ing60):
+            self.species = species
+            self.nature = nature 
+            self.ss10 = ss10 
+            self.ss25 = ss25 
+            self.ss50 = ss50 
+            self.ss75 = ss75 
+            self.ss100 = ss100 
+            self.ing30 = ing30 
+            self.ing60 = ing60 
+            self.match_specialty()
+    
+        def match_specialty(self):
+            self.specialty = pokemonRater.SPECIES_TO_SPECIALTY[self.species]
+            self.specialty_code = pokemonRater.SPECIALTY_CODES[self.specialty]
+    
+        def rate_nature(self):  # TODO add xp_hard
+            self.nature_rating = pokemonRater.NATURE_PER_SPECIALTY[self.nature][self.specialty_code]
+    
+        def _get_max_subskill_score(self):
+            all_scores_per_speciality = [subskill_ratings[self.specialty_code] for subskill_ratings in pokemonRater.SUBSKILL_PER_SPECIALTY.values()]
+            largest_5_scores = sorted(all_scores_per_speciality, reverse=True)[:5]
+            return sum([score*weight for score, weight in zip(largest_5_scores, pokemonRater.SUBSKILL_UNLOCK_WEIGHTS)])
+    
+        def rate_subskills(self):
+            subskills = [self.ss10, self.ss25, self.ss50, self.ss75, self.ss100]
+            subskills_unweighted = [pokemonRater.SUBSKILL_PER_SPECIALTY[subskill][self.specialty_code] for subskill in subskills]
+            subskills_weighted = [score*weight for score, weight in zip(subskills_unweighted, pokemonRater.SUBSKILL_UNLOCK_WEIGHTS)]
+            self.subskill_rating = sum(subskills_weighted) / self._get_max_subskill_score()
+    
+        def rate_ingredients(self):  # TODO
+            self.ingredient_rating = 0.2
+    
+        def rate_tierlist(self):  # TODO
+            self.tierlist_rating = 1
+    
+        def combine_scores(self):
+            rating_weights = pokemonRater.RATING_WEIGHTS[self.specialty_code]
+            subscores = [self.nature_rating, self.subskill_rating, self.ingredient_rating, self.tierlist_rating]
+            self.score = sum([weight * subscore for weight, subscore in zip(rating_weights, subscores)])
+        
+        def rate_pokemon(self):
+            self.rate_nature()
+            self.rate_subskills()
+            self.rate_ingredients()
+            self.rate_tierlist()
+            self.combine_scores()
+            Element('score').write(f'Final score of {self.species} is: {round(self.score*100, 1)}%')
 
-        // Call the function with your data
-        createSelectPicker(optionsData);
-    </script>
+    
+    def _extract_stats():
+        return {
+            'species':Element('species').value,
+            'nature':Element('nature').value,
+            'ss10':Element('ss10').value,
+            'ss25':Element('ss25').value,
+            'ss50':Element('ss50').value,
+            'ss75':Element('ss75').value,
+            'ss100':Element('ss100').value,
+            'ing30':Element('ing30').value,
+            'ing60':Element('ing60').value
+        }
+    
+    def evaluate():
+        species = Element('species').value
+        stats = _extract_stats()
+        pokemonRater(**stats).rate_pokemon()
 
-    <py-script>
-        import datetime as dt
+        
+</py-script>
+</html>
 
-        pokemon_list = ['bulbasaur', 'charmander', 'squirtle']
 
-        Element('date').write(dt.datetime.today().strftime('%Y-%m-%d'))
-        Element('pokemon-list').write(pokemon_list[1])
-
-        selected_pokemon = Element('pokemon-selector').value
-
-        def evaluate():
-            Element('output').write(f'The Pokemon you have selected is {selected_pokemon}')
-
-            
-        class pokemonRater():
-            SPECIES_TO_SPECIALTY = {  # TODO
-                'cyndaquil':'berry'
-            }
-        
-            SPECIALTY_CODES = {
-                'berry': 0,
-                'ingredient': 1,
-                'skill': 2,
-                'allrounder': 3
-            }
-        
-            NATURE_PER_SPECIALTY = {  # TODO
-                'jolly': [0.7, 0.1, 0.6, 0.2]
-            }
-        
-            SUBSKILL_PER_SPECIALTY = {
-                'berry finding s': [1, 0.5, 0.8, 0.8],
-                'helping bonus': [0.5, 1, 1, 1],
-                'helping speed m': [0.5, 0.7, 0.8, 0.8],
-                'skill trigger m': [0.3, 0.5, 1, 0.8],
-                'ingredient finder m': [0, 1, 0.2, 0.7],
-            }
-        
-            SUBSKILL_UNLOCK_WEIGHTS = [1, 0.9, 0.6, 0.3, 0.2]
-        
-            RATING_WEIGHTS = [
-                [0.2, 0.6, 0, 0.2],  # berry
-                [0.1, 0.4, 0.3, 0.2],  # ingredient
-                [0.2, 0.6, 0, 0.2],  # skill
-                [0.1, 0.5, 0.2, 0.2]  # allrounder
-            ]
-        
-            def __init__(self, species, nature, ss10, ss25, ss50, ss75, ss100, ing30, ing60):
-                self.species = species
-                self.nature = nature 
-                self.ss10 = ss10 
-                self.ss25 = ss25 
-                self.ss50 = ss50 
-                self.ss75 = ss75 
-                self.ss100 = ss100 
-                self.ing30 = ing30 
-                self.ing60 = ing60 
-                self.match_specialty()
-        
-            def match_specialty(self):
-                self.specialty = pokemonRater.SPECIES_TO_SPECIALTY[self.species]
-                self.specialty_code = pokemonRater.SPECIALTY_CODES[self.specialty]
-        
-            def rate_nature(self):  # TODO add xp_hard
-                self.nature_rating = pokemonRater.NATURE_PER_SPECIALTY[self.nature][self.specialty_code]
-        
-            def _get_max_subskill_score(self):
-                all_scores_per_speciality = [subskill_ratings[self.specialty_code] for subskill_ratings in pokemonRater.SUBSKILL_PER_SPECIALTY.values()]
-                largest_5_scores = sorted(all_scores_per_speciality, reverse=True)[:5]
-                return sum([score*weight for score, weight in zip(largest_5_scores, pokemonRater.SUBSKILL_UNLOCK_WEIGHTS)])
-        
-            def rate_subskills(self):
-                subskills = [self.ss10, self.ss25, self.ss50, self.ss75, self.ss100]
-                subskills_unweighted = [pokemonRater.SUBSKILL_PER_SPECIALTY[subskill][self.specialty_code] for subskill in subskills]
-                subskills_weighted = [score*weight for score, weight in zip(subskills_unweighted, pokemonRater.SUBSKILL_UNLOCK_WEIGHTS)]
-                self.subskill_rating = sum(subskills_weighted) / self._get_max_subskill_score()
-        
-            def rate_ingredients(self):  # TODO
-                self.ingredient_rating = 0.2
-        
-            def rate_tierlist(self):  # TODO
-                self.tierlist_rating = 1
-        
-            def combine_scores(self):
-                rating_weights = pokemonRater.RATING_WEIGHTS[self.specialty_code]
-                subscores = [self.nature_rating, self.subskill_rating, self.ingredient_rating, self.tierlist_rating]
-                self.score = sum([weight * subscore for weight, subscore in zip(rating_weights, subscores)])
-            
-            def rate_pokemon(self):
-                self.rate_nature()
-                self.rate_subskills()
-                self.rate_ingredients()
-                self.rate_tierlist()
-                self.combine_scores()
-        
-        
-        test_cyndaquil = pokemonRater(
+<!-- test_cyndaquil = pokemonRater(
             species='cyndaquil',
             nature = 'jolly',
             ss10 = 'helping bonus',
@@ -164,7 +279,4 @@
             ing60 = 'ginger'
         )
         test_cyndaquil.rate_pokemon()
-        Element('score').write(f'Final score of {test_cyndaquil.species} is: {round(test_cyndaquil.score*100, 1)}%')
-
-    </py-script>
-</html>
+        Element('score').write(f'Final score of {test_cyndaquil.species} (of style {species}) is: {round(test_cyndaquil.score*100, 1)}%') -->
