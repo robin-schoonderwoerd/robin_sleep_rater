@@ -10,7 +10,7 @@
     <head>
         
     <body>
-        <h1>Robin's Pokemon Sleep Rater</h1>
+        <h1>Robirater</h1>
 
 
 
@@ -18,7 +18,7 @@
     
 
         <label for="species">Select a Pokemon:</label>
-        <select id="species" onchange="updateOptions('species', 'ing30', 'ing60')">
+        <select id="species" onchange="updateOptions('species', 'ing1', 'ing30', 'ing60')">
         </select>
         <br>
 
@@ -52,6 +52,12 @@
         </select>
         <br>
 
+        <div id="ingredient_fields" hidden>
+        <label for="ing1">Lvl 1 ingredient:</label>
+        <select id="ing1" disabled>
+        </select>
+        <br>
+
         <label for="ing30">Lvl 30 ingredient:</label>
         <select id="ing30" disabled>
         </select>
@@ -61,6 +67,7 @@
         <select id="ing60" disabled>
         </select>
         <br>
+        </div>
 
         <button py-click="evaluate()">Evaluate</button>
         <br>
@@ -126,6 +133,46 @@
         'Absol','Mime Jr.','Croagunk', 'Toxicroak','Snover', 'Abomasnow'
     ]
 
+    var ing_options = {
+        'Bulbasaur':['Honey', 'Snoozy Tomato', 'Soft Potato'], 
+        'Ivysaur':['Honey', 'Snoozy Tomato', 'Soft Potato'], 
+        'Venusaur':['Honey', 'Snoozy Tomato', 'Soft Potato'],
+        'Charmander':['Bean Sausage', 'Warming Ginger', 'Fiery Herb'],
+        'Charmeleon':['Bean Sausage', 'Warming Ginger', 'Fiery Herb'],
+        'Charizard':['Bean Sausage', 'Warming Ginger', 'Fiery Herb'],
+        'Squirtle':['Moomoo Milk', 'Soothing Cacao', 'Bean Sausage'],
+        'Wartortle':['Moomoo Milk', 'Soothing Cacao', 'Bean Sausage'],
+        'Blastoise':['Moomoo Milk', 'Soothing Cacao', 'Bean Sausage'],
+        'Diglett':['Snoozy Tomato', 'Large Leek', 'Greengrass Soybeans'],
+        'Dugtrio':['Snoozy Tomato', 'Large Leek', 'Greengrass Soybeans'],
+        'Bellsprout':['Snoozy Tomato', 'Soft Potato', 'Large Leek'],
+        'Weepinbell':['Snoozy Tomato', 'Soft Potato', 'Large Leek'],
+        'Victreebel':['Snoozy Tomato', 'Soft Potato', 'Large Leek'],
+        'Geodude':['Greengrass Soybeans', 'Soft Potato', 'Tasty Mushroom'],
+        'Graveler':['Greengrass Soybeans', 'Soft Potato', 'Tasty Mushroom'],
+        'Golem':['Greengrass Soybeans', 'Soft Potato', 'Tasty Mushroom'],
+        'Slowpoke':['Soothing Cacao', 'Slowpoke Tail', 'Snoozy Tomato'],
+        'Slowbro':['Soothing Cacao', 'Slowpoke Tail', 'Snoozy Tomato'],
+        'Gastly':['Fiery Herb', 'Tasty Mushroom', 'Pure Oil'],
+        'Haunter':['Fiery Herb', 'Tasty Mushroom', 'Pure Oil'],
+        'Gengar':['Fiery Herb', 'Tasty Mushroom', 'Pure Oil'],
+        'Kangaskhan':['Warming Ginger', 'Soft Potato', 'Greengrass Soybeans'],
+        'Mr. Mime':['Snoozy Tomato', 'Soft Potato', 'Large Leek'],
+        'Pinsir':['Honey', 'Fancy Apple', 'Bean Sausage'],
+        'Ditto':['Pure Oil', 'Large Leek', 'Slowpoke Tail'],
+        'Slowking':['Soothing Cacao', 'Slowpoke Tail', 'Snoozy Tomato'],
+        'Delibird':['Fancy Egg', 'Fancy Apple', 'Soothing Cacao'],
+        'Larvitar':['Warming Ginger', 'Greengrass Soybeans', 'Bean Sausage'],
+        'Pupitar':['Warming Ginger', 'Greengrass Soybeans', 'Bean Sausage'],
+        'Tyranitar':['Warming Ginger', 'Greengrass Soybeans', 'Bean Sausage'],
+        'Absol':['Soothing Cacao', 'Fancy Apple', 'Tasty Mushroom'],
+        'Mime Jr.':['Snoozy Tomato', 'Soft Potato', 'Large Leek'],
+        'Croagunk':['Pure Oil', 'Bean Sausage'],
+        'Toxicroak':['Pure Oil', 'Bean Sausage'],
+        'Snover':['Snoozy Tomato', 'Fancy Egg', 'Tasty Mushroom'],
+        'Abomasnow':['Snoozy Tomato', 'Fancy Egg', 'Tasty Mushroom']
+    }
+
     // Function to populate select dropdown
     function populateSelect(elementId, data) {
         var selectElement = document.getElementById(elementId);
@@ -135,7 +182,6 @@
 
         // Add options from data array
         data.forEach(function(item) {
-            console.log(item)
             var option = document.createElement('option');
             option.value = item;
             option.text = item;
@@ -144,10 +190,18 @@
     }
 
     // Function to update options based on selected species
-    function updateOptions(species, ing30, ing60) {
+    function updateOptions(species, ing1, ing30, ing60) {
         var selected_species = document.getElementById(species).value;
+        var ing1 = document.getElementById(ing1);
         var ing30 = document.getElementById(ing30);
         var ing60 = document.getElementById(ing60);
+        var ingredient_fields = document.getElementById('ingredient_fields');
+
+        populateSelect('ing1', !ing_options[selected_species] ? [''] : ing_options[selected_species].slice(0,1));
+        populateSelect('ing30', !ing_options[selected_species] ? [''] : ing_options[selected_species].slice(0,2));
+        populateSelect('ing60', !ing_options[selected_species] ? [''] : ing_options[selected_species]);
+
+        ingredient_fields.hidden = !ing_species.includes(selected_species);
 
         // Enable/disable ing30 based on the selected species
         ing30.disabled = !ing_species.includes(selected_species);
@@ -165,10 +219,7 @@
     for (let i = 0; i < subskills.length; i++) {
         populateSelect(subskills[i], all_subskills)
     }
-    var ingredients = ['ing30', 'ing60']
-    for (let i = 0; i < ingredients.length; i++) {
-        populateSelect(ingredients[i], all_ingredients)
-    }
+
 
 
 </script>
@@ -319,7 +370,228 @@
             'Sylveon':1.0
         }
 
-        SUBSKILL_UNLOCK_WEIGHTS = [1, 0.9, 0.6, 0.3, 0.2]
+        ING_COMBI_RATINGS = {
+            'Bulbasaur|Honey|Honey': 0.6,
+            'Bulbasaur|Honey|Snoozy Tomato': 0.6,
+            'Bulbasaur|Honey|Soft Potato': 0.8,
+            'Bulbasaur|Snoozy Tomato|Honey': 0.6,
+            'Bulbasaur|Snoozy Tomato|Snoozy Tomato': 0.4,
+            'Bulbasaur|Snoozy Tomato|Soft Potato': 1.0,
+            'Ivysaur|Honey|Honey': 0.6,
+            'Ivysaur|Honey|Snoozy Tomato': 0.6,
+            'Ivysaur|Honey|Soft Potato': 0.8,
+            'Ivysaur|Snoozy Tomato|Honey': 0.6,
+            'Ivysaur|Snoozy Tomato|Snoozy Tomato': 0.4,
+            'Ivysaur|Snoozy Tomato|Soft Potato': 1.0,
+            'Venusaur|Honey|Honey': 0.6,
+            'Venusaur|Honey|Snoozy Tomato': 0.6,
+            'Venusaur|Honey|Soft Potato': 0.8,
+            'Venusaur|Snoozy Tomato|Honey': 0.6,
+            'Venusaur|Snoozy Tomato|Snoozy Tomato': 0.4,
+            'Venusaur|Snoozy Tomato|Soft Potato': 1.0,
+            'Charmander|Bean Sausage|Bean Sausage': 0.4,
+            'Charmander|Bean Sausage|Warming Ginger': 0.6,
+            'Charmander|Bean Sausage|Fiery Herb': 0.6,
+            'Charmander|Warming Ginger|Bean Sausage': 0.4,
+            'Charmander|Warming Ginger|Warming Ginger': 0.4,
+            'Charmander|Warming Ginger|Fiery Herb': 1.0,
+            'Charmeleon|Bean Sausage|Bean Sausage': 0.4,
+            'Charmeleon|Bean Sausage|Warming Ginger': 0.4,
+            'Charmeleon|Bean Sausage|Fiery Herb': 0.6,
+            'Charmeleon|Warming Ginger|Bean Sausage': 0.4,
+            'Charmeleon|Warming Ginger|Warming Ginger': 0.4,
+            'Charmeleon|Warming Ginger|Fiery Herb': 1.0,
+            'Charizard|Bean Sausage|Bean Sausage': 0.4,
+            'Charizard|Bean Sausage|Warming Ginger': 0.4,
+            'Charizard|Bean Sausage|Fiery Herb': 0.6,
+            'Charizard|Warming Ginger|Bean Sausage': 0.4,
+            'Charizard|Warming Ginger|Warming Ginger': 0.4,
+            'Charizard|Warming Ginger|Fiery Herb': 1.0,
+            'Squirtle|Moomoo Milk|Moomoo Milk': 0.2,
+            'Squirtle|Moomoo Milk|Soothing Cacao': 1.0,
+            'Squirtle|Moomoo Milk|Bean Sausage': 0.6,
+            'Squirtle|Soothing Cacao|Moomoo Milk': 0.8,
+            'Squirtle|Soothing Cacao|Soothing Cacao': 0.8,
+            'Squirtle|Soothing Cacao|Bean Sausage': 0.8,
+            'Wartortle|Moomoo Milk|Moomoo Milk': 0.2,
+            'Wartortle|Moomoo Milk|Soothing Cacao': 1.0,
+            'Wartortle|Moomoo Milk|Bean Sausage': 0.6,
+            'Wartortle|Soothing Cacao|Moomoo Milk': 0.8,
+            'Wartortle|Soothing Cacao|Soothing Cacao': 0.8,
+            'Wartortle|Soothing Cacao|Bean Sausage': 0.8,
+            'Blastoise|Moomoo Milk|Moomoo Milk': 0.2,
+            'Blastoise|Moomoo Milk|Soothing Cacao': 1.0,
+            'Blastoise|Moomoo Milk|Bean Sausage': 0.6,
+            'Blastoise|Soothing Cacao|Moomoo Milk': 0.8,
+            'Blastoise|Soothing Cacao|Soothing Cacao': 0.8,
+            'Blastoise|Soothing Cacao|Bean Sausage': 0.8,
+            'Diglett|Snoozy Tomato|Snoozy Tomato': 0.4,
+            'Diglett|Snoozy Tomato|Large Leek': 0.6,
+            'Diglett|Snoozy Tomato|Greengrass Soybeans': 0.6,
+            'Diglett|Large Leek|Snoozy Tomato': 0.6,
+            'Diglett|Large Leek|Large Leek': 1.0,
+            'Diglett|Large Leek|Greengrass Soybeans': 0.8,
+            'Dugtrio|Snoozy Tomato|Snoozy Tomato': 0.4,
+            'Dugtrio|Snoozy Tomato|Large Leek': 0.6,
+            'Dugtrio|Snoozy Tomato|Greengrass Soybeans': 0.6,
+            'Dugtrio|Large Leek|Snoozy Tomato': 0.6,
+            'Dugtrio|Large Leek|Large Leek': 1.0,
+            'Dugtrio|Large Leek|Greengrass Soybeans': 0.8,
+            'Bellsprout|Snoozy Tomato|Snoozy Tomato': 0.4,
+            'Bellsprout|Snoozy Tomato|Soft Potato': 1.0,
+            'Bellsprout|Snoozy Tomato|Large Leek': 0.8,
+            'Bellsprout|Soft Potato|Snoozy Tomato': 0.6,
+            'Bellsprout|Soft Potato|Soft Potato': 0.8,
+            'Bellsprout|Soft Potato|Large Leek': 1.0,
+            'Weepinbell|Snoozy Tomato|Snoozy Tomato': 0.4,
+            'Weepinbell|Snoozy Tomato|Soft Potato': 1.0,
+            'Weepinbell|Snoozy Tomato|Large Leek': 0.8,
+            'Weepinbell|Soft Potato|Snoozy Tomato': 0.6,
+            'Weepinbell|Soft Potato|Soft Potato': 0.8,
+            'Weepinbell|Soft Potato|Large Leek': 1.0,
+            'Victreebel|Snoozy Tomato|Snoozy Tomato': 0.4,
+            'Victreebel|Snoozy Tomato|Soft Potato': 1.0,
+            'Victreebel|Snoozy Tomato|Large Leek': 0.8,
+            'Victreebel|Soft Potato|Snoozy Tomato': 0.6,
+            'Victreebel|Soft Potato|Soft Potato': 0.8,
+            'Victreebel|Soft Potato|Large Leek': 1.0,
+            'Geodude|Greengrass Soybeans|Greengrass Soybeans': 0.4,
+            'Geodude|Greengrass Soybeans|Soft Potato': 0.6,
+            'Geodude|Greengrass Soybeans|Tasty Mushroom': 1.0,
+            'Geodude|Soft Potato|Greengrass Soybeans': 0.8,
+            'Geodude|Soft Potato|Soft Potato': 0.6,
+            'Geodude|Soft Potato|Tasty Mushroom': 1.0,
+            'Graveler|Greengrass Soybeans|Greengrass Soybeans': 0.4,
+            'Graveler|Greengrass Soybeans|Soft Potato': 0.6,
+            'Graveler|Greengrass Soybeans|Tasty Mushroom': 1.0,
+            'Graveler|Soft Potato|Greengrass Soybeans': 0.8,
+            'Graveler|Soft Potato|Soft Potato': 0.6,
+            'Graveler|Soft Potato|Tasty Mushroom': 1.0,
+            'Golem|Greengrass Soybeans|Greengrass Soybeans': 0.4,
+            'Golem|Greengrass Soybeans|Soft Potato': 0.6,
+            'Golem|Greengrass Soybeans|Tasty Mushroom': 1.0,
+            'Golem|Soft Potato|Greengrass Soybeans': 0.8,
+            'Golem|Soft Potato|Soft Potato': 0.6,
+            'Golem|Soft Potato|Tasty Mushroom': 1.0,
+            'Slowpoke|Soothing Cacao|Soothing Cacao': 0.0,
+            'Slowpoke|Soothing Cacao|Slowpoke Tail': 0.8,
+            'Slowpoke|Soothing Cacao|Snoozy Tomato': 0.0,
+            'Slowpoke|Slowpoke Tail|Soothing Cacao': 0.8,
+            'Slowpoke|Slowpoke Tail|Slowpoke Tail': 1.0,
+            'Slowpoke|Slowpoke Tail|Snoozy Tomato': 0.8,
+            'Slowbro|Soothing Cacao|Soothing Cacao': 0.0,
+            'Slowbro|Soothing Cacao|Slowpoke Tail': 0.8,
+            'Slowbro|Soothing Cacao|Snoozy Tomato': 0.0,
+            'Slowbro|Slowpoke Tail|Soothing Cacao': 0.8,
+            'Slowbro|Slowpoke Tail|Slowpoke Tail': 1.0,
+            'Slowbro|Slowpoke Tail|Snoozy Tomato': 0.8,
+            'Gastly|Fiery Herb|Fiery Herb': 0.8,
+            'Gastly|Fiery Herb|Tasty Mushroom': 1.0,
+            'Gastly|Fiery Herb|Pure Oil': 0.8,
+            'Gastly|Tasty Mushroom|Fiery Herb': 0.6,
+            'Gastly|Tasty Mushroom|Tasty Mushroom': 1.0,
+            'Gastly|Tasty Mushroom|Pure Oil': 1.0,
+            'Haunter|Fiery Herb|Fiery Herb': 0.8,
+            'Haunter|Fiery Herb|Tasty Mushroom': 1.0,
+            'Haunter|Fiery Herb|Pure Oil': 0.8,
+            'Haunter|Tasty Mushroom|Fiery Herb': 0.6,
+            'Haunter|Tasty Mushroom|Tasty Mushroom': 1.0,
+            'Haunter|Tasty Mushroom|Pure Oil': 1.0,
+            'Gengar|Fiery Herb|Fiery Herb': 0.8,
+            'Gengar|Fiery Herb|Tasty Mushroom': 1.0,
+            'Gengar|Fiery Herb|Pure Oil': 0.8,
+            'Gengar|Tasty Mushroom|Fiery Herb': 0.6,
+            'Gengar|Tasty Mushroom|Tasty Mushroom': 1.0,
+            'Gengar|Tasty Mushroom|Pure Oil': 1.0,
+            'Kangaskhan|Warming Ginger|Warming Ginger': 0.2,
+            'Kangaskhan|Warming Ginger|Soft Potato': 0.6,
+            'Kangaskhan|Warming Ginger|Greengrass Soybeans': 0.8,
+            'Kangaskhan|Soft Potato|Warming Ginger': 0.4,
+            'Kangaskhan|Soft Potato|Soft Potato': 0.6,
+            'Kangaskhan|Soft Potato|Greengrass Soybeans': 0.4,
+            'Mr. Mime|Snoozy Tomato|Snoozy Tomato': 0.4,
+            'Mr. Mime|Snoozy Tomato|Soft Potato': 1.0,
+            'Mr. Mime|Snoozy Tomato|Large Leek': 0.6,
+            'Mr. Mime|Soft Potato|Snoozy Tomato': 0.6,
+            'Mr. Mime|Soft Potato|Soft Potato': 0.6,
+            'Mr. Mime|Soft Potato|Large Leek': 0.8,
+            'Pinsir|Honey|Honey': 0.6,
+            'Pinsir|Honey|Fancy Apple': 0.8,
+            'Pinsir|Honey|Bean Sausage': 0.4,
+            'Pinsir|Fancy Apple|Honey': 1.0,
+            'Pinsir|Fancy Apple|Fancy Apple': 0.4,
+            'Pinsir|Fancy Apple|Bean Sausage': 0.4,
+            'Ditto|Pure Oil|Pure Oil': 0.0,
+            'Ditto|Pure Oil|Large Leek': 0.6,
+            'Ditto|Pure Oil|Slowpoke Tail': 0.8,
+            'Ditto|Large Leek|Pure Oil': 0.2,
+            'Ditto|Large Leek|Large Leek': 0.8,
+            'Ditto|Large Leek|Slowpoke Tail': 1.0,
+            'Slowking|Soothing Cacao|Soothing Cacao': 0.0,
+            'Slowking|Soothing Cacao|Slowpoke Tail': 0.8,
+            'Slowking|Soothing Cacao|Snoozy Tomato': 0.0,
+            'Slowking|Slowpoke Tail|Soothing Cacao': 0.8,
+            'Slowking|Slowpoke Tail|Slowpoke Tail': 1.0,
+            'Slowking|Slowpoke Tail|Snoozy Tomato': 0.8,
+            'Delibird|Fancy Egg|Fancy Egg': 0.4,
+            'Delibird|Fancy Egg|Fancy Apple': 1.0,
+            'Delibird|Fancy Egg|Soothing Cacao': 0.6,
+            'Delibird|Fancy Apple|Fancy Egg': 1.0,
+            'Delibird|Fancy Apple|Fancy Apple': 0.4,
+            'Delibird|Fancy Apple|Soothing Cacao': 0.6,
+            'Larvitar|Warming Ginger|Warming Ginger': 0.4,
+            'Larvitar|Warming Ginger|Greengrass Soybeans': 1.0,
+            'Larvitar|Warming Ginger|Bean Sausage': 0.6,
+            'Larvitar|Greengrass Soybeans|Warming Ginger': 0.8,
+            'Larvitar|Greengrass Soybeans|Greengrass Soybeans': 0.6,
+            'Larvitar|Greengrass Soybeans|Bean Sausage': 0.8,
+            'Pupitar|Warming Ginger|Warming Ginger': 0.4,
+            'Pupitar|Warming Ginger|Greengrass Soybeans': 1.0,
+            'Pupitar|Warming Ginger|Bean Sausage': 0.6,
+            'Pupitar|Greengrass Soybeans|Warming Ginger': 0.8,
+            'Pupitar|Greengrass Soybeans|Greengrass Soybeans': 0.6,
+            'Pupitar|Greengrass Soybeans|Bean Sausage': 0.8,
+            'Tyranitar|Warming Ginger|Warming Ginger': 0.4,
+            'Tyranitar|Warming Ginger|Greengrass Soybeans': 1.0,
+            'Tyranitar|Warming Ginger|Bean Sausage': 0.6,
+            'Tyranitar|Greengrass Soybeans|Warming Ginger': 0.8,
+            'Tyranitar|Greengrass Soybeans|Greengrass Soybeans': 0.6,
+            'Tyranitar|Greengrass Soybeans|Bean Sausage': 0.8,
+            'Absol|Soothing Cacao|Soothing Cacao': 0.6,
+            'Absol|Soothing Cacao|Fancy Apple': 0.6,
+            'Absol|Soothing Cacao|Tasty Mushroom': 0.8,
+            'Absol|Fancy Apple|Soothing Cacao': 0.6,
+            'Absol|Fancy Apple|Fancy Apple': 0.4,
+            'Absol|Fancy Apple|Tasty Mushroom': 1.0,
+            'Mime Jr.|Snoozy Tomato|Snoozy Tomato': 0.4,
+            'Mime Jr.|Snoozy Tomato|Soft Potato': 1.0,
+            'Mime Jr.|Snoozy Tomato|Large Leek': 0.6,
+            'Mime Jr.|Soft Potato|Snoozy Tomato': 0.6,
+            'Mime Jr.|Soft Potato|Soft Potato': 0.6,
+            'Mime Jr.|Soft Potato|Large Leek': 0.8,
+            'Croagunk|Pure Oil|Pure Oil': 0.4,
+            'Croagunk|Pure Oil|Bean Sausage': 0.6,
+            'Croagunk|Bean Sausage|Pure Oil': 0.6,
+            'Croagunk|Bean Sausage|Bean Sausage': 0.4,
+            'Toxicroak|Pure Oil|Pure Oil': 0.4,
+            'Toxicroak|Pure Oil|Bean Sausage': 0.6,
+            'Toxicroak|Bean Sausage|Pure Oil': 0.6,
+            'Toxicroak|Bean Sausage|Bean Sausage': 0.4,
+            'Snover|Snoozy Tomato|Snoozy Tomato': 0.4,
+            'Snover|Snoozy Tomato|Fancy Egg': 0.8,
+            'Snover|Snoozy Tomato|Tasty Mushroom': 1.0,
+            'Snover|Fancy Egg|Snoozy Tomato': 0.6,
+            'Snover|Fancy Egg|Fancy Egg': 0.6,
+            'Snover|Fancy Egg|Tasty Mushroom': 0.8,
+            'Abomasnow|Snoozy Tomato|Snoozy Tomato': 0.4,
+            'Abomasnow|Snoozy Tomato|Fancy Egg': 0.8,
+            'Abomasnow|Snoozy Tomato|Tasty Mushroom': 1.0,
+            'Abomasnow|Fancy Egg|Snoozy Tomato': 0.6,
+            'Abomasnow|Fancy Egg|Fancy Egg': 0.6,
+            'Abomasnow|Fancy Egg|Tasty Mushroom': 0.8
+        }
+
+        SUBSKILL_UNLOCK_WEIGHTS = [1, 0.95, 0.85, 0.4, 0.2]
 
         RATING_WEIGHTS = [
             [0.2, 0.6, 0, 0.2],  # berry
@@ -379,7 +651,7 @@
             smallest_5_scores = subskill_scores_sorted[-5:]
             self.max_subskill_score = sum([score*weight for score, weight in zip(largest_5_scores, pokemonRater.SUBSKILL_UNLOCK_WEIGHTS)])
             self.min_subskill_score = sum([score*weight for score, weight in zip(sorted(smallest_5_scores), pokemonRater.SUBSKILL_UNLOCK_WEIGHTS)]) 
-    
+
         def rate_subskills(self):
             subskills = [self.ss10, self.ss25, self.ss50, self.ss75, self.ss100]
             try:
@@ -390,8 +662,12 @@
             except KeyError:
                 Element('warning').write(f"Not all subskills selected")
 
-        def rate_ingredients(self):  # TODO
-            self.ingredient_rating = 0.5
+        def rate_ingredients(self):
+            ingredient_key = '|'.join([self.species, self.ing30, self.ing60])
+            try:
+                self.ingredient_rating = pokemonRater.ING_COMBI_RATINGS[ingredient_key]
+            except KeyError:
+                Element('warning').write(f"Ingredient combination not found for {self.species}")
 
         def rate_tierlist(self):
             try:
@@ -417,10 +693,7 @@
                 self.combine_scores()
                 self.apply_feelgoodfactor()
                 Element('warning').write(f"")
-                if self.species in pokemonRater.ING_SPECIES:
-                    Element('score').write(f"Sorry, I can't rate ingredient Pokkies yet")
-                else:
-                    Element('score').write(f'Final score of {self.species} is: {round(self.score*100, 1)}%')
+                Element('score').write(f'Final score of {self.species} is: {round(self.score*100, 1)}%')
             except AttributeError:
                 Element('score').write(f"Data missing. Please fill required fields")
     
