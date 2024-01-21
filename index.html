@@ -662,12 +662,16 @@
             except KeyError:
                 Element('warning').write(f"Not all subskills selected")
 
+
         def rate_ingredients(self):
-            ingredient_key = '|'.join([self.species, self.ing30, self.ing60])
-            try:
-                self.ingredient_rating = pokemonRater.ING_COMBI_RATINGS[ingredient_key]
-            except KeyError:
-                Element('warning').write(f"Ingredient combination not found for {self.species}")
+            if self.species in pokemonRater.ING_SPECIES:
+                ingredient_key = '|'.join([self.species, self.ing30, self.ing60])
+                try:
+                    self.ingredient_rating = pokemonRater.ING_COMBI_RATINGS[ingredient_key]
+                except KeyError:
+                    Element('warning').write(f"Ingredient combination not found for {self.species}")
+            else:
+                self.ingredient_rating = 0.5
 
         def rate_tierlist(self):
             try:
