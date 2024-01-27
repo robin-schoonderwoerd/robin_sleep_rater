@@ -53,7 +53,7 @@
         <br>
 
         <div id="ingredient_fields" hidden>
-        <label for="ing1">Lvl 1 ingredient:</label>
+        <label for="ing1">Base ingredient:</label>
         <select id="ing1" disabled>
         </select>
         <br>
@@ -89,16 +89,19 @@
         'Bellsprout', 'Weepinbell', 'Victreebel','Geodude', 'Graveler', 'Golem',
         'Slowpoke', 'Slowbro','Magnemite', 'Magneton','Doduo', 'Dodrio','Gastly', 
         'Haunter', 'Gengar','Onix','Cubone', 'Marowak','Kangaskhan','Mr. Mime',
-        'Pinsir','Ditto','Eevee', 'Vaporeon', 'Jolteon', 'Flareon','Chikorita', 
+        'Pinsir','Ditto','Eevee', 'Vaporeon', 'Jolteon', 'Flareon', 'Dratini', 
+        'Dragonair', 'Dragonite', 'Chikorita', 
         'Bayleef', 'Meganium','Cyndaquil', 'Quilava', 'Typhlosion','Totodile', 
         'Croconaw', 'Feraligatr','Pichu','Cleffa','Igglybuff','Togepi', 'Togetic',
         'Mareep', 'Flaaffy', 'Ampharos','Sudowoodo','Espeon', 'Umbreon','Slowking',
         'Wobbuffet','Steelix','Heracross','Delibird','Houndour', 'Houndoom',
-        'Larvitar', 'Pupitar', 'Tyranitar','Slakoth', 'Vigoroth', 'Slaking',
+        'Larvitar', 'Pupitar', 'Tyranitar','Ralts', 'Kirlia', 'Gardevoir',
+        'Slakoth', 'Vigoroth', 'Slaking', 
         'Sableye','Gulpin', 'Swalot','Swablu', 'Altaria','Shuppet', 'Banette',
         'Absol','Wynaut','Spheal', 'Sealeo', 'Walrein','Bonsly','Mime Jr.',
         'Riolu', 'Lucario','Croagunk', 'Toxicroak','Snover', 'Abomasnow',
-        'Magnezone','Togekiss','Leafeon', 'Glaceon','Sylveon'
+        'Magnezone', 'Togekiss','Leafeon', 'Glaceon','Gallade', 'Sylveon', 
+        'Stufful', 'Bewear'
     ];
 
     var all_natures = [
@@ -121,7 +124,7 @@
         '', 'Large Leek', 'Tasty Mushroom', 'Fancy Egg', 'Soft Potato', 
         'Fancy Apple','Fiery Herb', 'Bean Sausage', 'Moomoo Milk', 'Honey', 
         'Pure Oil','Warming Ginger', 'Snoozy Tomato', 'Soothing Cacao', 
-        'Slowpoke Tail','Greengrass Soybeans'
+        'Slowpoke Tail','Greengrass Soybeans', 'Greengrass Corn'
     ]
 
     var ing_species = [
@@ -129,8 +132,10 @@
         'Charizard','Squirtle', 'Wartortle', 'Blastoise','Diglett', 'Dugtrio',
         'Bellsprout', 'Weepinbell', 'Victreebel','Geodude', 'Graveler', 'Golem',
         'Slowpoke', 'Slowbro','Gastly','Haunter', 'Gengar','Kangaskhan','Mr. Mime',
-        'Pinsir','Ditto','Slowking','Delibird', 'Larvitar', 'Pupitar', 'Tyranitar',
-        'Absol','Mime Jr.','Croagunk', 'Toxicroak','Snover', 'Abomasnow'
+        'Pinsir','Ditto','Dratini','Dragonair','Dragonite',
+        'Slowking','Delibird', 'Larvitar', 'Pupitar', 'Tyranitar',
+        'Absol','Mime Jr.','Croagunk', 'Toxicroak','Snover', 'Abomasnow', 'Stufful', 
+        'Bewear'
     ]
 
     var ing_options = {
@@ -160,6 +165,9 @@
         'Mr. Mime':['Snoozy Tomato', 'Soft Potato', 'Large Leek'],
         'Pinsir':['Honey', 'Fancy Apple', 'Bean Sausage'],
         'Ditto':['Pure Oil', 'Large Leek', 'Slowpoke Tail'],
+        'Dratini':['Fiery Herb', 'Greengrass Corn', 'Pure Oil'],
+        'Dragonair':['Fiery Herb', 'Greengrass Corn', 'Pure Oil'],
+        'Dragonite':['Fiery Herb', 'Greengrass Corn', 'Pure Oil'],
         'Slowking':['Soothing Cacao', 'Slowpoke Tail', 'Snoozy Tomato'],
         'Delibird':['Fancy Egg', 'Fancy Apple', 'Soothing Cacao'],
         'Larvitar':['Warming Ginger', 'Greengrass Soybeans', 'Bean Sausage'],
@@ -170,7 +178,9 @@
         'Croagunk':['Pure Oil', 'Bean Sausage'],
         'Toxicroak':['Pure Oil', 'Bean Sausage'],
         'Snover':['Snoozy Tomato', 'Fancy Egg', 'Tasty Mushroom'],
-        'Abomasnow':['Snoozy Tomato', 'Fancy Egg', 'Tasty Mushroom']
+        'Abomasnow':['Snoozy Tomato', 'Fancy Egg', 'Tasty Mushroom'],
+        'Stufful':['Greengrass Corn', 'Bean Sausage', 'Fancy Egg'],
+        'Bewear':['Greengrass Corn', 'Bean Sausage', 'Fancy Egg']
     }
 
     // Function to populate select dropdown
@@ -227,7 +237,7 @@
 <py-script>
     import datetime as dt
     import math
-
+    
     class pokemonRater():
         SPECIES_TO_SPECIALTY = {
             'Bulbasaur':'Ingredient', 'Ivysaur':'Ingredient', 'Venusaur':'Ingredient',
@@ -250,6 +260,7 @@
             'Marowak':'Berry','Kangaskhan':'Ingredient','Mr. Mime':'Ingredient',
             'Pinsir':'Ingredient','Ditto':'Ingredient','Eevee':'Skill', 
             'Vaporeon':'Skill', 'Jolteon':'Skill', 'Flareon':'Skill',
+            'Dratini':'Ingredient', 'Dragonair':'Ingredient','Dragonite':'Ingredient',
             'Chikorita':'Berry', 'Bayleef':'Berry', 'Meganium':'Berry',
             'Cyndaquil':'Berry', 'Quilava':'Berry', 'Typhlosion':'Berry',
             'Totodile':'Berry', 'Croconaw':'Berry', 'Feraligatr':'Berry',
@@ -260,6 +271,7 @@
             'Wobbuffet':'Skill','Steelix':'Berry','Heracross':'Skill',
             'Delibird':'Ingredient','Houndour':'Berry', 'Houndoom':'Berry',
             'Larvitar':'Ingredient', 'Pupitar':'Ingredient', 'Tyranitar':'Ingredient',
+            'Ralts':'Skill', 'Kirlia':'Skill','Gardevoir':'Skill',
             'Slakoth':'Berry', 'Vigoroth':'Berry', 'Slaking':'Berry',
             'Sableye':'Skill','Gulpin':'Skill', 'Swalot':'Skill',
             'Swablu':'Berry', 'Altaria':'Berry','Shuppet':'Berry', 
@@ -269,7 +281,8 @@
             'Lucario':'Skill','Croagunk':'Ingredient', 'Toxicroak':'Ingredient',
             'Snover':'Ingredient', 'Abomasnow':'Ingredient','Magnezone':'Skill',
             'Togekiss':'Skill','Leafeon':'Skill', 'Glaceon':'Skill',
-            'Sylveon':'Skill'
+            'Gallade':'Skill',
+            'Sylveon':'Skill', 'Stufful':'Ingredient','Bewear':'Ingredient'
         }
 
         SPECIALTY_CODES = {
@@ -348,6 +361,7 @@
             'Marowak':0.4,'Kangaskhan':0.4,'Mr. Mime':0.6,
             'Pinsir':1.0,'Ditto':0.6,'Eevee':1.0, 
             'Vaporeon':0.8, 'Jolteon':0.4, 'Flareon':0.6,
+            'Dratini':1.0, 'Dragonair':1.0,'Dragonite':1.0,
             'Chikorita':1.0, 'Bayleef':1.0, 'Meganium':1.0,
             'Cyndaquil':1.0, 'Quilava':1.0, 'Typhlosion':1.0,
             'Totodile':1.0, 'Croconaw':1.0, 'Feraligatr':1.0,
@@ -358,6 +372,7 @@
             'Wobbuffet':0.0,'Steelix':0.6,'Heracross':0.4,
             'Delibird':0.8,'Houndour':0.8, 'Houndoom':0.8,
             'Larvitar':0.8, 'Pupitar':0.8, 'Tyranitar':0.8,
+            'Ralts':1.0, 'Kirlia':1.0,'Gardevoir':1.0,
             'Slakoth':0.8, 'Vigoroth':0.8, 'Slaking':0.8,
             'Sableye':0.0,'Gulpin':0.0, 'Swalot':0.0,
             'Swablu':0.4, 'Altaria':0.4,'Shuppet':0.6, 
@@ -367,7 +382,8 @@
             'Lucario':0.0,'Croagunk':0.2, 'Toxicroak':0.2,
             'Snover':0.8, 'Abomasnow':0.8,'Magnezone':0.4,
             'Togekiss':0.2,'Leafeon':0.0, 'Glaceon':0.6,
-            'Sylveon':1.0
+            'Gallade':0.6,
+            'Sylveon':1.0, 'Stufful':0.8,'Bewear':0.8
         }
 
         ING_COMBI_RATINGS = {
@@ -527,6 +543,24 @@
             'Ditto|Large Leek|Pure Oil': 0.2,
             'Ditto|Large Leek|Large Leek': 0.8,
             'Ditto|Large Leek|Slowpoke Tail': 1.0,
+            'Dratini|Fiery Herb|Fiery Herb':0.4,
+            'Dratini|Fiery Herb|Greengrass Corn':1.0,
+            'Dratini|Fiery Herb|Pure Oil':0.6,
+            'Dratini|Greengrass Corn|Fiery Herb':1.0,
+            'Dratini|Greengrass Corn|Greengrass Corn':0.8,
+            'Dratini|Greengrass Corn|Pure Oil':1.0,
+            'Dragonair|Fiery Herb|Fiery Herb':0.4,
+            'Dragonair|Fiery Herb|Greengrass Corn':1.0,
+            'Dragonair|Fiery Herb|Pure Oil':0.6,
+            'Dragonair|Greengrass Corn|Fiery Herb':1.0,
+            'Dragonair|Greengrass Corn|Greengrass Corn':0.8,
+            'Dragonair|Greengrass Corn|Pure Oil':1.0,
+            'Dragonite|Fiery Herb|Fiery Herb':0.4,
+            'Dragonite|Fiery Herb|Greengrass Corn':1.0,
+            'Dragonite|Fiery Herb|Pure Oil':0.6,
+            'Dragonite|Greengrass Corn|Fiery Herb':1.0,
+            'Dragonite|Greengrass Corn|Greengrass Corn':0.8,
+            'Dragonite|Greengrass Corn|Pure Oil':1.0,
             'Slowking|Soothing Cacao|Soothing Cacao': 0.0,
             'Slowking|Soothing Cacao|Slowpoke Tail': 0.8,
             'Slowking|Soothing Cacao|Snoozy Tomato': 0.0,
@@ -588,7 +622,19 @@
             'Abomasnow|Snoozy Tomato|Tasty Mushroom': 1.0,
             'Abomasnow|Fancy Egg|Snoozy Tomato': 0.6,
             'Abomasnow|Fancy Egg|Fancy Egg': 0.6,
-            'Abomasnow|Fancy Egg|Tasty Mushroom': 0.8
+            'Abomasnow|Fancy Egg|Tasty Mushroom': 0.8,
+            'Stufful|Greengrass Corn|Greengrass Corn':0.8,
+            'Stufful|Greengrass Corn|Bean Sausage':1.0,
+            'Stufful|Greengrass Corn|Fancy Egg':0.6,
+            'Stufful|Bean Sausage|Greengrass Corn':0.8,
+            'Stufful|Bean Sausage|Bean Sausage':0.4,
+            'Stufful|Bean Sausage|Fancy Egg':0.4,
+            'Bewear|Greengrass Corn|Greengrass Corn':0.8,
+            'Bewear|Greengrass Corn|Bean Sausage':1.0,
+            'Bewear|Greengrass Corn|Fancy Egg':0.6,
+            'Bewear|Bean Sausage|Greengrass Corn':0.8,
+            'Bewear|Bean Sausage|Bean Sausage':0.4,
+            'Bewear|Bean Sausage|Fancy Egg':0.4,
         }
 
         SUBSKILL_UNLOCK_WEIGHTS = [1, 0.95, 0.85, 0.4, 0.2]
@@ -605,7 +651,8 @@
         ING_SPECIES = [species for species, specialty in SPECIES_TO_SPECIALTY.items() if specialty == 'Ingredient']
 
         XP_HARD_SPECIES = [
-            'Onix', 'Kangaskhan', 'Pinsir','Ditto','Steelix','Heracross',
+            'Onix', 'Kangaskhan', 'Pinsir','Ditto', 'Dratini',
+            'Dragonair', 'Dragonite','Steelix','Heracross',
             'Delibird','Larvitar', 'Pupitar', 'Tyranitar', 'Absol'
         ]
 
@@ -661,7 +708,6 @@
                 self.subskill_rating = (sum(subskills_weighted) - self.min_subskill_score) / (self.max_subskill_score - self.min_subskill_score)
             except KeyError:
                 Element('warning').write(f"Not all subskills selected")
-
 
         def rate_ingredients(self):
             if self.species in pokemonRater.ING_SPECIES:
