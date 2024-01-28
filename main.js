@@ -102,6 +102,62 @@ var ing_options = {
     'Bewear':['Greengrass Corn', 'Bean Sausage', 'Fancy Egg']
 }
 
+var species_name_to_id = {
+    'Bulbasaur': 1, 'Ivysaur': 2, 'Venusaur': 3, 
+    'Charmander': 4, 'Charmeleon': 5, 'Charizard': 6, 
+    'Squirtle': 7, 'Wartortle': 8, 'Blastoise': 9, 
+    'Caterpie': 10, 'Metapod': 11, 'Butterfree': 12, 
+    'Rattata': 19, 'Raticate': 20, 
+    'Ekans': 23, 'Arbok': 24, 
+    'Pikachu': 25, 'Raichu': 26, 
+    'Pikachu - Halloween': '25-halloween',
+    'Pikachu - Holiday': '25-holiday',
+    'Clefairy': 35, 'Clefable': 36, 
+    'Jigglypuff': 39, 'Wigglytuff': 40, 
+    'Diglett': 50, 'Dugtrio': 51, 
+    'Meowth': 52, 'Persian': 53, 
+    'Psyduck': 54, 'Golduck': 55, 
+    'Mankey': 56, 'Primeape': 57, 
+    'Growlithe': 58, 'Arcanine': 59, 
+    'Bellsprout': 69, 'Weepinbell': 70, 'Victreebel': 71, 
+    'Geodude': 74, 'Graveler': 75, 'Golem': 76, 
+    'Slowpoke': 79, 'Slowbro': 80, 
+    'Magnemite': 81, 'Magneton': 82, 
+    'Doduo': 84, 'Dodrio': 85, 
+    'Gastly': 92, 'Haunter': 93, 'Gengar': 94, 
+    'Onix': 95, 'Cubone': 104, 'Marowak': 105, 
+    'Kangaskhan': 115, 'Mr. Mime': 122, 'Pinsir': 127, 
+    'Ditto': 132, 'Eevee': 133, 'Vaporeon': 134, 
+    'Jolteon': 135, 'Flareon': 136, 
+    'Dratini': 147, 'Dragonair': 148, 'Dragonite': 149, 
+    'Chikorita': 152, 'Bayleef': 153, 'Meganium': 154, 
+    'Cyndaquil': 155, 'Quilava': 156, 'Typhlosion': 157, 
+    'Totodile': 158, 'Croconaw': 159, 'Feraligatr': 160, 
+    'Pichu': 172, 'Cleffa': 173, 'Igglybuff': 174, 
+    'Togepi': 175, 'Togetic': 176, 
+    'Mareep': 179, 'Flaaffy': 180, 'Ampharos': 181, 
+    'Sudowoodo': 185, 'Espeon': 196, 'Umbreon': 197, 
+    'Slowking': 199, 'Wobbuffet': 202, 'Steelix': 208, 
+    'Heracross': 214, 'Delibird': 225, 
+    'Houndour': 228, 'Houndoom': 229, 
+    'Larvitar': 246, 'Pupitar': 247, 'Tyranitar': 248, 
+    'Ralts': 280, 'Kirlia': 281, 'Gardevoir': 282, 
+    'Slakoth': 287, 'Vigoroth': 288, 'Slaking': 289, 
+    'Sableye': 302, 'Gulpin': 316, 'Swalot': 317, 
+    'Swablu': 333, 'Altaria': 334, 
+    'Shuppet': 353, 'Banette': 354, 
+    'Absol': 359, 'Wynaut': 360, 
+    'Spheal': 363, 'Sealeo': 364, 'Walrein': 365, 
+    'Bonsly': 438, 'Mime Jr.': 439, 
+    'Riolu': 447, 'Lucario': 448, 
+    'Croagunk': 453, 'Toxicroak': 454, 
+    'Snover': 459, 'Abomasnow': 460, 
+    'Magnezone': 462, 'Togekiss': 468, 
+    'Leafeon': 470, 'Glaceon': 471, 
+    'Gallade': 475, 'Sylveon': 700, 
+    'Stufful': 759, 'Bewear': 760
+}
+
 // Function to populate select dropdown
 function populateSelect(elementId, data) {
     var selectElement = document.getElementById(elementId);
@@ -121,10 +177,13 @@ function populateSelect(elementId, data) {
 // Function to update options based on selected species
 function updateOptions(species, ing1, ing30, ing60) {
     var selected_species = document.getElementById(species).value;
+    var image = document.getElementById('image');
     var ing1 = document.getElementById(ing1);
     var ing30 = document.getElementById(ing30);
     var ing60 = document.getElementById(ing60);
     var ingredient_fields = document.getElementById('ingredient_fields');
+
+    image.src = (selected_species !== '') ? 'https://www.serebii.net/pokemonsleep/pokemon/' + species_name_to_id[selected_species] + '.png' : './empty.png'
 
     populateSelect('ing1', !ing_options[selected_species] ? [''] : ing_options[selected_species].slice(0,1));
     populateSelect('ing30', !ing_options[selected_species] ? [''] : ing_options[selected_species].slice(0,2));
