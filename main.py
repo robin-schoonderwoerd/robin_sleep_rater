@@ -1,4 +1,3 @@
-import datetime as dt
 import math
 from pyscript import Element
 
@@ -86,7 +85,7 @@ class pokemonRater():
     }
 
     SUBSKILL_PER_SPECIALTY = {
-        'Berry Finding S': [1.0, 0.5, 0.8, 0.8],
+        'Berry Finding S': [1.0, 0.6, 0.8, 0.8],
         'Dream Shard Bonus': [0.3, 0.6, 0.6, 0.6],
         'Energy Recovery Bonus': [0.3, 0.6, 0.6, 0.6],
         'Helping Bonus': [0.5, 1.0, 1.0, 1.0],
@@ -94,9 +93,9 @@ class pokemonRater():
         'Helping Speed M': [0.5, 0.7, 0.8, 0.8],
         'Ingredient Finder S': [0.0, 0.8, 0.0, 0.6],
         'Ingredient Finder M': [0.0, 1.0, 0.1, 0.7],
-        'Inventory Up S': [0.1, 0.6, 0.5, 0.6],
-        'Inventory Up M': [0.1, 0.7, 0.6, 0.7],
-        'Inventory Up L': [0.1, 0.8, 0.7, 0.8],
+        'Inventory Up S': [0.1, 0.5, 0.5, 0.6],
+        'Inventory Up M': [0.1, 0.6, 0.6, 0.7],
+        'Inventory Up L': [0.1, 0.7, 0.7, 0.8],
         'Research EXP Bonus': [0.3, 0.6, 0.6, 0.6],
         'Skill Level Up S': [0.3, 0.5, 0.8, 0.7],
         'Skill Level Up M': [0.4, 0.6, 0.9, 0.8],
@@ -406,7 +405,7 @@ class pokemonRater():
 
     RATING_WEIGHTS = [
         [0.2, 0.6, 0, 0.2],  # berry
-        [0.1, 0.4, 0.3, 0.2],  # ingredient
+        [0.15, 0.4, 0.25, 0.2],  # ingredient
         [0.2, 0.6, 0, 0.2],  # skill
         [0.1, 0.5, 0.2, 0.2]  # allrounder
     ]
@@ -495,9 +494,14 @@ class pokemonRater():
         subscores = [self.nature_rating, self.subskill_rating, self.ingredient_rating, self.tierlist_rating]
         self.score = sum([weight * subscore for weight, subscore in zip(rating_weights, subscores)])
     
-    def apply_feelgoodfactor(self):
+    @staticmethod
+    def apply_feelgoodfactor(score):
         k = 8
-        self.score = 1 / (1 + math.exp(-k * (self.score - 0.5)))
+        return 1.04 / (1 + math.exp(-k * (score - 0.5))) - 0.02
+
+    @staticmethod
+    def score_to_rating(score):
+        return f'{round(score*100)}%'
 
     def rate_pokemon(self):
         try:
@@ -506,9 +510,14 @@ class pokemonRater():
             self.rate_ingredients()
             self.rate_tierlist()
             self.combine_scores()
-            self.apply_feelgoodfactor()
+            self.score = self.apply_feelgoodfactor(self.score)
             Element('warning').write(f"")
-            Element('score').write(f'Final score of {self.species} is: {round(self.score*100, 1)}%')
+            Element('score').write(f"""Final score of {self.species} is: {self.score_to_rating(self.score)}
+            - Nature: {self.score_to_rating(self.apply_feelgoodfactor(self.nature_rating))}
+            - Subskills: {self.score_to_rating(self.apply_feelgoodfactor(self.subskill_rating))}{'' if not self.species in pokemonRater.ING_SPECIES else
+            '''
+            - Ingredients: ''' + self.score_to_rating(self.apply_feelgoodfactor(self.ingredient_rating))}
+            - Species: {self.score_to_rating(self.apply_feelgoodfactor(self.tierlist_rating))}""")
         except AttributeError:
             Element('score').write(f"Data missing. Please fill required fields")
 
