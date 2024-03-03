@@ -20,7 +20,7 @@ var all_species = [
     'Absol','Wynaut','Spheal', 'Sealeo', 'Walrein','Bonsly','Mime Jr.',
     'Riolu', 'Lucario','Croagunk', 'Toxicroak','Snover', 'Abomasnow',
     'Magnezone', 'Togekiss','Leafeon', 'Glaceon','Gallade', 'Sylveon', 
-    'Stufful', 'Bewear'
+    'Dedenne', 'Stufful', 'Bewear'
 ];
 
 var all_natures = [
@@ -154,7 +154,7 @@ var species_name_to_id = {
     'Snover': 459, 'Abomasnow': 460, 
     'Magnezone': 462, 'Togekiss': 468, 
     'Leafeon': 470, 'Glaceon': 471, 
-    'Gallade': 475, 'Sylveon': 700, 
+    'Gallade': 475, 'Sylveon': 700, 'Dedenne': 702,
     'Stufful': 759, 'Bewear': 760
 }
 
