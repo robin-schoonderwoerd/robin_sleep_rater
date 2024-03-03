@@ -45,8 +45,8 @@ class pokemonRater():
         'Lucario':'Skill','Croagunk':'Ingredient', 'Toxicroak':'Ingredient',
         'Snover':'Ingredient', 'Abomasnow':'Ingredient','Magnezone':'Skill',
         'Togekiss':'Skill','Leafeon':'Skill', 'Glaceon':'Skill',
-        'Gallade':'Skill',
-        'Sylveon':'Skill', 'Stufful':'Ingredient','Bewear':'Ingredient'
+        'Gallade':'Skill', 'Sylveon':'Skill', 'Dedenne':'Skill',
+        'Stufful':'Ingredient','Bewear':'Ingredient'
     }
 
     SPECIALTY_CODES = {
@@ -112,7 +112,7 @@ class pokemonRater():
         'Rattata':0.4, 'Raticate':0.4,'Ekans':0.2, 
         'Arbok':0.2,'Pikachu':1.0, 'Raichu':1.0,
         'Pikachu - Halloween':0.4,'Pikachu - Holiday':0.4,'Clefairy':0.6, 
-        'Clefable':0.6,'Jigglypuff':1.0, 'Wigglytuff':1.0,
+        'Clefable':0.6,'Jigglypuff':0.8, 'Wigglytuff':0.8,
         'Diglett':0.6, 'Dugtrio':0.6,'Meowth':0.0, 
         'Persian':0.0, 'Psyduck':0.0, 'Golduck':0.0,
         'Mankey':0.6, 'Primeape':0.6,'Growlithe':0.4, 
@@ -129,13 +129,13 @@ class pokemonRater():
         'Chikorita':1.0, 'Bayleef':1.0, 'Meganium':1.0,
         'Cyndaquil':1.0, 'Quilava':1.0, 'Typhlosion':1.0,
         'Totodile':1.0, 'Croconaw':1.0, 'Feraligatr':1.0,
-        'Pichu':1.0,'Cleffa':0.6,'Igglybuff':1.0,
+        'Pichu':1.0,'Cleffa':0.6,'Igglybuff':0.8,
         'Togepi':0.2, 'Togetic':0.2,'Mareep':0.4, 
         'Flaaffy':0.4, 'Ampharos':0.4,'Sudowoodo':0.0,
         'Espeon':0.6, 'Umbreon':0.2,'Slowking':0.2,
-        'Wobbuffet':0.0,'Steelix':0.6,'Heracross':0.4,
+        'Wobbuffet':0.0,'Steelix':0.8,'Heracross':0.4,
         'Delibird':0.8,'Houndour':0.8, 'Houndoom':0.8,
-        'Larvitar':0.8, 'Pupitar':0.8, 'Tyranitar':0.8,
+        'Larvitar':1.0, 'Pupitar':1.0, 'Tyranitar':1.0,
         'Ralts':1.0, 'Kirlia':1.0,'Gardevoir':1.0,
         'Slakoth':0.8, 'Vigoroth':0.8, 'Slaking':0.8,
         'Sableye':0.0,'Gulpin':0.0, 'Swalot':0.0,
@@ -146,8 +146,8 @@ class pokemonRater():
         'Lucario':0.0,'Croagunk':0.2, 'Toxicroak':0.2,
         'Snover':0.8, 'Abomasnow':0.8,'Magnezone':0.4,
         'Togekiss':0.2,'Leafeon':0.0, 'Glaceon':0.6,
-        'Gallade':0.6,
-        'Sylveon':1.0, 'Stufful':0.8,'Bewear':0.8
+        'Gallade':0.6, 'Sylveon':1.0, 'Dedenne':0.6,
+        'Stufful':0.8,'Bewear':0.8
     }
 
     ING_COMBI_RATINGS = {
@@ -417,7 +417,8 @@ class pokemonRater():
     XP_HARD_SPECIES = [
         'Onix', 'Kangaskhan', 'Pinsir','Ditto', 'Dratini',
         'Dragonair', 'Dragonite','Steelix','Heracross',
-        'Delibird','Larvitar', 'Pupitar', 'Tyranitar', 'Absol'
+        'Delibird','Larvitar', 'Pupitar', 'Tyranitar', 'Absol', 
+        'Dedenne'
     ]
 
     XP_NATURE_UP = ['Timid', 'Hasty', 'Jolly', 'Naive']
