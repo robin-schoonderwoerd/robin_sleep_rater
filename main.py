@@ -47,7 +47,7 @@ class pokemonRater():
         'Snover':'Ingredient', 'Abomasnow':'Ingredient','Magnezone':'Skill',
         'Togekiss':'Skill','Leafeon':'Skill', 'Glaceon':'Skill',
         'Gallade':'Skill', 'Sylveon':'Skill', 'Dedenne':'Skill',
-        'Stufful':'Ingredient','Bewear':'Ingredient'
+        'Stufful':'Ingredient','Bewear':'Ingredient', 'Comfey':'Ingredient'
     }
 
     SPECIALTY_CODES = {
@@ -149,7 +149,7 @@ class pokemonRater():
         'Snover':0.8, 'Abomasnow':0.8,'Magnezone':0.4,
         'Togekiss':0.2,'Leafeon':0.0, 'Glaceon':0.6,
         'Gallade':0.6, 'Sylveon':1.0, 'Dedenne':0.6,
-        'Stufful':0.8,'Bewear':0.8
+        'Stufful':1.0,'Bewear':1.0, 'Comfey':0.6
     }
 
     ING_COMBI_RATINGS = {
@@ -401,6 +401,12 @@ class pokemonRater():
         'Bewear|Bean Sausage|Greengrass Corn':0.8,
         'Bewear|Bean Sausage|Bean Sausage':0.4,
         'Bewear|Bean Sausage|Fancy Egg':0.4,
+        'Comfey|Greengrass Corn|Greengrass Corn':0.8,
+        'Comfey|Greengrass Corn|Warming Ginger':1.0,
+        'Comfey|Greengrass Corn|Soothing Cacao':0.4,
+        'Comfey|Warming Ginger|Greengrass Corn':0.8,
+        'Comfey|Warming Ginger|Warming Ginger':0.2,
+        'Comfey|Warming Ginger|Soothing Cacao':0.4
     }
 
     SUBSKILL_UNLOCK_WEIGHTS = [1, 0.95, 0.85, 0.4, 0.2]
@@ -420,7 +426,7 @@ class pokemonRater():
         'Onix', 'Kangaskhan', 'Pinsir','Ditto', 'Dratini',
         'Dragonair', 'Dragonite','Steelix','Heracross',
         'Delibird', 'Raikou', 'Larvitar', 'Pupitar', 'Tyranitar', 
-        'Absol', 'Dedenne'
+        'Absol', 'Dedenne', 'Comfey'
     ]
 
     XP_NATURE_UP = ['Timid', 'Hasty', 'Jolly', 'Naive']
