@@ -427,7 +427,8 @@ class pokemonRater():
     XP_HARD_SPECIES = [
         'Onix', 'Kangaskhan', 'Pinsir','Ditto', 'Dratini',
         'Dragonair', 'Dragonite','Steelix','Heracross',
-        'Delibird', 'Raikou', 'Larvitar', 'Pupitar', 'Tyranitar', 
+        'Delibird', 'Raikou', 'Entei',
+        'Larvitar', 'Pupitar', 'Tyranitar', 
         'Absol', 'Dedenne', 'Comfey'
     ]
 
