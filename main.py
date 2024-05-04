@@ -11,7 +11,8 @@ class pokemonRater():
         'Rattata':'Berry', 'Raticate':'Berry','Ekans':'Berry', 
         'Arbok':'Berry','Pikachu':'Berry', 'Raichu':'Berry',
         'Pikachu - Halloween':'Berry','Pikachu - Holiday':'Skill','Clefairy':'Berry', 
-        'Clefable':'Berry','Jigglypuff':'Skill', 'Wigglytuff':'Skill',
+        'Clefable':'Berry', 'Vulpix':'Berry', 'Ninetales':'Berry',
+        'Jigglypuff':'Skill', 'Wigglytuff':'Skill',
         'Diglett':'Ingredient', 'Dugtrio':'Ingredient','Meowth':'Skill', 
         'Persian':'Skill', 'Psyduck':'Skill', 'Golduck':'Skill',
         'Mankey':'Berry', 'Primeape':'Berry','Growlithe':'Skill', 
@@ -34,7 +35,7 @@ class pokemonRater():
         'Espeon':'Skill', 'Umbreon':'Skill','Slowking':'Ingredient',
         'Wobbuffet':'Skill','Steelix':'Berry','Heracross':'Skill',
         'Delibird':'Ingredient','Houndour':'Berry', 'Houndoom':'Berry',
-        'Raikou':'Skill',
+        'Raikou':'Skill', 'Entei':'Skill',
         'Larvitar':'Ingredient', 'Pupitar':'Ingredient', 'Tyranitar':'Ingredient',
         'Ralts':'Skill', 'Kirlia':'Skill','Gardevoir':'Skill',
         'Slakoth':'Berry', 'Vigoroth':'Berry', 'Slaking':'Berry',
@@ -112,8 +113,9 @@ class pokemonRater():
         'Caterpie':0.6, 'Metapod':0.6, 'Butterfree':0.6,
         'Rattata':0.4, 'Raticate':0.4,'Ekans':0.2, 
         'Arbok':0.2,'Pikachu':1.0, 'Raichu':1.0,
-        'Pikachu - Halloween':0.4,'Pikachu - Holiday':0.4,'Clefairy':0.6, 
-        'Clefable':0.6,'Jigglypuff':0.8, 'Wigglytuff':0.8,
+        'Pikachu - Halloween':0.4,'Pikachu - Holiday':0.4,
+        'Clefairy':0.6, 'Clefable':0.6, 'Vulpix':1.0, 
+        'Ninetales':1.0, 'Jigglypuff':0.8, 'Wigglytuff':0.8,
         'Diglett':0.6, 'Dugtrio':0.6,'Meowth':0.0, 
         'Persian':0.0, 'Psyduck':0.0, 'Golduck':0.0,
         'Mankey':0.6, 'Primeape':0.6,'Growlithe':0.4, 
@@ -136,7 +138,7 @@ class pokemonRater():
         'Espeon':0.6, 'Umbreon':0.2,'Slowking':0.2,
         'Wobbuffet':0.0,'Steelix':0.8,'Heracross':0.4,
         'Delibird':0.8,'Houndour':0.8, 'Houndoom':0.8,
-        'Raikou':1.0,
+        'Raikou':0.8, 'Entei':1.0,
         'Larvitar':1.0, 'Pupitar':1.0, 'Tyranitar':1.0,
         'Ralts':1.0, 'Kirlia':1.0,'Gardevoir':1.0,
         'Slakoth':0.8, 'Vigoroth':0.8, 'Slaking':0.8,
@@ -413,7 +415,7 @@ class pokemonRater():
 
     RATING_WEIGHTS = [
         [0.2, 0.6, 0, 0.2],  # berry
-        [0.15, 0.4, 0.25, 0.2],  # ingredient
+        [0.15, 0.45, 0.2, 0.2],  # ingredient
         [0.2, 0.6, 0, 0.2],  # skill
         [0.1, 0.5, 0.2, 0.2]  # allrounder
     ]
