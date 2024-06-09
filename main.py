@@ -38,7 +38,7 @@ class pokemonRater():
         'Raikou':'Skill', 'Entei':'Skill',
         'Larvitar':'Ingredient', 'Pupitar':'Ingredient', 'Tyranitar':'Ingredient',
         'Ralts':'Skill', 'Kirlia':'Skill','Gardevoir':'Skill',
-        'Slakoth':'Berry', 'Vigoroth':'Berry', 'Slaking':'Berry',
+        'Slakoth':'Skill', 'Vigoroth':'Skill', 'Slaking':'Skill',
         'Sableye':'Skill','Gulpin':'Skill', 'Swalot':'Skill',
         'Swablu':'Berry', 'Altaria':'Berry','Shuppet':'Berry', 
         'Banette':'Berry', 'Absol':'Ingredient','Wynaut':'Skill',
