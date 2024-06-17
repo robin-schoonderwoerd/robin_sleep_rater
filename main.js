@@ -21,7 +21,7 @@ var all_species = [
     'Absol','Wynaut','Spheal', 'Sealeo', 'Walrein','Bonsly','Mime Jr.',
     'Riolu', 'Lucario','Croagunk', 'Toxicroak','Snover', 'Abomasnow',
     'Magnezone', 'Togekiss','Leafeon', 'Glaceon','Gallade', 'Sylveon', 
-    'Dedenne', 'Stufful', 'Bewear', 'Comfey'
+    'Dedenne', 'Stufful', 'Bewear', 'Comfey', 'Cramorant'
 ];
 
 var all_natures = [
@@ -55,7 +55,7 @@ var ing_species = [
     'Pinsir','Ditto','Dratini','Dragonair','Dragonite',
     'Slowking','Delibird', 'Larvitar', 'Pupitar', 'Tyranitar',
     'Absol','Mime Jr.','Croagunk', 'Toxicroak','Snover', 'Abomasnow', 'Stufful', 
-    'Bewear', 'Comfey'
+    'Bewear', 'Comfey', 'Cramorant'
 ]
 
 var ing_options = {
@@ -101,7 +101,8 @@ var ing_options = {
     'Abomasnow':['Snoozy Tomato', 'Fancy Egg', 'Tasty Mushroom'],
     'Stufful':['Greengrass Corn', 'Bean Sausage', 'Fancy Egg'],
     'Bewear':['Greengrass Corn', 'Bean Sausage', 'Fancy Egg'],
-    'Comfey':['Greengrass Corn', 'Warming Ginger', 'Soothing Cacao']
+    'Comfey':['Greengrass Corn', 'Warming Ginger', 'Soothing Cacao'],
+    'Cramorant':['Pure Oil', 'Soft Potato', 'Fancy Egg']
 }
 
 var species_name_to_id = {
@@ -159,7 +160,8 @@ var species_name_to_id = {
     'Magnezone': 462, 'Togekiss': 468, 
     'Leafeon': 470, 'Glaceon': 471, 
     'Gallade': 475, 'Sylveon': 700, 'Dedenne': 702,
-    'Stufful': 759, 'Bewear': 760, 'Comfey': 764
+    'Stufful': 759, 'Bewear': 760, 'Comfey': 764,
+    'Cramorant': 845
 }
 
 // Function to populate select dropdown
