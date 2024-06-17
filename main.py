@@ -48,7 +48,8 @@ class pokemonRater():
         'Snover':'Ingredient', 'Abomasnow':'Ingredient','Magnezone':'Skill',
         'Togekiss':'Skill','Leafeon':'Skill', 'Glaceon':'Skill',
         'Gallade':'Skill', 'Sylveon':'Skill', 'Dedenne':'Skill',
-        'Stufful':'Ingredient','Bewear':'Ingredient', 'Comfey':'Ingredient'
+        'Stufful':'Ingredient','Bewear':'Ingredient', 'Comfey':'Ingredient',
+        'Cramorant':'Ingredient'
     }
 
     SPECIALTY_CODES = {
@@ -127,7 +128,7 @@ class pokemonRater():
         'Gengar':0.8,'Onix':0.8,'Cubone':0.4, 
         'Marowak':0.4,'Kangaskhan':0.4,'Mr. Mime':0.6,
         'Pinsir':1.0,'Ditto':0.6,'Eevee':1.0, 
-        'Vaporeon':0.8, 'Jolteon':0.4, 'Flareon':0.6,
+        'Vaporeon':0.8, 'Jolteon':0.4, 'Flareon':0.8,
         'Dratini':1.0, 'Dragonair':1.0,'Dragonite':1.0,
         'Chikorita':1.0, 'Bayleef':1.0, 'Meganium':1.0,
         'Cyndaquil':1.0, 'Quilava':1.0, 'Typhlosion':1.0,
@@ -149,9 +150,10 @@ class pokemonRater():
         'Bonsly':0.0,'Mime Jr.':0.0,'Riolu':0.0, 
         'Lucario':0.0,'Croagunk':0.2, 'Toxicroak':0.2,
         'Snover':0.8, 'Abomasnow':0.8,'Magnezone':0.4,
-        'Togekiss':0.2,'Leafeon':0.0, 'Glaceon':0.6,
+        'Togekiss':0.2,'Leafeon':0.0, 'Glaceon':0.8,
         'Gallade':0.6, 'Sylveon':1.0, 'Dedenne':0.6,
-        'Stufful':1.0,'Bewear':1.0, 'Comfey':0.6
+        'Stufful':1.0,'Bewear':1.0, 'Comfey':0.6,
+        'Cramorant':0.8
     }
 
     ING_COMBI_RATINGS = {
@@ -408,7 +410,13 @@ class pokemonRater():
         'Comfey|Greengrass Corn|Soothing Cacao':0.4,
         'Comfey|Warming Ginger|Greengrass Corn':0.8,
         'Comfey|Warming Ginger|Warming Ginger':0.2,
-        'Comfey|Warming Ginger|Soothing Cacao':0.4
+        'Comfey|Warming Ginger|Soothing Cacao':0.4,
+        'Cramorant|Pure Oil|Pure Oil':1.0,
+        'Cramorant|Pure Oil|Soft Potato':0.6,
+        'Cramorant|Pure Oil|Fancy Egg':0.4,
+        'Cramorant|Soft Potato|Pure Oil':0.8,
+        'Cramorant|Soft Potato|Soft Potato':0.6,
+        'Cramorant|Soft Potato|Fancy Egg':0.4
     }
 
     SUBSKILL_UNLOCK_WEIGHTS = [1, 0.95, 0.85, 0.4, 0.2]
@@ -429,7 +437,7 @@ class pokemonRater():
         'Dragonair', 'Dragonite','Steelix','Heracross',
         'Delibird', 'Raikou', 'Entei',
         'Larvitar', 'Pupitar', 'Tyranitar', 
-        'Absol', 'Dedenne', 'Comfey'
+        'Absol', 'Dedenne', 'Comfey', 'Cramorant'
     ]
 
     XP_NATURE_UP = ['Timid', 'Hasty', 'Jolly', 'Naive']
