@@ -114,7 +114,7 @@ var ing_options = {
     'Skeledirge':['Fancy Apple', 'Bean Sausage', 'Fiery Herb'],
     'Quaxly':['Greengrass Soybeans', 'Large Leek', 'Pure Oil'], 
     'Quaxwell':['Greengrass Soybeans', 'Large Leek', 'Pure Oil'], 
-    'Quaquaval'['Greengrass Soybeans', 'Large Leek', 'Pure Oil']
+    'Quaquaval':['Greengrass Soybeans', 'Large Leek', 'Pure Oil']
 }
 
 var species_name_to_id = {
