@@ -21,7 +21,9 @@ var all_species = [
     'Absol','Wynaut','Spheal', 'Sealeo', 'Walrein','Bonsly','Mime Jr.',
     'Riolu', 'Lucario','Croagunk', 'Toxicroak','Snover', 'Abomasnow',
     'Magnezone', 'Togekiss','Leafeon', 'Glaceon','Gallade', 'Sylveon', 
-    'Dedenne', 'Stufful', 'Bewear', 'Comfey', 'Cramorant'
+    'Dedenne', 'Stufful', 'Bewear', 'Comfey', 'Cramorant',
+    'Sprigatito', 'Floragato', 'Meowscarada', 'Fuecoco', 'Crocalor', 'Skeledirge',
+    'Quaxly', 'Quaxwell', 'Quaquaval'
 ];
 
 var all_natures = [
@@ -55,7 +57,8 @@ var ing_species = [
     'Pinsir','Ditto','Dratini','Dragonair','Dragonite',
     'Slowking','Delibird', 'Larvitar', 'Pupitar', 'Tyranitar',
     'Absol','Mime Jr.','Croagunk', 'Toxicroak','Snover', 'Abomasnow', 'Stufful', 
-    'Bewear', 'Comfey', 'Cramorant'
+    'Bewear', 'Comfey', 'Cramorant', 'Sprigatito', 'Floragato', 'Meowscarada', 
+    'Fuecoco', 'Crocalor', 'Skeledirge', 'Quaxly', 'Quaxwell', 'Quaquaval'
 ]
 
 var ing_options = {
@@ -102,7 +105,16 @@ var ing_options = {
     'Stufful':['Greengrass Corn', 'Bean Sausage', 'Fancy Egg'],
     'Bewear':['Greengrass Corn', 'Bean Sausage', 'Fancy Egg'],
     'Comfey':['Greengrass Corn', 'Warming Ginger', 'Soothing Cacao'],
-    'Cramorant':['Pure Oil', 'Soft Potato', 'Fancy Egg']
+    'Cramorant':['Pure Oil', 'Soft Potato', 'Fancy Egg'],
+    'Sprigatito':['Soft Potato', 'Moomoo Milk', 'Warming Ginger'], 
+    'Floragato':['Soft Potato', 'Moomoo Milk', 'Warming Ginger'], 
+    'Meowscarada':['Soft Potato', 'Moomoo Milk', 'Warming Ginger'], 
+    'Fuecoco':['Fancy Apple', 'Bean Sausage', 'Fiery Herb'], 
+    'Crocalor':['Fancy Apple', 'Bean Sausage', 'Fiery Herb'], 
+    'Skeledirge':['Fancy Apple', 'Bean Sausage', 'Fiery Herb'],
+    'Quaxly':['Greengrass Soybeans', 'Large Leek', 'Pure Oil'], 
+    'Quaxwell':['Greengrass Soybeans', 'Large Leek', 'Pure Oil'], 
+    'Quaquaval'['Greengrass Soybeans', 'Large Leek', 'Pure Oil']
 }
 
 var species_name_to_id = {
@@ -161,7 +173,10 @@ var species_name_to_id = {
     'Leafeon': 470, 'Glaceon': 471, 
     'Gallade': 475, 'Sylveon': 700, 'Dedenne': 702,
     'Stufful': 759, 'Bewear': 760, 'Comfey': 764,
-    'Cramorant': 845
+    'Cramorant': 845,
+    'Sprigatito': 906, 'Floragato': 907, 'Meowscarada': 908, 
+    'Fuecoco': 909, 'Crocalor': 910, 'Skeledirge': 911,
+    'Quaxly': 912, 'Quaxwell': 913, 'Quaquaval': 914
 }
 
 // Function to populate select dropdown
