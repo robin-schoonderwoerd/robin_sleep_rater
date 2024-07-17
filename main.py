@@ -49,7 +49,10 @@ class pokemonRater():
         'Togekiss':'Skill','Leafeon':'Skill', 'Glaceon':'Skill',
         'Gallade':'Skill', 'Sylveon':'Skill', 'Dedenne':'Skill',
         'Stufful':'Ingredient','Bewear':'Ingredient', 'Comfey':'Ingredient',
-        'Cramorant':'Ingredient'
+        'Cramorant':'Ingredient',
+        'Sprigatito':'Ingredient','Floragato':'Ingredient', 'Meowscarada':'Ingredient',
+        'Fuecoco':'Ingredient','Crocalor':'Ingredient', 'Skeledirge':'Ingredient',
+        'Quaxly':'Ingredient','Quaxwell':'Ingredient', 'Quaquaval':'Ingredient'
     }
 
     SPECIALTY_CODES = {
@@ -152,7 +155,10 @@ class pokemonRater():
         'Togekiss':0.2,'Leafeon':0.2, 'Glaceon':0.8,
         'Gallade':0.6, 'Sylveon':0.8, 'Dedenne':0.6,
         'Stufful':1.0,'Bewear':1.0, 'Comfey':0.6,
-        'Cramorant':0.6
+        'Cramorant':0.6,
+        'Sprigatito':0.8,'Floragato':0.8, 'Meowscarada':0.8,
+        'Fuecoco':0.4,'Crocalor':0.4, 'Skeledirge':0.4,
+        'Quaxly':0.8,'Quaxwell':0.8, 'Quaquaval':0.8
     }
 
     ING_COMBI_RATINGS = {
@@ -415,7 +421,61 @@ class pokemonRater():
         'Cramorant|Pure Oil|Fancy Egg':0.4,
         'Cramorant|Soft Potato|Pure Oil':0.8,
         'Cramorant|Soft Potato|Soft Potato':0.6,
-        'Cramorant|Soft Potato|Fancy Egg':0.4
+        'Cramorant|Soft Potato|Fancy Egg':0.4,
+        'Sprigatito|Soft Potato|Soft Potato':1.0,
+        'Sprigatito|Soft Potato|Moomoo Milk':0.8,
+        'Sprigatito|Soft Potato|Warming Ginger':0.2,
+        'Sprigatito|Moomoo Milk|Soft Potato':0.8,
+        'Sprigatito|Moomoo Milk|Moomoo Milk':0.0,
+        'Sprigatito|Moomoo Milk|Warming Ginger':0.4,
+        'Floragato|Soft Potato|Soft Potato':1.0,
+        'Floragato|Soft Potato|Moomoo Milk':0.8,
+        'Floragato|Soft Potato|Warming Ginger':0.2,
+        'Floragato|Moomoo Milk|Soft Potato':0.8,
+        'Floragato|Moomoo Milk|Moomoo Milk':0.0,
+        'Floragato|Moomoo Milk|Warming Ginger':0.4,
+        'Meowscarada|Soft Potato|Soft Potato':1.0,
+        'Meowscarada|Soft Potato|Moomoo Milk':0.8,
+        'Meowscarada|Soft Potato|Warming Ginger':0.2,
+        'Meowscarada|Moomoo Milk|Soft Potato':0.8,
+        'Meowscarada|Moomoo Milk|Moomoo Milk':0.0,
+        'Meowscarada|Moomoo Milk|Warming Ginger':0.4,
+        'Fuecoco|Fancy Apple|Fancy Apple':1.0,
+        'Fuecoco|Fancy Apple|Bean Sausage':0.2,
+        'Fuecoco|Fancy Apple|Fiery Herb':0.6,
+        'Fuecoco|Bean Sausage|Fancy Apple':0.2,
+        'Fuecoco|Bean Sausage|Bean Sausage':0.0,
+        'Fuecoco|Bean Sausage|Fiery Herb':0.4,
+        'Crocalor|Fancy Apple|Fancy Apple':1.0,
+        'Crocalor|Fancy Apple|Bean Sausage':0.2,
+        'Crocalor|Fancy Apple|Fiery Herb':0.6,
+        'Crocalor|Bean Sausage|Fancy Apple':0.2,
+        'Crocalor|Bean Sausage|Bean Sausage':0.0,
+        'Crocalor|Bean Sausage|Fiery Herb':0.4,
+        'Skeledirge|Fancy Apple|Fancy Apple':1.0,
+        'Skeledirge|Fancy Apple|Bean Sausage':0.2,
+        'Skeledirge|Fancy Apple|Fiery Herb':0.6,
+        'Skeledirge|Bean Sausage|Fancy Apple':0.2,
+        'Skeledirge|Bean Sausage|Bean Sausage':0.0,
+        'Skeledirge|Bean Sausage|Fiery Herb':0.4,
+        'Quaxly|Greengrass Soybeans|Greengrass Soybeans':0.0,
+        'Quaxly|Greengrass Soybeans|Large Leek':1.0,
+        'Quaxly|Greengrass Soybeans|Pure Oil':0.8,
+        'Quaxly|Large Leek|Greengrass Soybeans':0.2,
+        'Quaxly|Large Leek|Large Leek':1.0,
+        'Quaxly|Large Leek|Pure Oil':0.2,
+        'Quaxwell|Greengrass Soybeans|Greengrass Soybeans':0.0,
+        'Quaxwell|Greengrass Soybeans|Large Leek':1.0,
+        'Quaxwell|Greengrass Soybeans|Pure Oil':0.8,
+        'Quaxwell|Large Leek|Greengrass Soybeans':0.2,
+        'Quaxwell|Large Leek|Large Leek':1.0,
+        'Quaxwell|Large Leek|Pure Oil':0.2,
+        'Quaquaval|Greengrass Soybeans|Greengrass Soybeans':0.0,
+        'Quaquaval|Greengrass Soybeans|Large Leek':1.0,
+        'Quaquaval|Greengrass Soybeans|Pure Oil':0.8,
+        'Quaquaval|Large Leek|Greengrass Soybeans':0.2,
+        'Quaquaval|Large Leek|Large Leek':1.0,
+        'Quaquaval|Large Leek|Pure Oil':0.2
     }
 
     SUBSKILL_UNLOCK_WEIGHTS = [1, 0.95, 0.85, 0.4, 0.2]
