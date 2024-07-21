@@ -228,3 +228,126 @@ var subskills = ['ss10','ss25','ss50','ss75','ss100']
 for (let i = 0; i < subskills.length; i++) {
     populateSelect(subskills[i], all_subskills)
 }
+
+// Upload screenshot
+document.getElementById('imageUpload').addEventListener('change', function(event) {
+    const file = event.target.files[0];
+    if (!file) {
+        return;
+    }
+
+    const reader = new FileReader();
+    reader.onload = function(e) {
+        const img = new Image();
+        img.src = e.target.result;
+
+        img.onload = function() {
+            // Image cropping part
+            const canvas = document.getElementById('canvas');
+            const ctx = canvas.getContext('2d');
+    
+            const standardWidth = 1080;
+            const standardHeight = 2400;
+    
+            // Resize the image to the standard size
+            canvas.width = standardWidth;
+            canvas.height = standardHeight;
+            ctx.drawImage(img, 0, 0, standardWidth, standardHeight);
+    
+            // Define crop areas based on screenshot size
+            let img_size_factor = img.height / img.width
+            console.log(img_size_factor)
+            let crops = []
+            if (img_size_factor > 2.2) {
+                // Eric screenshot size (2.22)
+                crops = [
+                    {x: 311, y: 226, width: 285, height: 68}, // species
+                    {x: 145, y: 1630, width: 300, height: 68}, // nature
+                    {x: 130, y: 910, width: 340, height: 68}, // subskill10
+                    {x: 615, y: 910, width: 340, height: 68}, // subskill25
+                    {x: 130, y: 1080, width: 340, height: 68}, // subskill50
+                    {x: 615, y: 1080, width: 340, height: 68}, // subskill75
+                    {x: 130, y: 1250, width: 340, height: 68}, // subskill100
+                ];
+            }
+            else if (img_size_factor > 2) {
+                // Maartje screenshot size (2.17)
+                crops = [
+                    {x: 311, y: 223, width: 285, height: 68}, // species
+                    {x: 145, y: 1610, width: 300, height: 68}, // nature
+                    {x: 130, y: 865, width: 340, height: 68}, // subskill10
+                    {x: 615, y: 865, width: 340, height: 68}, // subskill25
+                    {x: 130, y: 1042, width: 340, height: 68}, // subskill50
+                    {x: 615, y: 1042, width: 340, height: 68}, // subskill75
+                    {x: 130, y: 1215, width: 340, height: 68}, // subskill100
+                ];
+            }
+            else {
+                // Robin screenshot size (1.78)
+                crops = [
+                    {x: 320, y: 300, width: 285, height: 68}, // species
+                    {x: 165, y: 1550, width: 300, height: 68}, // nature
+                    {x: 120, y: 640, width: 370, height: 68}, // subskill10
+                    {x: 600, y: 640, width: 370, height: 68}, // subskill25
+                    {x: 120, y: 850, width: 370, height: 68}, // subskill50
+                    {x: 600, y: 850, width: 370, height: 68}, // subskill75
+                    {x: 120, y: 1060, width: 370, height: 68}, // subskill100
+                ];
+            }
+    
+            const outputCanvas = document.getElementById('outputCanvas');
+            const outputCtx = outputCanvas.getContext('2d');
+    
+            // Set output canvas dimensions to hold all cropped fragments vertically
+            outputCanvas.width = crops[2].width;
+            outputCanvas.height = crops.reduce((sum, crop) => sum + crop.height, 0);
+    
+            // Draw the cropped fragments onto the output canvas vertically
+            let currentHeight = 0;
+            crops.forEach(crop => {
+                const sx = crop.x, sy = crop.y, sw = crop.width, sh = crop.height;
+                outputCtx.drawImage(canvas, sx, sy, sw, sh, 0, currentHeight, sw, sh);
+                currentHeight += sh;
+            });
+
+            // Tesseract part to extract text from image
+            document.getElementById('status').innerText = 'Recognizing text...';
+            Tesseract.recognize(
+                outputCanvas,
+                'eng',
+                {
+                    logger: m => console.log(m)
+                }
+            ).then(({ data: { text } }) => {
+                document.getElementById('status').innerText = 'Text recognized:';
+                document.getElementById('result').innerText = text;
+                
+                // Preprocess extracted text
+                let words = text.split('\n');
+
+                // Prefill selectpickers
+                var species = document.getElementById('species');
+                var nature = document.getElementById('nature');
+                var ss10 = document.getElementById('ss10');
+                var ss25 = document.getElementById('ss25');
+                var ss50 = document.getElementById('ss50');
+                var ss75 = document.getElementById('ss75');
+                var ss100 = document.getElementById('ss100');
+
+                species.value = words[0]
+                updateOptions('species', 'ing1', 'ing30', 'ing60')
+                nature.value = words[1]
+                ss10.value = words[2]
+                ss25.value = words[3]
+                ss50.value = words[4]
+                ss75.value = words[5]
+                ss100.value = words[6]
+
+            }).catch(err => {
+                document.getElementById('status').innerText = 'Error recognizing text';
+                console.error(err);
+            });
+        };
+    };
+    reader.readAsDataURL(file);
+});
