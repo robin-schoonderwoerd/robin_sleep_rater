@@ -286,7 +286,7 @@ document.getElementById('imageUpload').addEventListener('change', function(event
                 // Robin screenshot size (1.78)
                 crops = [
                     {x: 320, y: 300, width: 285, height: 68}, // species
-                    {x: 165, y: 1544, width: 300, height: 68}, // nature
+                    {x: 165, y: 1541, width: 300, height: 68}, // nature
                     {x: 120, y: 640, width: 370, height: 68}, // subskill10
                     {x: 600, y: 640, width: 370, height: 68}, // subskill25
                     {x: 120, y: 853, width: 370, height: 68}, // subskill50
