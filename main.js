@@ -310,6 +310,24 @@ document.getElementById('imageUpload').addEventListener('change', function(event
                 currentHeight += sh;
             });
 
+            // Make black/white
+            const imageData = outputCtx.getImageData(0, 0, canvas.width, canvas.height);
+            const data = imageData.data;
+            
+            for (let i = 0; i < data.length; i += 4) {
+                const red = data[i];
+                const green = data[i + 1];
+                const blue = data[i + 2];
+                
+                const grey = 0.3 * red + 0.59 * green + 0.11 * blue; // Calculate the greyscale value
+                
+                data[i] = grey;
+                data[i + 1] = grey;
+                data[i + 2] = grey; // Set the RGB values to the greyscale value
+            }
+            
+            outputCtx.putImageData(imageData, 0, 0); // Update the canvas with the new image data
+
             // Tesseract part to extract text from image
             document.getElementById('status').innerText = 'Recognizing text...';
             Tesseract.recognize(
