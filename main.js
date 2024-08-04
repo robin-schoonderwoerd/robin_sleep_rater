@@ -246,8 +246,8 @@ document.getElementById('imageUpload').addEventListener('change', function(event
             const canvas = document.getElementById('canvas');
             const ctx = canvas.getContext('2d');
     
-            const standardWidth = 1080;
-            const standardHeight = 2400;
+            const standardWidth = img.width * 2;
+            const standardHeight = img.height * 2;
     
             // Resize the image to the standard size
             canvas.width = standardWidth;
