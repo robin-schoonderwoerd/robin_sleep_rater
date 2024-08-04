@@ -246,19 +246,14 @@ document.getElementById('imageUpload').addEventListener('change', function(event
             const canvas = document.getElementById('canvas');
             const ctx = canvas.getContext('2d');
     
-            const standardWidth = img.width * 2;
-            const standardHeight = img.height * 2;
-    
-            // Resize the image to the standard size
-            canvas.width = standardWidth;
-            canvas.height = standardHeight;
-            ctx.drawImage(img, 0, 0, standardWidth, standardHeight);
-    
             // Define crop areas based on screenshot size
             let img_size_factor = img.height / img.width
             console.log(img_size_factor)
             let crops = []
-            
+
+            let standardWidth = img.width;
+            let standardHeight = img.height;
+
             if (img_size_factor > 2.2) {
                 // Eric screenshot size (2.22)
                 crops = [
@@ -270,6 +265,13 @@ document.getElementById('imageUpload').addEventListener('change', function(event
                     {x: 834, y: 2017, width: 430, height: 78}, // subskill75
                     {x: 188, y: 2244, width: 430, height: 78}, // subskill100
                 ];
+                standardWidth = 1440;
+                standardHeight = 3200;
+        
+                // Resize the image to the standard size
+                canvas.width = standardWidth;
+                canvas.height = standardHeight;
+                ctx.drawImage(img, 0, 0, standardWidth, standardHeight);
             }
             else if (img_size_factor > 2) {
                 // Maartje screenshot size (2.17)
@@ -282,6 +284,13 @@ document.getElementById('imageUpload').addEventListener('change', function(event
                     {x: 850, y: 1989, width: 440, height: 78}, // subskill75
                     {x: 188, y: 2224, width: 440, height: 78}, // subskill100
                 ];
+                standardWidth = 1476;
+                standardHeight = 3200;
+        
+                // Resize the image to the standard size
+                canvas.width = standardWidth;
+                canvas.height = standardHeight;
+                ctx.drawImage(img, 0, 0, standardWidth, standardHeight);
             }
             else {
                 // Robin screenshot size (1.78)
@@ -294,6 +303,13 @@ document.getElementById('imageUpload').addEventListener('change', function(event
                     {x: 850, y: 1545, width: 460, height: 78}, // subskill75
                     {x: 188, y: 1779, width: 460, height: 78}, // subskill100
                 ];
+                standardWidth = 1500;
+                standardHeight = 2668;
+        
+                // Resize the image to the standard size
+                canvas.width = standardWidth;
+                canvas.height = standardHeight;
+                ctx.drawImage(img, 0, 0, standardWidth, standardHeight);
             }
     
             const outputCanvas = document.getElementById('outputCanvas');
