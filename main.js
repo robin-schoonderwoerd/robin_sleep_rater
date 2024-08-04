@@ -258,40 +258,41 @@ document.getElementById('imageUpload').addEventListener('change', function(event
             let img_size_factor = img.height / img.width
             console.log(img_size_factor)
             let crops = []
+            
             if (img_size_factor > 2.2) {
                 // Eric screenshot size (2.22)
                 crops = [
-                    {x: 311, y: 226, width: 285, height: 68}, // species
-                    {x: 145, y: 1630, width: 300, height: 68}, // nature
-                    {x: 130, y: 910, width: 340, height: 68}, // subskill10
-                    {x: 615, y: 910, width: 340, height: 68}, // subskill25
-                    {x: 130, y: 1080, width: 340, height: 68}, // subskill50
-                    {x: 615, y: 1080, width: 340, height: 68}, // subskill75
-                    {x: 130, y: 1250, width: 340, height: 68}, // subskill100
+                    {x: 438, y: 324, width: 326, height: 56}, // species
+                    {x: 232, y: 2731, width: 326, height: 78}, // nature
+                    {x: 188, y: 1793, width: 430, height: 78}, // subskill10
+                    {x: 834, y: 1793, width: 430, height: 78}, // subskill25
+                    {x: 188, y: 2017, width: 430, height: 78}, // subskill50
+                    {x: 834, y: 2017, width: 430, height: 78}, // subskill75
+                    {x: 188, y: 2244, width: 430, height: 78}, // subskill100
                 ];
             }
             else if (img_size_factor > 2) {
                 // Maartje screenshot size (2.17)
                 crops = [
-                    {x: 311, y: 223, width: 285, height: 68}, // species
-                    {x: 145, y: 1610, width: 300, height: 68}, // nature
-                    {x: 130, y: 865, width: 340, height: 68}, // subskill10
-                    {x: 615, y: 865, width: 340, height: 68}, // subskill25
-                    {x: 130, y: 1042, width: 340, height: 68}, // subskill50
-                    {x: 615, y: 1042, width: 340, height: 68}, // subskill75
-                    {x: 130, y: 1215, width: 340, height: 68}, // subskill100
+                    {x: 438, y: 324, width: 326, height: 56}, // species
+                    {x: 232, y: 2731, width: 326, height: 78}, // nature
+                    {x: 188, y: 1751, width: 440, height: 78}, // subskill10
+                    {x: 850, y: 1751, width: 440, height: 78}, // subskill25
+                    {x: 188, y: 1989, width: 440, height: 78}, // subskill50
+                    {x: 850, y: 1989, width: 440, height: 78}, // subskill75
+                    {x: 188, y: 2224, width: 440, height: 78}, // subskill100
                 ];
             }
             else {
                 // Robin screenshot size (1.78)
                 crops = [
-                    {x: 320, y: 300, width: 285, height: 68}, // species
-                    {x: 165, y: 1418, width: 300, height: 68}, // nature
-                    {x: 120, y: 520, width: 370, height: 68}, // subskill10
-                    {x: 600, y: 520, width: 370, height: 68}, // subskill25
-                    {x: 120, y: 730, width: 370, height: 68}, // subskill50
-                    {x: 600, y: 730, width: 370, height: 68}, // subskill75
-                    {x: 120, y: 940, width: 370, height: 68}, // subskill100
+                    {x: 438, y: 334, width: 326, height: 56}, // species
+                    {x: 250, y: 2291, width: 326, height: 78}, // nature
+                    {x: 188, y: 1306, width: 460, height: 78}, // subskill10
+                    {x: 850, y: 1306, width: 460, height: 78}, // subskill25
+                    {x: 188, y: 1545, width: 460, height: 78}, // subskill50
+                    {x: 850, y: 1545, width: 460, height: 78}, // subskill75
+                    {x: 188, y: 1779, width: 460, height: 78}, // subskill100
                 ];
             }
     
