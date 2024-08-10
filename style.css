@@ -1,6 +1,9 @@
+
 :root {
-    --white: #EEE;
-    --white2: #F6F6F6;
+    --arrow-bg: rgba(255, 255, 255, 0.3);
+    --arrow-icon: url(https://upload.wikimedia.org/wikipedia/commons/9/9d/Caret_down_font_awesome_whitevariation.svg);
+    --option-bg: #333;
+    --select-bg: rgba(255, 255, 255, 0.2);
 }
 
 * {
@@ -9,9 +12,19 @@
     box-sizing: border-box;
 }
 
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 body {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    background: linear-gradient(35deg, black, #111);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 16;
+    font-size: 10px;
     width: 100%;
     height: 100vh;
     background-color: var(--white);
@@ -21,11 +34,144 @@ body {
     align-items: center;
 }
 
+/* <select> styles */
+select {
+    /* Reset */
+    appearance: none;
+    border: 0;
+    outline: 0;
+    font: inherit;
+    /* Personalize */
+    height: 1.5rem;
+    width: 11rem;
+    padding: 0rem 1rem 0rem 1rem;
+    background: var(--arrow-icon) no-repeat right 0.6em center / 1.4em,
+      linear-gradient(to left, var(--arrow-bg) 2em, var(--select-bg) 3em);
+    color: white;
+    font-size: 1.05em;
+    border-radius: 0.25em;
+    box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    /* Remove IE arrow */
+    &::-ms-expand {
+      display: none;
+    }
+    /* Remove focus outline */
+    &:focus {
+      outline: none;
+    }
+}
+
+#ingredient_fields select {
+    /* Reset */
+    appearance: none;
+    border: 0;
+    outline: 0;
+    font: inherit;
+    /* Personalize */
+    height: 1.5rem;
+    width: 7.5rem;
+    padding: 0rem 1rem 0rem 1rem;
+    background: var(--arrow-icon) no-repeat right 0.6em center / 1.4em,
+      linear-gradient(to left, var(--arrow-bg) 2em, var(--select-bg) 3em);
+    color: white;
+    font-size: 1.05em;
+    border-radius: 0.25em;
+    box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    /* Remove IE arrow */
+    &::-ms-expand {
+      display: none;
+    }
+    /* Remove focus outline */
+    &:focus {
+      outline: none;
+    }
+}
+
+/* <option> colors */
+option {
+    color: white;
+    background-color: black;
+    }
+
+label {
+    color: white;
+    padding: 1.05em;
+    font-size: 1.05em;
+}
+
+p {
+    color: white;
+}
+
+div {
+    color: white;
+    text-align: center;
+}
+
+button {
+    /* background-color: green;
+    color: white; */
+    border: 0;
+    outline: 0;
+    font: inherit;
+    /* Personalize */
+    height: 1.5rem;
+    width: 5.5rem;
+    padding: 0rem 1rem 0rem 1rem;
+    background: linear-gradient(35deg, green, lightgreen);
+    color: white;
+    font-size: 1.05em;
+    border-radius: 0.25em;
+    box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+  
+
 .container {
     width: 100vw;
     height: 100vh;
-    background-color: var(--white2);
-    padding: 0px
+    background: linear-gradient(35deg, black, #333);
+    padding: 0px;
+}
+
+.subcontainer {
+    display: flex;
+}
+
+.column {
+    flex: 1;
+    padding: 10px;
+    width: 50%;
+}
+
+.column3 {
+    flex: 1;
+    padding: 0px;
+    width: 33%;
+}
+
+#camera_icon {
+    display: inline-block;
+    padding: 0.2rem;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    cursor: pointer;
+    border-radius: 0.25em;
+    text-align: center;
+}
+
+#imageUpload {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 /* Responsiveness */
@@ -46,3 +192,4 @@ body {
         -webkit-backdrop-filter: blur(30px);
         border: 1px solid rgba(255, 255, 255, 0.3);
     }
+}
