@@ -257,13 +257,13 @@ document.getElementById('imageUpload').addEventListener('change', function(event
             if (img_size_factor > 2.2) {
                 // Eric screenshot size (2.22)
                 crops = [
-                    {x: 438, y: 324, width: 326, height: 56}, // species
-                    {x: 232, y: 2731, width: 326, height: 78}, // nature
-                    {x: 188, y: 1793, width: 430, height: 78}, // subskill10
-                    {x: 834, y: 1793, width: 430, height: 78}, // subskill25
-                    {x: 188, y: 2017, width: 430, height: 78}, // subskill50
-                    {x: 834, y: 2017, width: 430, height: 78}, // subskill75
-                    {x: 188, y: 2244, width: 430, height: 78}, // subskill100
+                    {x: 438, y: 324, width: 326, height: 76}, // species
+                    {x: 232, y: 2731, width: 326, height: 98}, // nature
+                    {x: 188, y: 1793, width: 430, height: 98}, // subskill10
+                    {x: 834, y: 1793, width: 430, height: 98}, // subskill25
+                    {x: 188, y: 2017, width: 430, height: 98}, // subskill50
+                    {x: 834, y: 2017, width: 430, height: 98}, // subskill75
+                    {x: 188, y: 2244, width: 430, height: 98}, // subskill100
                 ];
                 standardWidth = 1440;
                 standardHeight = 3200;
@@ -276,13 +276,13 @@ document.getElementById('imageUpload').addEventListener('change', function(event
             else if (img_size_factor > 2) {
                 // Maartje screenshot size (2.17)
                 crops = [
-                    {x: 438, y: 324, width: 326, height: 56}, // species
-                    {x: 232, y: 2731, width: 326, height: 78}, // nature
-                    {x: 188, y: 1751, width: 440, height: 78}, // subskill10
-                    {x: 850, y: 1751, width: 440, height: 78}, // subskill25
-                    {x: 188, y: 1989, width: 440, height: 78}, // subskill50
-                    {x: 850, y: 1989, width: 440, height: 78}, // subskill75
-                    {x: 188, y: 2224, width: 440, height: 78}, // subskill100
+                    {x: 438, y: 324, width: 326, height: 76}, // species
+                    {x: 232, y: 2731, width: 326, height: 98}, // nature
+                    {x: 188, y: 1751, width: 440, height: 98}, // subskill10
+                    {x: 850, y: 1751, width: 440, height: 98}, // subskill25
+                    {x: 188, y: 1989, width: 440, height: 98}, // subskill50
+                    {x: 850, y: 1989, width: 440, height: 98}, // subskill75
+                    {x: 188, y: 2224, width: 440, height: 98}, // subskill100
                 ];
                 standardWidth = 1476;
                 standardHeight = 3200;
@@ -295,13 +295,13 @@ document.getElementById('imageUpload').addEventListener('change', function(event
             else {
                 // Robin screenshot size (1.78)
                 crops = [
-                    {x: 438, y: 334, width: 326, height: 56}, // species
-                    {x: 250, y: 2291, width: 326, height: 78}, // nature
-                    {x: 188, y: 1306, width: 460, height: 78}, // subskill10
-                    {x: 850, y: 1306, width: 460, height: 78}, // subskill25
-                    {x: 188, y: 1545, width: 460, height: 78}, // subskill50
-                    {x: 850, y: 1545, width: 460, height: 78}, // subskill75
-                    {x: 188, y: 1779, width: 460, height: 78}, // subskill100
+                    {x: 438, y: 334, width: 326, height: 76}, // species
+                    {x: 250, y: 2291, width: 326, height: 98}, // nature
+                    {x: 188, y: 1306, width: 460, height: 98}, // subskill10
+                    {x: 850, y: 1306, width: 460, height: 98}, // subskill25
+                    {x: 188, y: 1545, width: 460, height: 98}, // subskill50
+                    {x: 850, y: 1545, width: 460, height: 98}, // subskill75
+                    {x: 188, y: 1779, width: 460, height: 98}, // subskill100
                 ];
                 standardWidth = 1500;
                 standardHeight = 2668;
@@ -311,77 +311,119 @@ document.getElementById('imageUpload').addEventListener('change', function(event
                 canvas.height = standardHeight;
                 ctx.drawImage(img, 0, 0, standardWidth, standardHeight);
             }
-    
-            const outputCanvas = document.getElementById('outputCanvas');
-            const outputCtx = outputCanvas.getContext('2d');
-    
-            // Set output canvas dimensions to hold all cropped fragments vertically
-            outputCanvas.width = crops[2].width;
-            outputCanvas.height = crops.reduce((sum, crop) => sum + crop.height, 0);
-    
-            // Draw the cropped fragments onto the output canvas vertically
-            let currentHeight = 0;
-            crops.forEach(crop => {
-                const sx = crop.x, sy = crop.y, sw = crop.width, sh = crop.height;
-                outputCtx.drawImage(canvas, sx, sy, sw, sh, 0, currentHeight, sw, sh);
-                currentHeight += sh;
-            });
 
+            
             // Make black/white
-            const imageData = outputCtx.getImageData(0, 0, canvas.width, canvas.height);
-            const data = imageData.data;
-            
-            for (let i = 0; i < data.length; i += 4) {
-                const red = data[i];
-                const green = data[i + 1];
-                const blue = data[i + 2];
+            function makeBlackWhite (image_ctx) {
+                const imageData = image_ctx.getImageData(0, 0, canvas.width, canvas.height);
+                const data = imageData.data;
                 
-                const grey = 0.3 * red + 0.59 * green + 0.11 * blue; // Calculate the greyscale value
-                
-                data[i] = grey;
-                data[i + 1] = grey;
-                data[i + 2] = grey; // Set the RGB values to the greyscale value
-            }
-            
-            outputCtx.putImageData(imageData, 0, 0); // Update the canvas with the new image data
-
-            // Tesseract part to extract text from image
-            document.getElementById('status').innerText = 'Recognizing text...';
-            Tesseract.recognize(
-                outputCanvas,
-                'eng',
-                {
-                    logger: m => console.log(m)
+                for (let i = 0; i < data.length; i += 4) {
+                    const red = data[i];
+                    const green = data[i + 1];
+                    const blue = data[i + 2];
+                    
+                    const grey = 0.3 * red + 0.59 * green + 0.11 * blue; // Calculate the greyscale value
+                    
+                    data[i] = grey;
+                    data[i + 1] = grey;
+                    data[i + 2] = grey; // Set the RGB values to the greyscale value
                 }
-            ).then(({ data: { text } }) => {
-                document.getElementById('status').innerText = 'Text recognized:';
-                document.getElementById('result').innerText = text;
-                
-                // Preprocess extracted text
-                let words = text.split('\n');
+                image_ctx.putImageData(imageData, 0, 0); // Update the canvas with the new image data
+                return image_ctx
+            }
+    
+            const outputCanvasSpecies = document.getElementById('outputCanvasSpecies');
+            let outputCtxSpecies = outputCanvasSpecies.getContext('2d');
 
-                // Prefill selectpickers
-                var species = document.getElementById('species');
-                var nature = document.getElementById('nature');
-                var ss10 = document.getElementById('ss10');
-                var ss25 = document.getElementById('ss25');
-                var ss50 = document.getElementById('ss50');
-                var ss75 = document.getElementById('ss75');
-                var ss100 = document.getElementById('ss100');
+            const outputCanvasNature = document.getElementById('outputCanvasNature');
+            let outputCtxNature = outputCanvasNature.getContext('2d');
 
-                species.value = words[0]
-                updateOptions('species', 'ing1', 'ing30', 'ing60')
-                nature.value = words[1]
-                ss10.value = words[2]
-                ss25.value = words[3]
-                ss50.value = words[4]
-                ss75.value = words[5]
-                ss100.value = words[6]
+            const outputCanvasSS10 = document.getElementById('outputCanvasSS10');
+            let outputCtxSS10 = outputCanvasSS10.getContext('2d');
 
-            }).catch(err => {
-                document.getElementById('status').innerText = 'Error recognizing text';
-                console.error(err);
-            });
+            const outputCanvasSS25 = document.getElementById('outputCanvasSS25');
+            let outputCtxSS25 = outputCanvasSS25.getContext('2d');
+
+            const outputCanvasSS50 = document.getElementById('outputCanvasSS50');
+            let outputCtxSS50 = outputCanvasSS50.getContext('2d');
+
+            const outputCanvasSS75 = document.getElementById('outputCanvasSS75');
+            let outputCtxSS75 = outputCanvasSS75.getContext('2d');
+
+            const outputCanvasSS100 = document.getElementById('outputCanvasSS100');
+            let outputCtxSS100 = outputCanvasSS100.getContext('2d');
+
+            const canvas_list = [
+                outputCanvasSpecies, 
+                outputCanvasNature, 
+                outputCanvasSS10,
+                outputCanvasSS25,
+                outputCanvasSS50,
+                outputCanvasSS75,
+                outputCanvasSS100
+            ]
+            const ctx_list = [
+                outputCtxSpecies, 
+                outputCtxNature, 
+                outputCtxSS10,
+                outputCtxSS25,
+                outputCtxSS50,
+                outputCtxSS75,
+                outputCtxSS100
+            ]
+            const element_list = ['species', 'nature', 'ss10', 'ss25', 'ss50', 'ss75', 'ss100']
+            const result_list = [
+                "resultSpecies",
+                "resultNature",
+                "resultSS10",
+                "resultSS25",
+                "resultSS50",
+                "resultSS75",
+                "resultSS100",
+            ]
+
+
+            function doTesseract (i) {
+                // Tesseract part to extract text from image
+                document.getElementById('status').innerText = 'Recognizing text...';
+                    Tesseract.recognize(
+                        canvas_list[i],
+                        'eng',
+                        {
+                            logger: m => console.log(m),
+                            tessedit_pageseg_mode: Tesseract.PSM.SINGLE_LINE,
+                        }
+                    ).then(({ data: { text } }) => {
+                        document.getElementById('status').innerText = 'Text recognized:';
+                        document.getElementById(result_list[i]).innerText = text;
+                        
+                        // Preprocess extracted text
+                        let words = text.split('\n');
+
+                        // Prefill selectpickers
+                        var fill_element = document.getElementById(element_list[i]);
+                        console.log(words[0].replace(/[^a-zA-Z\s]/g, ''))
+
+                        fill_element.value = words[0].replace(/[^a-zA-Z\s]/g, '')
+                        if (element_list[i] === 'species') {
+                            updateOptions('species', 'ing1', 'ing30', 'ing60')
+                        }
+                        
+                    }).catch(err => {
+                        document.getElementById('status').innerText = 'Error recognizing text';
+                        console.error(err);
+                    });
+            }
+
+            // Crop and perform Tesseract
+            for (let i = 0; i < crops.length; i++) {
+                const sx = crops[i].x, sy = crops[i].y-10, sw = crops[i].width, sh = crops[i].height;
+                canvas_list[i].width = crops[2].width;
+                ctx_list[i].drawImage(canvas, sx, sy, sw, sh, 0, 0, sw, sh);
+                ctx_list[i] = makeBlackWhite(ctx_list[i])
+                doTesseract(i)
+            };
         };
     };
     reader.readAsDataURL(file);
