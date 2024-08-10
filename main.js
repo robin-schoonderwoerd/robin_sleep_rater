@@ -259,11 +259,11 @@ document.getElementById('imageUpload').addEventListener('change', function(event
                 crops = [
                     {x: 438, y: 324, width: 326, height: 76}, // species
                     {x: 232, y: 2731, width: 326, height: 98}, // nature
-                    {x: 188, y: 1793, width: 430, height: 98}, // subskill10
-                    {x: 834, y: 1793, width: 430, height: 98}, // subskill25
-                    {x: 188, y: 2017, width: 430, height: 98}, // subskill50
-                    {x: 834, y: 2017, width: 430, height: 98}, // subskill75
-                    {x: 188, y: 2244, width: 430, height: 98}, // subskill100
+                    {x: 168, y: 1793, width: 470, height: 98}, // subskill10
+                    {x: 814, y: 1793, width: 470, height: 98}, // subskill25
+                    {x: 168, y: 2017, width: 470, height: 98}, // subskill50
+                    {x: 814, y: 2017, width: 470, height: 98}, // subskill75
+                    {x: 168, y: 2244, width: 470, height: 98}, // subskill100
                 ];
                 standardWidth = 1440;
                 standardHeight = 3200;
@@ -278,11 +278,11 @@ document.getElementById('imageUpload').addEventListener('change', function(event
                 crops = [
                     {x: 438, y: 324, width: 326, height: 76}, // species
                     {x: 232, y: 2731, width: 326, height: 98}, // nature
-                    {x: 188, y: 1751, width: 440, height: 98}, // subskill10
-                    {x: 850, y: 1751, width: 440, height: 98}, // subskill25
-                    {x: 188, y: 1989, width: 440, height: 98}, // subskill50
-                    {x: 850, y: 1989, width: 440, height: 98}, // subskill75
-                    {x: 188, y: 2224, width: 440, height: 98}, // subskill100
+                    {x: 168, y: 1751, width: 480, height: 98}, // subskill10
+                    {x: 830, y: 1751, width: 480, height: 98}, // subskill25
+                    {x: 168, y: 1989, width: 480, height: 98}, // subskill50
+                    {x: 830, y: 1989, width: 480, height: 98}, // subskill75
+                    {x: 168, y: 2224, width: 480, height: 98}, // subskill100
                 ];
                 standardWidth = 1476;
                 standardHeight = 3200;
@@ -297,11 +297,11 @@ document.getElementById('imageUpload').addEventListener('change', function(event
                 crops = [
                     {x: 438, y: 334, width: 326, height: 76}, // species
                     {x: 250, y: 2291, width: 326, height: 98}, // nature
-                    {x: 188, y: 1306, width: 460, height: 98}, // subskill10
-                    {x: 850, y: 1306, width: 460, height: 98}, // subskill25
-                    {x: 188, y: 1545, width: 460, height: 98}, // subskill50
-                    {x: 850, y: 1545, width: 460, height: 98}, // subskill75
-                    {x: 188, y: 1779, width: 460, height: 98}, // subskill100
+                    {x: 168, y: 1306, width: 500, height: 98}, // subskill10
+                    {x: 830, y: 1306, width: 500, height: 98}, // subskill25
+                    {x: 168, y: 1545, width: 500, height: 98}, // subskill50
+                    {x: 830, y: 1545, width: 500, height: 98}, // subskill75
+                    {x: 168, y: 1779, width: 500, height: 98}, // subskill100
                 ];
                 standardWidth = 1500;
                 standardHeight = 2668;
