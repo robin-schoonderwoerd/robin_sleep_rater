@@ -213,7 +213,6 @@ button {
     vertical-align: middle;
     display: flex;
     padding: 1rem;
-    position: absolute;
     width: 100%;
     bottom: 1.5rem;
 }
