@@ -13,8 +13,13 @@
 
     <body>
         <div class="container">
-            <div>
+            <br>
+            <br>
+            <h1>ROBIRATER</h1>
+            <div class="h1_underline"></div>
+            <div style="position: relative;">
                 <img id="image" class="center" src="./empty.png" width="300" height="273">
+                <div id="percentage"></div>
             </div>
             <div class="subcontainer">
                 <div class="column">
@@ -82,35 +87,40 @@
                     <select id="ss75" class="center">
                     </select>
                     <br>
+
+                    <div id="warning"></div>
+                    <div id="score" style="white-space: pre-wrap;"></div>
                 </div>
             </div>
-            <button class="center" py-click="evaluate()">Evaluate</button>
-            <br>
+            <div class="button_div">
+                <div class="icon_button" onclick="toggleVisibility()"><img src="info_icon.png" height="28" width="28"></div>
+                <button class="center" py-click="evaluate()">Evaluate</button>
+            
+                <label class="icon_button" for="imageUpload"><img src="screenshot_icon.svg" height="28" width="28"></label>
+                <input type="file" id="imageUpload" accept="image/*">
 
-            <div id="warning"></div>
-            <div id="score" style="white-space: pre-wrap;"></div>
-        
-        <label id="camera_icon" for="imageUpload"><img src="screenshot_icon2.png" height="20" width="24"></label>
-        <input type="file" id="imageUpload" accept="image/*">
-        <p id="status"></p>
-        <pre id="result"></pre>
-        <pre id="resultSpecies"></pre>
-        <pre id="resultNature"></pre>
-        <pre id="resultSS10"></pre>
-        <pre id="resultSS25"></pre>
-        <pre id="resultSS50"></pre>
-        <pre id="resultSS75"></pre>
-        <pre id="resultSS100"></pre>
+                
+            </div>
+            <div id="debuginfo" style="display: none;">
+                <p id="status"></p>
+                <pre id="result"></pre>
+                <pre id="resultSpecies"></pre>
+                <pre id="resultNature"></pre>
+                <pre id="resultSS10"></pre>
+                <pre id="resultSS25"></pre>
+                <pre id="resultSS50"></pre>
+                <pre id="resultSS75"></pre>
+                <pre id="resultSS100"></pre>
 
-        <canvas id="canvas" style="display: none;"></canvas>
-        <canvas id="outputCanvasSpecies"></canvas>
-        <canvas id="outputCanvasNature"></canvas>
-        <canvas id="outputCanvasSS10"></canvas>
-        <canvas id="outputCanvasSS25"></canvas>
-        <canvas id="outputCanvasSS50"></canvas>
-        <canvas id="outputCanvasSS75"></canvas>
-        <canvas id="outputCanvasSS100"></canvas>
-
+                <canvas id="canvas" style="display: none;"></canvas>
+                <canvas id="outputCanvasSpecies"></canvas>
+                <canvas id="outputCanvasNature"></canvas>
+                <canvas id="outputCanvasSS10"></canvas>
+                <canvas id="outputCanvasSS25"></canvas>
+                <canvas id="outputCanvasSS50"></canvas>
+                <canvas id="outputCanvasSS75"></canvas>
+                <canvas id="outputCanvasSS100"></canvas>
+            </div>
         </div>
     </body>
 <script src="./main.js"></script>
