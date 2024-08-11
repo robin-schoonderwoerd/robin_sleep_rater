@@ -203,6 +203,7 @@ function updateOptions(species, ing1, ing30, ing60) {
     var ing30 = document.getElementById(ing30);
     var ing60 = document.getElementById(ing60);
     var ingredient_fields = document.getElementById('ingredient_fields');
+    var percentage = document.getElementById('percentage');
 
     image.src = (selected_species !== '') ? 'https://www.serebii.net/pokemonsleep/pokemon/' + species_name_to_id[selected_species] + '.png' : './empty.png'
 
@@ -219,6 +220,9 @@ function updateOptions(species, ing1, ing30, ing60) {
     // Enable/disable ing60 based on the selected species
     ing60.disabled = !ing_species.includes(selected_species);
     ing60.selectedIndex = 0; // Reset selection
+
+    // Remove percentage
+    percentage.innerHTML = ''
 }
 
 // Initial population of species
@@ -228,6 +232,38 @@ var subskills = ['ss10','ss25','ss50','ss75','ss100']
 for (let i = 0; i < subskills.length; i++) {
     populateSelect(subskills[i], all_subskills)
 }
+
+function toggleVisibility() {
+    const div = document.getElementById('debuginfo');
+    if (div.style.display === 'none') {
+        div.style.display = 'block';
+    } else {
+        div.style.display = 'none';
+    }
+}
+
+// Set color of percentage
+function updateTextColor(percentage) {
+    const percentageText = percentage.innerText;
+    const percentageValue = parseFloat(percentageText);
+    percentage.className = ''; // Remove existing class
+    if (!isNaN(percentageValue)) { // Check if percentageValue is valid
+        if (percentageValue < 50) {
+            percentage.classList.add('low-percentage');
+        } else if (percentageValue >= 50 && percentageValue < 75) {
+            percentage.classList.add('medium-percentage');
+        } else {
+            percentage.classList.add('high-percentage');
+        }
+    }
+}
+const percentage = document.getElementById('percentage'); // Initial color setting
+updateTextColor(percentage);
+const observer = new MutationObserver(() => { // Create a MutationObserver to watch for changes to the div's innerHTML
+    updateTextColor(percentage);
+});
+observer.observe(percentage, { childList: true, subtree: true }); // Start observing the div for changes in its child nodes (e.g., text changes)
+
 
 // Upload screenshot
 document.getElementById('imageUpload').addEventListener('change', function(event) {
