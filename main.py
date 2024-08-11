@@ -114,31 +114,31 @@ class pokemonRater():
         'Bulbasaur':0.8, 'Ivysaur':0.8, 'Venusaur':0.8,
         'Charmander':1.0, 'Charmeleon':1.0, 'Charizard':1.0,
         'Squirtle':1.0, 'Wartortle':1.0, 'Blastoise':1.0,
-        'Caterpie':0.2, 'Metapod':0.2, 'Butterfree':0.2,
-        'Rattata':0.2, 'Raticate':0.2,'Ekans':0.0, 
-        'Arbok':0.0,'Pikachu':1.0, 'Raichu':1.0,
+        'Caterpie':0.4, 'Metapod':0.4, 'Butterfree':0.4,
+        'Rattata':0.2, 'Raticate':0.2,'Ekans':0.2, 
+        'Arbok':0.2,'Pikachu':1.0, 'Raichu':1.0,
         'Clefairy':0.6, 'Clefable':0.6, 'Vulpix':0.8, 
-        'Ninetales':0.8, 'Jigglypuff':0.4, 'Wigglytuff':0.4,
-        'Diglett':0.2, 'Dugtrio':0.2,'Meowth':0.0, 
-        'Persian':0.0, 'Psyduck':0.4, 'Golduck':0.4,
+        'Ninetales':0.8, 'Jigglypuff':0.6, 'Wigglytuff':0.6,
+        'Diglett':0.6, 'Dugtrio':0.6,'Meowth':0.0, 
+        'Persian':0.0, 'Psyduck':0.0, 'Golduck':0.0,
         'Mankey':0.6, 'Primeape':0.6,'Growlithe':0.4, 
         'Arcanine':0.4,'Bellsprout':0.8, 'Weepinbell':0.8, 
         'Victreebel':0.8,'Geodude':0.8, 'Graveler':0.8, 
         'Golem':0.8, 'Slowpoke':0.2, 'Slowbro':0.2,
-        'Magnemite':0.6, 'Magneton':0.6,'Doduo':0.8, 
+        'Magnemite':0.4, 'Magneton':0.4,'Doduo':0.8, 
         'Dodrio':0.8,'Gastly':0.8, 'Haunter':0.8, 
-        'Gengar':0.8,'Onix':0.8,'Cubone':0.2, 
-        'Marowak':0.2,'Kangaskhan':0.2,'Mr. Mime':0.4,
-        'Pinsir':0.8,'Ditto':0.2,'Eevee':0.8, 
+        'Gengar':0.8,'Onix':0.8,'Cubone':0.4, 
+        'Marowak':0.4,'Kangaskhan':0.2,'Mr. Mime':0.6,
+        'Pinsir':1.0,'Ditto':0.2,'Eevee':0.8, 
         'Vaporeon':0.8, 'Jolteon':0.2, 'Flareon':0.8,
         'Dratini':1.0, 'Dragonair':1.0,'Dragonite':1.0,
         'Chikorita':1.0, 'Bayleef':1.0, 'Meganium':1.0,
         'Cyndaquil':1.0, 'Quilava':1.0, 'Typhlosion':1.0,
         'Totodile':1.0, 'Croconaw':1.0, 'Feraligatr':1.0,
-        'Pichu':1.0,'Cleffa':0.6,'Igglybuff':0.4,
+        'Pichu':1.0,'Cleffa':0.6,'Igglybuff':0.6,
         'Togepi':0.2, 'Togetic':0.2,'Mareep':0.4, 
         'Flaaffy':0.4, 'Ampharos':0.4,'Sudowoodo':0.0,
-        'Espeon':0.6, 'Umbreon':0.0,'Slowking':0.2,
+        'Espeon':0.6, 'Umbreon':0.2,'Slowking':0.2,
         'Wobbuffet':0.0,'Steelix':0.8,'Heracross':0.4,
         'Delibird':0.8,'Houndour':0.6, 'Houndoom':0.6,
         'Raikou':0.4, 'Entei':0.6,
@@ -146,15 +146,15 @@ class pokemonRater():
         'Ralts':1.0, 'Kirlia':1.0,'Gardevoir':1.0,
         'Slakoth':0.6, 'Vigoroth':0.6, 'Slaking':0.6,
         'Sableye':0.0,'Gulpin':0.0, 'Swalot':0.0,
-        'Swablu':0.2, 'Altaria':0.2,'Shuppet':0.4, 
-        'Banette':0.4, 'Absol':0.6,'Wynaut':0.0,
+        'Swablu':0.4, 'Altaria':0.4,'Shuppet':0.6, 
+        'Banette':0.6, 'Absol':0.8,'Wynaut':0.0,
         'Spheal':1.0, 'Sealeo':1.0, 'Walrein':1.0,
-        'Bonsly':0.0,'Mime Jr.':0.4,'Riolu':0.0, 
+        'Bonsly':0.0,'Mime Jr.':0.0,'Riolu':0.0, 
         'Lucario':0.0,'Croagunk':0.2, 'Toxicroak':0.2,
-        'Snover':0.6, 'Abomasnow':0.6,'Magnezone':0.6,
+        'Snover':0.8, 'Abomasnow':0.8,'Magnezone':0.4,
         'Togekiss':0.2,'Leafeon':0.2, 'Glaceon':0.8,
         'Gallade':0.6, 'Sylveon':0.8, 'Dedenne':0.6,
-        'Stufful':1.0,'Bewear':1.0, 'Comfey':0.4,
+        'Stufful':1.0,'Bewear':1.0, 'Comfey':0.6,
         'Cramorant':0.6,
         'Sprigatito':0.8,'Floragato':0.8, 'Meowscarada':0.8,
         'Fuecoco':0.4,'Crocalor':0.4, 'Skeledirge':0.4,
@@ -591,14 +591,14 @@ class pokemonRater():
             self.combine_scores()
             self.score = self.apply_feelgoodfactor(self.score)
             Element('warning').write(f"")
-            Element('score').write(f"""Final score of {self.species} is: {self.score_to_rating(self.score)}
-            - Nature: {self.score_to_rating(self.apply_feelgoodfactor(self.nature_rating))}
+            Element('percentage').write(f"{self.score_to_rating(self.score)}")
+            Element('score').write(f"""            - Nature: {self.score_to_rating(self.apply_feelgoodfactor(self.nature_rating))}
             - Subskills: {self.score_to_rating(self.apply_feelgoodfactor(self.subskill_rating))}{'' if not self.species in pokemonRater.ING_SPECIES else
             '''
             - Ingredients: ''' + self.score_to_rating(self.apply_feelgoodfactor(self.ingredient_rating))}
             - Species: {self.score_to_rating(self.apply_feelgoodfactor(self.tierlist_rating))}""")
         except AttributeError:
-            Element('score').write(f"Data missing. Please fill required fields")
+            Element('score').write(f"Please fill required fields")
 
 def _extract_stats():
     return {
