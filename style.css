@@ -10,6 +10,49 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Proxima Nova', sans-serif;
+}
+
+h1 {
+    font-size: 3.5em;
+    font-family: 'Proxima Nova', serif;
+    margin-bottom: -5px;
+}
+
+.h1_underline {
+    border: 0;
+    outline: 0;
+    font: inherit;
+    height: 0.25rem;
+    width: 12.25rem;
+    background: linear-gradient(35deg, green, lightgreen);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#percentage {
+    position: absolute;
+    bottom: 1em;
+    right: 2.5em;
+    font-size: 3.5em;
+    font-family: 'Proxima Nova', serif;
+    font-weight: bold;
+}
+
+.low-percentage {
+    color: white; /* Bright red text */
+    text-shadow: 0 0 10px #ff4c4c, 0 0 20px #ff4c4c, 0 0 30px #ff4c4c, 0 0 40px #ff4c4c; /* Red glow */
+}
+
+.medium-percentage {
+    color: white; /* Bright orange text */
+    text-shadow: 0 0 10px #ff9900, 0 0 20px #ff9900, 0 0 30px #ff9900, 0 0 40px #ff9900; /* Orange glow */
+}
+
+.high-percentage {
+    color: white; /* Bright green text */
+    text-shadow: 0 0 10px #28a745, 0 0 20px #28a745, 0 0 30px #28a745, 0 0 40px #28a745; /* Green glow */
 }
 
 .center {
@@ -117,12 +160,12 @@ button {
     outline: 0;
     font: inherit;
     /* Personalize */
-    height: 1.5rem;
-    width: 5.5rem;
+    height: 2.25rem;
+    width: 8.25rem;
     padding: 0rem 1rem 0rem 1rem;
     background: linear-gradient(35deg, green, lightgreen);
     color: white;
-    font-size: 1.05em;
+    font-size: 1.5em;
     border-radius: 0.25em;
     box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
     cursor: pointer;
@@ -142,7 +185,7 @@ button {
 
 .column {
     flex: 1;
-    padding: 10px;
+    padding: 0px;
     width: 50%;
 }
 
@@ -152,7 +195,7 @@ button {
     width: 33%;
 }
 
-#camera_icon {
+.icon_button {
     display: inline-block;
     padding: 0.2rem;
     background-color: rgba(255, 255, 255, 0.2);
@@ -160,7 +203,21 @@ button {
     cursor: pointer;
     border-radius: 0.25em;
     text-align: center;
+    height: 2.25rem;
+    width: 2.25rem;
+    overflow: hidden;
+    vertical-align: middle;
 }
+
+.button_div {
+    vertical-align: middle;
+    display: flex;
+    padding: 1rem;
+    position: absolute;
+    width: 100%;
+    bottom: 1.5rem;
+}
+
 
 #imageUpload {
     position: absolute;
@@ -182,7 +239,7 @@ button {
 @media (min-width: 576px) {
     .container {
         width: 400px;
-        height: 618px;
+        height: 720px;
         /* background-color: var(--white2); */
         border-radius: 20px;
         /* box-shadow: 10px 10px 10px grey; */
