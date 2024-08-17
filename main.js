@@ -204,6 +204,8 @@ function updateOptions(species, ing1, ing30, ing60) {
     var ing60 = document.getElementById(ing60);
     var ingredient_fields = document.getElementById('ingredient_fields');
     var percentage = document.getElementById('percentage');
+    var score = document.getElementById('score');
+    var warning = document.getElementById('warning');
 
     image.src = (selected_species !== '') ? 'https://www.serebii.net/pokemonsleep/pokemon/' + species_name_to_id[selected_species] + '.png' : './empty.png'
 
@@ -223,6 +225,8 @@ function updateOptions(species, ing1, ing30, ing60) {
 
     // Remove percentage
     percentage.innerHTML = ''
+    score.innerHTML = ''
+    warning.innerHTML = ''
 }
 
 // Initial population of species
@@ -423,6 +427,7 @@ document.getElementById('imageUpload').addEventListener('change', function(event
             function doTesseract (i) {
                 // Tesseract part to extract text from image
                 document.getElementById('status').innerText = 'Recognizing text...';
+                document.getElementById('visible_status').innerText = 'Extracting from screenshot...';
                     Tesseract.recognize(
                         canvas_list[i],
                         'eng',
@@ -432,6 +437,7 @@ document.getElementById('imageUpload').addEventListener('change', function(event
                         }
                     ).then(({ data: { text } }) => {
                         document.getElementById('status').innerText = 'Text recognized:';
+                        document.getElementById('visible_status').innerText = '';
                         document.getElementById(result_list[i]).innerText = text;
                         
                         // Preprocess extracted text
