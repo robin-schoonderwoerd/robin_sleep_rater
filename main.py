@@ -183,20 +183,20 @@ class pokemonRater():
         'Charmander|Bean Sausage|Bean Sausage': 0.4,
         'Charmander|Bean Sausage|Warming Ginger': 0.6,
         'Charmander|Bean Sausage|Fiery Herb': 0.6,
-        'Charmander|Warming Ginger|Bean Sausage': 1.0,
-        'Charmander|Warming Ginger|Warming Ginger': 0.2,
+        'Charmander|Warming Ginger|Bean Sausage': 0.4,
+        'Charmander|Warming Ginger|Warming Ginger': 0.4,
         'Charmander|Warming Ginger|Fiery Herb': 1.0,
         'Charmeleon|Bean Sausage|Bean Sausage': 0.4,
         'Charmeleon|Bean Sausage|Warming Ginger': 0.4,
         'Charmeleon|Bean Sausage|Fiery Herb': 0.6,
-        'Charmeleon|Warming Ginger|Bean Sausage': 1.0,
-        'Charmeleon|Warming Ginger|Warming Ginger': 0.2,
+        'Charmeleon|Warming Ginger|Bean Sausage': 0.4,
+        'Charmeleon|Warming Ginger|Warming Ginger': 0.4,
         'Charmeleon|Warming Ginger|Fiery Herb': 1.0,
         'Charizard|Bean Sausage|Bean Sausage': 0.4,
         'Charizard|Bean Sausage|Warming Ginger': 0.4,
         'Charizard|Bean Sausage|Fiery Herb': 0.6,
-        'Charizard|Warming Ginger|Bean Sausage': 1.0,
-        'Charizard|Warming Ginger|Warming Ginger': 0.2,
+        'Charizard|Warming Ginger|Bean Sausage': 0.4,
+        'Charizard|Warming Ginger|Warming Ginger': 0.4,
         'Charizard|Warming Ginger|Fiery Herb': 1.0,
         'Squirtle|Moomoo Milk|Moomoo Milk': 0.2,
         'Squirtle|Moomoo Milk|Soothing Cacao': 1.0,
@@ -592,11 +592,11 @@ class pokemonRater():
             self.score = self.apply_feelgoodfactor(self.score)
             Element('warning').write(f"")
             Element('percentage').write(f"{self.score_to_rating(self.score)}")
-            Element('score').write(f"""            - Nature: {self.score_to_rating(self.apply_feelgoodfactor(self.nature_rating))}
-            - Subskills: {self.score_to_rating(self.apply_feelgoodfactor(self.subskill_rating))}{'' if not self.species in pokemonRater.ING_SPECIES else
+            Element('score').write(f"""Nature: {self.score_to_rating(self.apply_feelgoodfactor(self.nature_rating))}
+Subskills: {self.score_to_rating(self.apply_feelgoodfactor(self.subskill_rating))}{'' if not self.species in pokemonRater.ING_SPECIES else
             '''
-            - Ingredients: ''' + self.score_to_rating(self.apply_feelgoodfactor(self.ingredient_rating))}
-            - Species: {self.score_to_rating(self.apply_feelgoodfactor(self.tierlist_rating))}""")
+Ingredients: ''' + self.score_to_rating(self.apply_feelgoodfactor(self.ingredient_rating))}
+Species: {self.score_to_rating(self.apply_feelgoodfactor(self.tierlist_rating))}""")
         except AttributeError:
             Element('score').write(f"Please fill required fields")
 
