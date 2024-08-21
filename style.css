@@ -24,7 +24,7 @@ h1 {
     background-clip: text;
     color: transparent;
     -webkit-text-stroke-width: 2px;
-    -webkit-text-stroke-color: #ffffff;
+    -webkit-text-stroke-color: green;
 }
 
 
