@@ -36,7 +36,7 @@ class pokemonRater():
         'Espeon':'Skill', 'Umbreon':'Skill','Slowking':'Ingredient',
         'Wobbuffet':'Skill','Steelix':'Berry','Heracross':'Skill',
         'Delibird':'Ingredient','Houndour':'Berry', 'Houndoom':'Berry',
-        'Raikou':'Skill', 'Entei':'Skill',
+        'Raikou':'Skill', 'Entei':'Skill', 'Suicune': 'Skill',
         'Larvitar':'Ingredient', 'Pupitar':'Ingredient', 'Tyranitar':'Ingredient',
         'Ralts':'Skill', 'Kirlia':'Skill','Gardevoir':'Skill',
         'Slakoth':'Skill', 'Vigoroth':'Skill', 'Slaking':'Skill',
@@ -143,7 +143,7 @@ class pokemonRater():
         'Espeon':0.6, 'Umbreon':0.0,'Slowking':0.2,
         'Wobbuffet':0.0,'Steelix':0.8,'Heracross':0.4,
         'Delibird':0.8,'Houndour':0.6, 'Houndoom':0.6,
-        'Raikou':0.4, 'Entei':0.6,
+        'Raikou':0.4, 'Entei':0.6, 'Suicune': 0.6,
         'Larvitar':1.0, 'Pupitar':1.0, 'Tyranitar':1.0,
         'Ralts':1.0, 'Kirlia':1.0,'Gardevoir':1.0,
         'Slakoth':0.6, 'Vigoroth':0.6, 'Slaking':0.6,
@@ -508,7 +508,7 @@ class pokemonRater():
     XP_HARD_SPECIES = [
         'Onix', 'Kangaskhan', 'Pinsir','Ditto', 'Dratini',
         'Dragonair', 'Dragonite','Steelix','Heracross',
-        'Delibird', 'Raikou', 'Entei',
+        'Delibird', 'Raikou', 'Entei', 'Suicune',
         'Larvitar', 'Pupitar', 'Tyranitar', 
         'Absol', 'Dedenne', 'Comfey', 'Cramorant'
     ]
