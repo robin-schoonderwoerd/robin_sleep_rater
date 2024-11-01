@@ -24,7 +24,8 @@ var all_species = [
     'Shinx', 'Luxio', 'Luxray', 'Drifloon', 'Drifblim', 'Bonsly','Mime Jr.',
     'Riolu', 'Lucario','Croagunk', 'Toxicroak','Snover', 'Abomasnow',
     'Magnezone', 'Togekiss','Leafeon', 'Glaceon','Gallade', 'Sylveon', 
-    'Dedenne', 'Grubbin', 'Charjabug', 'Vikavolt', 'Stufful', 'Bewear', 'Comfey', 'Cramorant',
+    'Dedenne', 'Grubbin', 'Charjabug', 'Vikavolt', 'Stufful', 'Bewear', 'Comfey', 
+    'Mimikyu', 'Cramorant',
     'Sprigatito', 'Floragato', 'Meowscarada', 'Fuecoco', 'Crocalor', 'Skeledirge',
     'Quaxly', 'Quaxwell', 'Quaquaval'
 ];
@@ -194,7 +195,7 @@ var species_name_to_id = {
     'Gallade': 475, 'Sylveon': 700, 'Dedenne': 702,
     'Grubbin':736, 'Charjabug': 737, 'Vikavolt':738,
     'Stufful': 759, 'Bewear': 760, 'Comfey': 764,
-    'Cramorant': 845,
+    'Mimikyu':778, 'Cramorant': 845,
     'Sprigatito': 906, 'Floragato': 907, 'Meowscarada': 908, 
     'Fuecoco': 909, 'Crocalor': 910, 'Skeledirge': 911,
     'Quaxly': 912, 'Quaxwell': 913, 'Quaquaval': 914
