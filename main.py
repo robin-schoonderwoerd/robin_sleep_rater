@@ -54,7 +54,7 @@ class pokemonRater():
         'Gallade':'Skill', 'Sylveon':'Skill', 'Dedenne':'Skill',
         'Grubbin':'Ingredient', 'Charjabug':'Ingredient', 'Vikavolt':'Ingredient',
         'Stufful':'Ingredient','Bewear':'Ingredient', 'Comfey':'Ingredient',
-        'Cramorant':'Ingredient',
+        'Mimikyu':'Skill', 'Cramorant':'Ingredient',
         'Sprigatito':'Ingredient','Floragato':'Ingredient', 'Meowscarada':'Ingredient',
         'Fuecoco':'Ingredient','Crocalor':'Ingredient', 'Skeledirge':'Ingredient',
         'Quaxly':'Ingredient','Quaxwell':'Ingredient', 'Quaquaval':'Ingredient'
@@ -165,7 +165,7 @@ class pokemonRater():
         'Gallade':0.6, 'Sylveon':0.8, 'Dedenne':0.8,
         'Grubbin':1.0, 'Charjabug':1.0, 'Vikavolt': 1.0,
         'Stufful':1.0,'Bewear':1.0, 'Comfey':0.4,
-        'Cramorant':0.6,
+        'Mimikyu':0.6, 'Cramorant':0.6,
         'Sprigatito':0.8,'Floragato':0.8, 'Meowscarada':0.8,
         'Fuecoco':0.4,'Crocalor':0.4, 'Skeledirge':0.4,
         'Quaxly':0.8,'Quaxwell':0.8, 'Quaquaval':0.8
@@ -572,7 +572,7 @@ class pokemonRater():
         'Dragonair', 'Dragonite','Steelix','Heracross',
         'Delibird', 'Raikou', 'Entei', 'Suicune',
         'Larvitar', 'Pupitar', 'Tyranitar', 
-        'Absol', 'Dedenne', 'Comfey', 'Cramorant'
+        'Absol', 'Dedenne', 'Comfey', 'Mimikyu', 'Cramorant'
     ]
 
     XP_NATURE_UP = ['Timid', 'Hasty', 'Jolly', 'Naive']
