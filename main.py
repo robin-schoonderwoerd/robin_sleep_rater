@@ -35,6 +35,7 @@ class pokemonRater():
         'Wooper':'Ingredient', 'Quagsire':'Ingredient',
         'Espeon':'Skill', 'Umbreon':'Skill','Slowking':'Ingredient',
         'Wobbuffet':'Skill','Steelix':'Berry','Heracross':'Skill',
+        'Sneasel':'Berry',
         'Delibird':'Ingredient','Houndour':'Berry', 'Houndoom':'Berry',
         'Raikou':'Skill', 'Entei':'Skill', 'Suicune': 'Skill',
         'Larvitar':'Ingredient', 'Pupitar':'Ingredient', 'Tyranitar':'Ingredient',
@@ -49,7 +50,8 @@ class pokemonRater():
         'Drifloon':'Skill', 'Drifblim':'Skill',
         'Bonsly':'Skill','Mime Jr.':'Ingredient','Riolu':'Skill', 
         'Lucario':'Skill','Croagunk':'Ingredient', 'Toxicroak':'Ingredient',
-        'Snover':'Ingredient', 'Abomasnow':'Ingredient','Magnezone':'Skill',
+        'Snover':'Ingredient', 'Abomasnow':'Ingredient', 'Weavile':'Berry',
+        'Magnezone':'Skill',
         'Togekiss':'Skill','Leafeon':'Skill', 'Glaceon':'Skill',
         'Gallade':'Skill', 'Sylveon':'Skill', 'Dedenne':'Skill',
         'Grubbin':'Ingredient', 'Charjabug':'Ingredient', 'Vikavolt':'Ingredient',
@@ -146,6 +148,7 @@ class pokemonRater():
         'Wooper':0.6, 'Quagsire':0.6,
         'Espeon':0.6, 'Umbreon':0.0,'Slowking':0.2,
         'Wobbuffet':0.0,'Steelix':1.0,'Heracross':0.4,
+        'Sneasel':1.0,
         'Delibird':0.8,'Houndour':0.6, 'Houndoom':0.6,
         'Raikou':0.6, 'Entei':0.6, 'Suicune': 0.6,
         'Larvitar':1.0, 'Pupitar':1.0, 'Tyranitar':1.0,
@@ -160,7 +163,8 @@ class pokemonRater():
         'Drifloon':0.4, 'Drifblim':0.4,
         'Bonsly':0.0,'Mime Jr.':0.2,'Riolu':0.0, 
         'Lucario':0.0,'Croagunk':0.2, 'Toxicroak':0.2,
-        'Snover':0.6, 'Abomasnow':0.6,'Magnezone':0.8,
+        'Snover':0.6, 'Abomasnow':0.6, 'Weavile':1.0,
+        'Magnezone':0.8,
         'Togekiss':0.2,'Leafeon':0.2, 'Glaceon':0.8,
         'Gallade':0.6, 'Sylveon':0.8, 'Dedenne':0.8,
         'Grubbin':1.0, 'Charjabug':1.0, 'Vikavolt': 1.0,
@@ -569,10 +573,10 @@ class pokemonRater():
 
     XP_HARD_SPECIES = [
         'Onix', 'Kangaskhan', 'Pinsir','Ditto', 'Dratini',
-        'Dragonair', 'Dragonite','Steelix','Heracross',
+        'Dragonair', 'Dragonite','Steelix','Heracross', 'Sneasel',
         'Delibird', 'Raikou', 'Entei', 'Suicune',
         'Larvitar', 'Pupitar', 'Tyranitar', 
-        'Absol', 'Dedenne', 'Comfey', 'Mimikyu', 'Cramorant'
+        'Absol', 'Weavile', 'Dedenne', 'Comfey', 'Mimikyu', 'Cramorant'
     ]
 
     XP_NATURE_UP = ['Timid', 'Hasty', 'Jolly', 'Naive']
