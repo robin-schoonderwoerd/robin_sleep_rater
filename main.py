@@ -124,6 +124,7 @@ class pokemonRater():
         'Caterpie':0.2, 'Metapod':0.2, 'Butterfree':0.2,
         'Rattata':0.2, 'Raticate':0.2,'Ekans':0.0, 
         'Arbok':0.0,'Pikachu':1.0, 'Raichu':1.0,
+        'Pikachu - Halloween':0.4,'Pikachu - Holiday':0.0,
         'Clefairy':0.6, 'Clefable':0.6, 'Vulpix':0.8, 
         'Ninetales':0.8, 'Jigglypuff':0.4, 'Wigglytuff':0.4,
         'Diglett':0.2, 'Dugtrio':0.2,'Meowth':0.0, 
