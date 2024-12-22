@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-        <head>
+    <head>
         <title>Robin's Pokemon Sleep Rater</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
     <link href="https://fonts.cdnfonts.com/css/pokemon-solid" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
     <script src='https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js'></script>
     <style>@import url('https://fonts.cdnfonts.com/css/pokemon-solid');</style>
     <head>
@@ -97,7 +95,7 @@
             </div>
             <div class="button_div">
                 <div class="icon_button" onclick="toggleVisibility()"><img src="info_icon.png" height="28" width="28"></div>
-                <button class="center" py-click="evaluate()">Evaluate</button>
+                <button class="center" onclick="evaluate_pokkie()">Evaluate</button>
             
                 <label class="icon_button" for="imageUpload"><img src="screenshot_icon.svg" height="28" width="28"></label>
                 <input type="file" id="imageUpload" accept="image/*">
@@ -126,6 +124,7 @@
             </div>
         </div>
     </body>
+
 <script src="./main.js"></script>
-<py-script src="./main.py"></py-script>
+<script src="./evaluate.js"></script>
 </html>
