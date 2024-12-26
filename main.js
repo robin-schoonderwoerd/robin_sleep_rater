@@ -1,34 +1,8 @@
-var all_species = [
-    '', 'Bulbasaur', 'Ivysaur', 'Venusaur','Charmander', 'Charmeleon', 
-    'Charizard','Squirtle', 'Wartortle', 'Blastoise','Caterpie', 'Metapod', 
-    'Butterfree','Rattata', 'Raticate','Ekans', 'Arbok','Pikachu', 'Raichu',
-    'Pikachu - Halloween','Pikachu - Holiday','Clefairy', 'Clefable', 
-    'Vulpix', 'Ninetales',
-    'Jigglypuff', 'Wigglytuff','Diglett', 'Dugtrio','Meowth', 'Persian',
-    'Psyduck', 'Golduck','Mankey', 'Primeape','Growlithe', 'Arcanine',
-    'Bellsprout', 'Weepinbell', 'Victreebel','Geodude', 'Graveler', 'Golem',
-    'Slowpoke', 'Slowbro','Magnemite', 'Magneton','Doduo', 'Dodrio','Gastly', 
-    'Haunter', 'Gengar','Onix','Cubone', 'Marowak','Kangaskhan','Mr. Mime',
-    'Pinsir','Ditto','Eevee', 'Vaporeon', 'Jolteon', 'Flareon', 'Dratini', 
-    'Dragonair', 'Dragonite', 'Chikorita', 
-    'Bayleef', 'Meganium','Cyndaquil', 'Quilava', 'Typhlosion','Totodile', 
-    'Croconaw', 'Feraligatr','Pichu','Cleffa','Igglybuff','Togepi', 'Togetic',
-    'Mareep', 'Flaaffy', 'Ampharos','Sudowoodo', 'Wooper', 'Quagsire',
-    'Espeon', 'Umbreon','Slowking',
-    'Wobbuffet','Steelix','Heracross', 'Sneasel', 'Delibird','Houndour', 'Houndoom',
-    'Raikou', 'Entei', 'Suicune',
-    'Larvitar', 'Pupitar', 'Tyranitar','Ralts', 'Kirlia', 'Gardevoir',
-    'Aron', 'Lairon', 'Aggron', 'Slakoth', 'Vigoroth', 'Slaking', 
-    'Sableye','Gulpin', 'Swalot','Swablu', 'Altaria','Shuppet', 'Banette',
-    'Absol','Wynaut','Spheal', 'Sealeo', 'Walrein', 
-    'Shinx', 'Luxio', 'Luxray', 'Drifloon', 'Drifblim', 'Bonsly','Mime Jr.',
-    'Riolu', 'Lucario','Croagunk', 'Toxicroak','Snover', 'Abomasnow', 'Weavile',
-    'Magnezone', 'Togekiss','Leafeon', 'Glaceon','Gallade', 'Sylveon', 
-    'Dedenne', 'Grubbin', 'Charjabug', 'Vikavolt', 'Stufful', 'Bewear', 'Comfey', 
-    'Mimikyu', 'Cramorant',
-    'Sprigatito', 'Floragato', 'Meowscarada', 'Fuecoco', 'Crocalor', 'Skeledirge',
-    'Quaxly', 'Quaxwell', 'Quaquaval'
-];
+// Extract all data
+// All Pokemon species
+// ex. ["", "Bulbasaur", "Ivysaur"]
+var all_species = Object.keys(pokemonData);
+all_species.unshift('');
 
 var all_natures = [
     '', 'Adamant','Bashful','Bold','Brave','Calm','Careful','Docile',
@@ -46,160 +20,34 @@ var all_subskills = [
     'Skill Trigger M','Sleep EXP Bonus'
 ]
 
-var all_ingredients = [
-    '', 'Large Leek', 'Tasty Mushroom', 'Fancy Egg', 'Soft Potato', 
-    'Fancy Apple','Fiery Herb', 'Bean Sausage', 'Moomoo Milk', 'Honey', 
-    'Pure Oil','Warming Ginger', 'Snoozy Tomato', 'Soothing Cacao', 
-    'Slowpoke Tail','Greengrass Soybeans', 'Greengrass Corn', 'Rousing Coffee'
-]
+// All ingredients
+// ex. ["", "Honey", "Snoozy Tomato"]
+var all_ingredients = Object.values(pokemonData).reduce((acc, pokemon) => {
+    const { ingA, ingB, ingC } = pokemon; // Destructure ingredient properties
+    [ingA, ingB, ingC].forEach(ingredient => {
+        if (ingredient && !acc.includes(ingredient)) { // Add only if it's not already in the array
+            acc.push(ingredient);
+        }
+    });
+    return acc;
+}, []);
+all_ingredients.unshift('');
 
-var ing_species = [
-    'Bulbasaur', 'Ivysaur', 'Venusaur','Charmander', 'Charmeleon', 
-    'Charizard','Squirtle', 'Wartortle', 'Blastoise','Diglett', 'Dugtrio',
-    'Bellsprout', 'Weepinbell', 'Victreebel','Geodude', 'Graveler', 'Golem',
-    'Slowpoke', 'Slowbro','Gastly','Haunter', 'Gengar','Kangaskhan','Mr. Mime',
-    'Pinsir','Ditto','Dratini','Dragonair','Dragonite', 'Wooper', 'Quagsire',
-    'Slowking','Delibird', 'Larvitar', 'Pupitar', 'Tyranitar',
-    'Aron', 'Lairon', 'Aggron', 'Absol', 'Shinx', 'Luxio', 'Luxray',
-    'Mime Jr.','Croagunk', 'Toxicroak','Snover', 'Abomasnow', 
-    'Grubbin', 'Charjabug', 'Vikavolt', 'Stufful', 
-    'Bewear', 'Comfey', 'Cramorant', 'Sprigatito', 'Floragato', 'Meowscarada', 
-    'Fuecoco', 'Crocalor', 'Skeledirge', 'Quaxly', 'Quaxwell', 'Quaquaval'
-]
+// Ingredient species
+// ex. ["Bulbasaur", "Ivysaur"]
+var ing_species = Object.keys(pokemonData)
+.filter(species => pokemonData[species].specialty === 'Ingredient');
 
-var ing_options = {
-    'Bulbasaur':['Honey', 'Snoozy Tomato', 'Soft Potato'], 
-    'Ivysaur':['Honey', 'Snoozy Tomato', 'Soft Potato'], 
-    'Venusaur':['Honey', 'Snoozy Tomato', 'Soft Potato'],
-    'Charmander':['Bean Sausage', 'Warming Ginger', 'Fiery Herb'],
-    'Charmeleon':['Bean Sausage', 'Warming Ginger', 'Fiery Herb'],
-    'Charizard':['Bean Sausage', 'Warming Ginger', 'Fiery Herb'],
-    'Squirtle':['Moomoo Milk', 'Soothing Cacao', 'Bean Sausage'],
-    'Wartortle':['Moomoo Milk', 'Soothing Cacao', 'Bean Sausage'],
-    'Blastoise':['Moomoo Milk', 'Soothing Cacao', 'Bean Sausage'],
-    'Diglett':['Snoozy Tomato', 'Large Leek', 'Greengrass Soybeans'],
-    'Dugtrio':['Snoozy Tomato', 'Large Leek', 'Greengrass Soybeans'],
-    'Bellsprout':['Snoozy Tomato', 'Soft Potato', 'Large Leek'],
-    'Weepinbell':['Snoozy Tomato', 'Soft Potato', 'Large Leek'],
-    'Victreebel':['Snoozy Tomato', 'Soft Potato', 'Large Leek'],
-    'Geodude':['Greengrass Soybeans', 'Soft Potato', 'Tasty Mushroom'],
-    'Graveler':['Greengrass Soybeans', 'Soft Potato', 'Tasty Mushroom'],
-    'Golem':['Greengrass Soybeans', 'Soft Potato', 'Tasty Mushroom'],
-    'Slowpoke':['Soothing Cacao', 'Slowpoke Tail', 'Snoozy Tomato'],
-    'Slowbro':['Soothing Cacao', 'Slowpoke Tail', 'Snoozy Tomato'],
-    'Gastly':['Fiery Herb', 'Tasty Mushroom', 'Pure Oil'],
-    'Haunter':['Fiery Herb', 'Tasty Mushroom', 'Pure Oil'],
-    'Gengar':['Fiery Herb', 'Tasty Mushroom', 'Pure Oil'],
-    'Kangaskhan':['Warming Ginger', 'Soft Potato', 'Greengrass Soybeans'],
-    'Mr. Mime':['Snoozy Tomato', 'Soft Potato', 'Large Leek'],
-    'Pinsir':['Honey', 'Fancy Apple', 'Bean Sausage'],
-    'Ditto':['Pure Oil', 'Large Leek', 'Slowpoke Tail'],
-    'Dratini':['Fiery Herb', 'Greengrass Corn', 'Pure Oil'],
-    'Dragonair':['Fiery Herb', 'Greengrass Corn', 'Pure Oil'],
-    'Dragonite':['Fiery Herb', 'Greengrass Corn', 'Pure Oil'],
-    'Wooper':['Tasty Mushroom', 'Soft Potato', 'Bean Sausage'],
-    'Quagsire':['Tasty Mushroom', 'Soft Potato', 'Bean Sausage'],
-    'Slowking':['Soothing Cacao', 'Slowpoke Tail', 'Snoozy Tomato'],
-    'Delibird':['Fancy Egg', 'Fancy Apple', 'Soothing Cacao'],
-    'Larvitar':['Warming Ginger', 'Greengrass Soybeans', 'Bean Sausage'],
-    'Pupitar':['Warming Ginger', 'Greengrass Soybeans', 'Bean Sausage'],
-    'Tyranitar':['Warming Ginger', 'Greengrass Soybeans', 'Bean Sausage'],
-    'Aron':['Bean Sausage', 'Rousing Coffee', 'Greengrass Soybeans'],
-    'Lairon':['Bean Sausage', 'Rousing Coffee', 'Greengrass Soybeans'],
-    'Aggron':['Bean Sausage', 'Rousing Coffee', 'Greengrass Soybeans'],
-    'Absol':['Soothing Cacao', 'Fancy Apple', 'Tasty Mushroom'],
-    'Shinx':['Snoozy Tomato', 'Pure Oil', 'Rousing Coffee'],
-    'Luxio':['Snoozy Tomato', 'Pure Oil', 'Rousing Coffee'],
-    'Luxray':['Snoozy Tomato', 'Pure Oil', 'Rousing Coffee'],
-    'Mime Jr.':['Snoozy Tomato', 'Soft Potato', 'Large Leek'],
-    'Croagunk':['Pure Oil', 'Bean Sausage'],
-    'Toxicroak':['Pure Oil', 'Bean Sausage'],
-    'Snover':['Snoozy Tomato', 'Fancy Egg', 'Tasty Mushroom'],
-    'Abomasnow':['Snoozy Tomato', 'Fancy Egg', 'Tasty Mushroom'],
-    'Grubbin':['Rousing Coffee', 'Tasty Mushroom', 'Honey'],
-    'Charjabug':['Rousing Coffee', 'Tasty Mushroom', 'Honey'],
-    'Vikavolt':['Rousing Coffee', 'Tasty Mushroom', 'Honey'],
-    'Stufful':['Greengrass Corn', 'Bean Sausage', 'Fancy Egg'],
-    'Bewear':['Greengrass Corn', 'Bean Sausage', 'Fancy Egg'],
-    'Comfey':['Greengrass Corn', 'Warming Ginger', 'Soothing Cacao'],
-    'Cramorant':['Pure Oil', 'Soft Potato', 'Fancy Egg'],
-    'Sprigatito':['Soft Potato', 'Moomoo Milk', 'Warming Ginger'], 
-    'Floragato':['Soft Potato', 'Moomoo Milk', 'Warming Ginger'], 
-    'Meowscarada':['Soft Potato', 'Moomoo Milk', 'Warming Ginger'], 
-    'Fuecoco':['Fancy Apple', 'Bean Sausage', 'Fiery Herb'], 
-    'Crocalor':['Fancy Apple', 'Bean Sausage', 'Fiery Herb'], 
-    'Skeledirge':['Fancy Apple', 'Bean Sausage', 'Fiery Herb'],
-    'Quaxly':['Greengrass Soybeans', 'Large Leek', 'Pure Oil'], 
-    'Quaxwell':['Greengrass Soybeans', 'Large Leek', 'Pure Oil'], 
-    'Quaquaval':['Greengrass Soybeans', 'Large Leek', 'Pure Oil']
-}
-
-var species_name_to_id = {
-    'Bulbasaur': 1, 'Ivysaur': 2, 'Venusaur': 3, 
-    'Charmander': 4, 'Charmeleon': 5, 'Charizard': 6, 
-    'Squirtle': 7, 'Wartortle': 8, 'Blastoise': 9, 
-    'Caterpie': 10, 'Metapod': 11, 'Butterfree': 12, 
-    'Rattata': 19, 'Raticate': 20, 
-    'Ekans': 23, 'Arbok': 24, 
-    'Pikachu': 25, 'Raichu': 26, 
-    'Pikachu - Halloween': '25-halloween',
-    'Pikachu - Holiday': '25-holiday',
-    'Clefairy': 35, 'Clefable': 36, 
-    'Vulpix': 37, 'Ninetales': 38,
-    'Jigglypuff': 39, 'Wigglytuff': 40, 
-    'Diglett': 50, 'Dugtrio': 51, 
-    'Meowth': 52, 'Persian': 53, 
-    'Psyduck': 54, 'Golduck': 55, 
-    'Mankey': 56, 'Primeape': 57, 
-    'Growlithe': 58, 'Arcanine': 59, 
-    'Bellsprout': 69, 'Weepinbell': 70, 'Victreebel': 71, 
-    'Geodude': 74, 'Graveler': 75, 'Golem': 76, 
-    'Slowpoke': 79, 'Slowbro': 80, 
-    'Magnemite': 81, 'Magneton': 82, 
-    'Doduo': 84, 'Dodrio': 85, 
-    'Gastly': 92, 'Haunter': 93, 'Gengar': 94, 
-    'Onix': 95, 'Cubone': 104, 'Marowak': 105, 
-    'Kangaskhan': 115, 'Mr. Mime': 122, 'Pinsir': 127, 
-    'Ditto': 132, 'Eevee': 133, 'Vaporeon': 134, 
-    'Jolteon': 135, 'Flareon': 136, 
-    'Dratini': 147, 'Dragonair': 148, 'Dragonite': 149, 
-    'Chikorita': 152, 'Bayleef': 153, 'Meganium': 154, 
-    'Cyndaquil': 155, 'Quilava': 156, 'Typhlosion': 157, 
-    'Totodile': 158, 'Croconaw': 159, 'Feraligatr': 160, 
-    'Pichu': 172, 'Cleffa': 173, 'Igglybuff': 174, 
-    'Togepi': 175, 'Togetic': 176, 
-    'Mareep': 179, 'Flaaffy': 180, 'Ampharos': 181, 
-    'Sudowoodo': 185, 'Wooper':194, 'Quagsire':195,
-    'Espeon': 196, 'Umbreon': 197, 
-    'Slowking': 199, 'Wobbuffet': 202, 'Steelix': 208, 
-    'Heracross': 214, 'Sneasel': 215, 'Delibird': 225, 
-    'Houndour': 228, 'Houndoom': 229, 
-    'Raikou': 243, 'Entei': 244, 'Suicune':245,
-    'Larvitar': 246, 'Pupitar': 247, 'Tyranitar': 248, 
-    'Ralts': 280, 'Kirlia': 281, 'Gardevoir': 282,
-    'Aron': 304, 'Lairon': 305, 'Aggron':306,
-    'Slakoth': 287, 'Vigoroth': 288, 'Slaking': 289, 
-    'Sableye': 302, 'Gulpin': 316, 'Swalot': 317, 
-    'Swablu': 333, 'Altaria': 334, 
-    'Shuppet': 353, 'Banette': 354, 
-    'Absol': 359, 'Wynaut': 360, 
-    'Spheal': 363, 'Sealeo': 364, 'Walrein': 365, 
-    'Shinx': 403, 'Luxio': 404, 'Luxray':405,
-    'Drifloon':425, 'Drifblim':426,
-    'Bonsly': 438, 'Mime Jr.': 439, 
-    'Riolu': 447, 'Lucario': 448, 
-    'Croagunk': 453, 'Toxicroak': 454, 
-    'Snover': 459, 'Abomasnow': 460, 'Weavile':461,
-    'Magnezone': 462, 'Togekiss': 468, 
-    'Leafeon': 470, 'Glaceon': 471, 
-    'Gallade': 475, 'Sylveon': 700, 'Dedenne': 702,
-    'Grubbin':736, 'Charjabug': 737, 'Vikavolt':738,
-    'Stufful': 759, 'Bewear': 760, 'Comfey': 764,
-    'Mimikyu':778, 'Cramorant': 845,
-    'Sprigatito': 906, 'Floragato': 907, 'Meowscarada': 908, 
-    'Fuecoco': 909, 'Crocalor': 910, 'Skeledirge': 911,
-    'Quaxly': 912, 'Quaxwell': 913, 'Quaquaval': 914
-}
+// Ingredient options per Pokemon
+// ex. {"Bulbasaur":["Honey", "Snoozy Tomato", "Soft Potato"]}
+var ing_options = Object.keys(pokemonData).reduce((acc, pokemon) => {
+    const { ingA, ingB, ingC } = pokemonData[pokemon]; // Destructure the ingredients
+    const ingredients = [ingA, ingB, ingC].filter(Boolean); // Filter out undefined or null values
+    if (ingredients.length) { // Only include Pokémon with ingredients
+        acc[pokemon] = ingredients;
+    }
+    return acc;
+}, {});
 
 // Function to populate select dropdown
 function populateSelect(elementId, data) {
@@ -229,7 +77,7 @@ function updateOptions(species, ing1, ing30, ing60) {
     var score = document.getElementById('score');
     var warning = document.getElementById('warning');
 
-    image.src = (selected_species !== '') ? 'https://www.serebii.net/pokemonsleep/pokemon/' + species_name_to_id[selected_species] + '.png' : './empty.png'
+    image.src = (selected_species !== '') ? 'https://www.serebii.net/pokemonsleep/pokemon/' + pokemonData[selected_species].id + '.png' : './empty.png'
 
     populateSelect('ing1', !ing_options[selected_species] ? [''] : ing_options[selected_species].slice(0,1));
     populateSelect('ing30', !ing_options[selected_species] ? [''] : ing_options[selected_species].slice(0,2));
