@@ -1,76 +1,13 @@
 
 class PokemonRater {
-    static SPECIALTY_CODES = {
-        'Berry': 0,
-        'Ingredient': 1,
-        'Skill': 2,
-        'Allrounder': 3
-    };
-
-    static NATURE_PER_SPECIALTY = {
-        'Adamant': [1.0, 0.1, 0.7, 0.4],
-        'Bashful': [0.5, 0.5, 0.5, 0.5],
-        'Bold': [0.0, 0.1, 0.1, 0.1],
-        'Brave': [0.9, 0.5, 0.5, 0.5],
-        'Calm': [0.0, 0.1, 0.6, 0.3],
-        'Careful': [0.6, 0.1, 1.0, 0.4],
-        'Docile': [0.5, 0.5, 0.5, 0.5],
-        'Gentle': [0.5, 0.5, 0.9, 0.6],
-        'Hardy': [0.5, 0.5, 0.5, 0.5],
-        'Hasty': [0.5, 0.5, 0.5, 0.5],
-        'Impish': [0.5, 0.0, 0.5, 0.5],
-        'Jolly': [0.7, 0.1, 0.5, 0.2],
-        'Lax': [0.5, 0.5, 0.0, 0.2],
-        'Lonely': [0.9, 0.5, 0.5, 0.5],
-        'Mild': [0.1, 0.9, 0.2, 1.0],
-        'Modest': [0.0, 0.7, 0.1, 0.3],
-        'Naive': [0.5, 0.5, 0.1, 0.2],
-        'Naughty': [0.9, 0.7, 0.2, 0.5],
-        'Quiet': [0.1, 1.0, 0.2, 0.9],
-        'Quirky': [0.5, 0.5, 0.5, 0.5],
-        'Rash': [0.1, 1.0, 0.0, 0.5],
-        'Relaxed': [0.4, 0.4, 0.4, 0.4],
-        'Sassy': [0.2, 0.2, 1.0, 0.6],
-        'Serious': [0.5, 0.5, 0.5, 0.5],
-        'Timid': [0.0, 0.1, 0.1, 0.1]
-    };
-
-    static SUBSKILL_PER_SPECIALTY = {
-        'Berry Finding S': [1.0, 0.6, 0.8, 0.8],
-        'Dream Shard Bonus': [0.3, 0.6, 0.6, 0.6],
-        'Energy Recovery Bonus': [0.2, 0.4, 0.4, 0.4],
-        'Helping Bonus': [0.5, 1.0, 1.0, 1.0],
-        'Helping Speed S': [0.4, 0.5, 0.6, 0.6],
-        'Helping Speed M': [0.5, 0.7, 0.8, 0.8],
-        'Ingredient Finder S': [0.0, 0.8, 0.0, 0.6],
-        'Ingredient Finder M': [0.0, 1.0, 0.1, 0.7],
-        'Inventory Up S': [0.1, 0.5, 0.3, 0.6],
-        'Inventory Up M': [0.1, 0.6, 0.4, 0.7],
-        'Inventory Up L': [0.1, 0.7, 0.5, 0.8],
-        'Research EXP Bonus': [0.2, 0.4, 0.4, 0.4],
-        'Skill Level Up S': [0.3, 0.5, 0.8, 0.7],
-        'Skill Level Up M': [0.4, 0.6, 0.9, 0.8],
-        'Skill Trigger S': [0.2, 0.4, 0.9, 0.7],
-        'Skill Trigger M': [0.3, 0.5, 1, 0.8],
-        'Sleep EXP Bonus': [0.3, 0.6, 0.6, 0.6]
-    };
-
-    static SUBSKILL_UNLOCK_WEIGHTS = [1, 0.95, 0.85, 0.4, 0.2];
-
-    static RATING_WEIGHTS = [
-        [0.2, 0.6, 0, 0.2],  // Berry
-        [0.2, 0.45, 0.2, 0.15],  // Ingredient
-        [0.2, 0.6, 0, 0.2],  // Skill
-        [0.1, 0.5, 0.2, 0.2]  // Allrounder
-    ];
-
-    static NATURE_XP_FACTOR = 0.3;
+    static SUBSKILL_UNLOCK_WEIGHTS = [1, 1, 0.85, 0.4, 0.1]; // lvl 10, 25, 50, 75, 100
 
     // Ingredient species
     // ex. ["Bulbasaur", "Ivysaur"]
     static ing_species = Object.keys(pokemonData)
     .filter(species => pokemonData[species].specialty === 'Ingredient');
 
+    static NATURE_XP_FACTOR = 0.3;
     static XP_NATURE_UP = ['Timid', 'Hasty', 'Jolly', 'Naive'];
     static XP_NATURE_DOWN = ['Brave', 'Relaxed', 'Quiet', 'Sassy'];
 
@@ -111,11 +48,10 @@ class PokemonRater {
 
     matchSpecialty() {
         this.specialty = pokemonData[this.species].specialty;
-        this.specialtyCode = PokemonRater.SPECIALTY_CODES[this.specialty];        
     }
 
     rateNature() {
-        this.natureRating = PokemonRater.NATURE_PER_SPECIALTY[this.nature][this.specialtyCode];
+        this.natureRating = specialtyData[this.specialty]['natures'][this.nature];
         if (pokemonData[this.species].XPHard) {
             if (PokemonRater.XP_NATURE_UP.includes(this.nature)) {
                 const corrected = this.natureRating + PokemonRater.NATURE_XP_FACTOR;
@@ -128,8 +64,8 @@ class PokemonRater {
     }
 
     _getSubskillScoreBounds() {
-        const allScoresPerSpecialty = Object.values(PokemonRater.SUBSKILL_PER_SPECIALTY)
-            .map(subskillRatings => subskillRatings[this.specialtyCode]);
+        const allScoresPerSpecialty = Object.values(specialtyData[this.specialty]['subskills']);
+        console.log(allScoresPerSpecialty)
 
         const subskillScoresSorted = allScoresPerSpecialty.slice().sort((a, b) => b - a); // Sort in descending order
         const largest5Scores = subskillScoresSorted.slice(0, 5); // Take the top 5 scores
@@ -147,7 +83,7 @@ class PokemonRater {
         const subskills = [this.ss10, this.ss25, this.ss50, this.ss75, this.ss100];
         // Retrieve unweighted subskill scores
         const subskillsUnweighted = subskills.map(subskill => {
-            return PokemonRater.SUBSKILL_PER_SPECIALTY[subskill][this.specialtyCode];
+            return specialtyData[this.specialty]['subskills'][subskill];
         });
 
         // Calculate weighted subskill scores
@@ -200,9 +136,11 @@ class PokemonRater {
     }
 
     combineScores() {
-        const ratingWeights = PokemonRater.RATING_WEIGHTS[this.specialtyCode];
-        const subscores = [this.natureRating, this.subskillRating, this.ingredientRating, this.tierlistRating];
-        this.score = ratingWeights.reduce((total, weight, index) => total + weight * subscores[index], 0);
+        this.score =         
+            (this.natureRating * specialtyData[this.specialty].ratingWeights.nature) +
+            (this.subskillRating * specialtyData[this.specialty].ratingWeights.subskills) +
+            (this.ingredientRating * specialtyData[this.specialty].ratingWeights.ingredients) +
+            (this.tierlistRating * specialtyData[this.specialty].ratingWeights.tierlist);
     }
 
     applyFeelGoodFactor(score) {
