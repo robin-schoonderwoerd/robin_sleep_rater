@@ -4,21 +4,15 @@
 var all_species = Object.keys(pokemonData);
 all_species.unshift('');
 
-var all_natures = [
-    '', 'Adamant','Bashful','Bold','Brave','Calm','Careful','Docile',
-    'Gentle','Hardy','Hasty','Impish','Jolly','Lax','Lonely','Mild',
-    'Modest','Naive','Naughty','Quiet','Quirky','Rash','Relaxed',
-    'Sassy','Serious','Timid'
-]
+// All natures
+// ex. ['', 'Adamant','Bashful']
+var all_natures = Object.keys(specialtyData.Berry.natures);
+all_natures.unshift('');
 
-var all_subskills = [
-    '','Berry Finding S', 'Dream Shard Bonus','Energy Recovery Bonus',
-    'Helping Bonus', 'Helping Speed S', 'Helping Speed M',
-    'Ingredient Finder S', 'Ingredient Finder M','Inventory Up S', 
-    'Inventory Up M', 'Inventory Up L','Research EXP Bonus',
-    'Skill Level Up S', 'Skill Level Up M', 'Skill Trigger S', 
-    'Skill Trigger M','Sleep EXP Bonus'
-]
+// All subskills
+// ex. ['','Berry Finding S', 'Dream Shard Bonus']
+var all_subskills = Object.keys(specialtyData.Berry.subskills);
+all_subskills.unshift('');
 
 // All ingredients
 // ex. ["", "Honey", "Snoozy Tomato"]
