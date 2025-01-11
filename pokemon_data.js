@@ -1310,10 +1310,10 @@ const pokemonData = {
        "ingB":"Tasty Mushroom",
        "ingC":"Honey",
        "AAA":1.0,
-       "AAB":1.0,
+       "AAB":0.8,
        "ABA":0.6,
        "ABB":0.6,
-       "AAC":1.0,
+       "AAC":0.8,
        "ABC":0.2
     },
     "Charjabug":{
@@ -1325,10 +1325,10 @@ const pokemonData = {
        "ingB":"Tasty Mushroom",
        "ingC":"Honey",
        "AAA":1.0,
-       "AAB":1.0,
+       "AAB":0.8,
        "ABA":0.6,
        "ABB":0.6,
-       "AAC":1.0,
+       "AAC":0.8,
        "ABC":0.2
     },
     "Vikavolt":{
@@ -1340,10 +1340,10 @@ const pokemonData = {
        "ingB":"Tasty Mushroom",
        "ingC":"Honey",
        "AAA":1.0,
-       "AAB":1.0,
+       "AAB":0.8,
        "ABA":0.6,
        "ABB":0.6,
-       "AAC":1.0,
+       "AAC":0.8,
        "ABC":0.2
     },
     "Stufful":{
