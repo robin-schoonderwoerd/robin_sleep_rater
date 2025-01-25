@@ -1289,6 +1289,18 @@ const pokemonData = {
        "tierlist":0.6,
        "XPHard":false
     },
+    "Rufflet":{
+       "id":627,
+       "specialty":"Skill",
+       "tierlist":0.6,
+       "XPHard":false
+    },
+    "Braviary":{
+       "id":628,
+       "specialty":"Skill",
+       "tierlist":0.6,
+       "XPHard":false
+    },
     "Sylveon":{
        "id":700,
        "specialty":"Skill",
