@@ -791,6 +791,21 @@ const pokemonData = {
        "AAC":0.4,
        "ABC":0.4
     },
+    "Paldean Wooper":{
+       "id":"194-paldeanwooper",
+       "specialty":"Ingredient",
+       "tierlist":0.6,
+       "XPHard":false,
+       "ingA":"Soothing Cacao",
+       "ingB":"Rousing Coffee",
+       "ingC":"Soft Potato",
+       "AAA":1.0,
+       "AAB":0.6,
+       "ABA":0.4,
+       "ABB":0.6,
+       "AAC":0.2,
+       "ABC":0.0
+    },
     "Quagsire":{
        "id":195,
        "specialty":"Ingredient",
@@ -1576,5 +1591,20 @@ const pokemonData = {
        "specialty":"Skill",
        "tierlist":1.0,
        "XPHard":false,
+    },
+    "Clodsire":{
+       "id":980,
+       "specialty":"Ingredient",
+       "tierlist":0.6,
+       "XPHard":false,
+       "ingA":"Soothing Cacao",
+       "ingB":"Rousing Coffee",
+       "ingC":"Soft Potato",
+       "AAA":1.0,
+       "AAB":0.6,
+       "ABA":0.4,
+       "ABB":0.6,
+       "AAC":0.2,
+       "ABC":0.0
     }
 }
