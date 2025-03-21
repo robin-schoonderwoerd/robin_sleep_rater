@@ -1304,16 +1304,28 @@ const pokemonData = {
        "tierlist":0.6,
        "XPHard":false
     },
+    "Munna":{
+       "id":517,
+       "specialty":"Berry",
+       "tierlist": 0.4,
+       "XPHard":false
+    },
+    "Musharna":{
+      "id":518,
+      "specialty":"Berry",
+      "tierlist": 0.4,
+      "XPHard":false
+    },
     "Rufflet":{
        "id":627,
        "specialty":"Skill",
-       "tierlist":0.6,
+       "tierlist":0.4,
        "XPHard":false
     },
     "Braviary":{
        "id":628,
        "specialty":"Skill",
-       "tierlist":0.6,
+       "tierlist":0.4,
        "XPHard":false
     },
     "Sylveon":{
