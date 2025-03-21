@@ -47,7 +47,7 @@ const pokemonData = {
     "Charmander":{
        "id":4,
        "specialty":"Ingredient",
-       "tierlist":1.0,
+       "tierlist":0.8,
        "XPHard":false,
        "ingA":"Bean Sausage",
        "ingB":"Warming Ginger",
@@ -62,7 +62,7 @@ const pokemonData = {
     "Charmeleon":{
        "id":5,
        "specialty":"Ingredient",
-       "tierlist":1.0,
+       "tierlist":0.8,
        "XPHard":false,
        "ingA":"Bean Sausage",
        "ingB":"Warming Ginger",
@@ -77,7 +77,7 @@ const pokemonData = {
     "Charizard":{
        "id":6,
        "specialty":"Ingredient",
-       "tierlist":1.0,
+       "tierlist":0.8,
        "XPHard":false,
        "ingA":"Bean Sausage",
        "ingB":"Warming Ginger",
@@ -329,7 +329,7 @@ const pokemonData = {
     "Bellsprout":{
        "id":69,
        "specialty":"Ingredient",
-       "tierlist":0.8,
+       "tierlist":0.6,
        "XPHard":false,
        "ingA":"Snoozy Tomato",
        "ingB":"Soft Potato",
@@ -344,7 +344,7 @@ const pokemonData = {
     "Weepinbell":{
        "id":70,
        "specialty":"Ingredient",
-       "tierlist":0.8,
+       "tierlist":0.6,
        "XPHard":false,
        "ingA":"Snoozy Tomato",
        "ingB":"Soft Potato",
@@ -359,7 +359,7 @@ const pokemonData = {
     "Victreebel":{
        "id":71,
        "specialty":"Ingredient",
-       "tierlist":0.8,
+       "tierlist":0.6,
        "XPHard":false,
        "ingA":"Snoozy Tomato",
        "ingB":"Soft Potato",
@@ -461,13 +461,13 @@ const pokemonData = {
     "Doduo":{
        "id":84,
        "specialty":"Berry",
-       "tierlist":0.8,
+       "tierlist":0.6,
        "XPHard":false
     },
     "Dodrio":{
        "id":85,
        "specialty":"Berry",
-       "tierlist":0.8,
+       "tierlist":0.6,
        "XPHard":false
     },
     "Gastly":{
@@ -779,7 +779,7 @@ const pokemonData = {
     "Wooper":{
        "id":194,
        "specialty":"Ingredient",
-       "tierlist":0.6,
+       "tierlist":0.8,
        "XPHard":false,
        "ingA":"Tasty Mushroom",
        "ingB":"Soft Potato",
@@ -794,7 +794,7 @@ const pokemonData = {
     "Paldean Wooper":{
        "id":"194-paldeanwooper",
        "specialty":"Ingredient",
-       "tierlist":0.6,
+       "tierlist":0.8,
        "XPHard":false,
        "ingA":"Soothing Cacao",
        "ingB":"Rousing Coffee",
@@ -809,7 +809,7 @@ const pokemonData = {
     "Quagsire":{
        "id":195,
        "specialty":"Ingredient",
-       "tierlist":0.6,
+       "tierlist":0.8,
        "XPHard":false,
        "ingA":"Tasty Mushroom",
        "ingB":"Soft Potato",
@@ -863,7 +863,7 @@ const pokemonData = {
     "Heracross":{
        "id":214,
        "specialty":"Skill",
-       "tierlist":0.4,
+       "tierlist":0.8,
        "XPHard":true
     },
     "Sneasel":{
@@ -1052,13 +1052,13 @@ const pokemonData = {
     "Gulpin":{
        "id":316,
        "specialty":"Skill",
-       "tierlist":0.0,
+       "tierlist":0.2,
        "XPHard":false
     },
     "Swalot":{
        "id":317,
        "specialty":"Skill",
-       "tierlist":0.0,
+       "tierlist":0.2,
        "XPHard":false
     },
     "Swablu":{
@@ -1337,7 +1337,7 @@ const pokemonData = {
     "Dedenne":{
        "id":702,
        "specialty":"Skill",
-       "tierlist":0.8,
+       "tierlist":1.0,
        "XPHard":true
     },
     "Grubbin":{
@@ -1499,7 +1499,7 @@ const pokemonData = {
     "Fuecoco":{
        "id":909,
        "specialty":"Ingredient",
-       "tierlist":0.4,
+       "tierlist":0.6,
        "XPHard":false,
        "ingA":"Fancy Apple",
        "ingB":"Bean Sausage",
@@ -1514,7 +1514,7 @@ const pokemonData = {
     "Crocalor":{
        "id":910,
        "specialty":"Ingredient",
-       "tierlist":0.4,
+       "tierlist":0.6,
        "XPHard":false,
        "ingA":"Fancy Apple",
        "ingB":"Bean Sausage",
@@ -1529,7 +1529,7 @@ const pokemonData = {
     "Skeledirge":{
        "id":911,
        "specialty":"Ingredient",
-       "tierlist":0.4,
+       "tierlist":0.6,
        "XPHard":false,
        "ingA":"Fancy Apple",
        "ingB":"Bean Sausage",
@@ -1590,24 +1590,24 @@ const pokemonData = {
       "id":921,
       "specialty":"Skill",
       "tierlist":1.0,
-      "XPHard":false,
+      "XPHard":false
     },
     "Pawmo":{
        "id":922,
        "specialty":"Skill",
        "tierlist":1.0,
-       "XPHard":false,
+       "XPHard":false
     },
     "Pawmot":{
        "id":923,
        "specialty":"Skill",
        "tierlist":1.0,
-       "XPHard":false,
+       "XPHard":false
     },
     "Clodsire":{
        "id":980,
        "specialty":"Ingredient",
-       "tierlist":0.6,
+       "tierlist":0.8,
        "XPHard":false,
        "ingA":"Soothing Cacao",
        "ingB":"Rousing Coffee",
