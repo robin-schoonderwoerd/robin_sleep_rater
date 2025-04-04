@@ -1304,6 +1304,18 @@ const pokemonData = {
        "tierlist":0.6,
        "XPHard":false
     },
+    "Cresselia":{
+       "id":488,
+       "specialty":"Skill",
+       "tierlist":0.8,
+       "XPHard":true
+    },
+    "Darkrai":{
+      "id":491,
+      "specialty":"Skill",
+      "tierlist":0.8,
+      "XPHard":true
+    },
     "Munna":{
        "id":517,
        "specialty":"Berry",
