@@ -70,6 +70,13 @@ function updateOptions(species, ing1, ing30, ing60) {
     var percentage = document.getElementById('percentage');
     var score = document.getElementById('score');
     var warning = document.getElementById('warning');
+    var nature_box = document.getElementById('nature');
+    var species_box = document.getElementById('species');
+    var ss10_box = document.getElementById('ss10');
+    var ss25_box = document.getElementById('ss25');
+    var ss50_box = document.getElementById('ss50');
+    var ss75_box = document.getElementById('ss75');
+    var ss100_box = document.getElementById('ss100');
 
     image.src = (selected_species !== '') ? 'https://www.serebii.net/pokemonsleep/pokemon/' + pokemonData[selected_species].id + '.png' : './empty.png'
 
@@ -88,9 +95,23 @@ function updateOptions(species, ing1, ing30, ing60) {
     ing60.selectedIndex = 0; // Reset selection
 
     // Remove percentage
-    percentage.innerHTML = ''
-    score.innerHTML = ''
-    warning.innerHTML = ''
+    percentage.innerHTML = '';
+    score.innerHTML = '';
+    warning.innerHTML = '';
+
+    // Remove color classes
+    setTimeout(() => {
+        ing1.className = '';
+        ing30.className = '';
+        ing60.className = '';
+        nature_box.className = '';
+        species_box.className = '';
+        ss10_box.className = '';
+        ss25_box.className = '';
+        ss50_box.className = '';
+        ss75_box.className = '';
+        ss100_box.className = '';
+    }, 0);
 }
 
 // Initial population of species
@@ -125,13 +146,76 @@ function updateTextColor(percentage) {
         }
     }
 }
+
+function rateToColor(box, rating) {
+    if (!isNaN(rating)) { // Check if rating is valid
+        if (rating < 0.4) {
+            box.classList.add('low-box');
+        } else if (rating >= 0.4 && rating < 0.65) {
+            box.classList.add('medium-box');
+        } else {
+            box.classList.add('high-box');
+        }
+    }
+}
+
+function updateBoxColor(subrating_data) {
+    if (subrating_data.dataset.ssRating) {
+        const nature_box = document.getElementById('nature');
+        const ing1_box = document.getElementById('ing1');
+        const ing30_box = document.getElementById('ing30');
+        const ing60_box = document.getElementById('ing60');
+        const species_box = document.getElementById('species');
+        const ss10_box = document.getElementById('ss10');
+        const ss25_box = document.getElementById('ss25');
+        const ss50_box = document.getElementById('ss50');
+        const ss75_box = document.getElementById('ss75');
+        const ss100_box = document.getElementById('ss100');
+    
+        const nature_rating = subrating_data.dataset.natureRating;
+        const ingredient_rating = subrating_data.dataset.ingredientRating;
+        const tierlist_rating = subrating_data.dataset.tierlistRating;
+        const ss_rating = subrating_data.dataset.ssRating;
+        const [ss10_rating, ss25_rating, ss50_rating, ss75_rating, ss100_rating] = ss_rating.split(',');
+    
+        nature_box.className = ''; // Remove existing class
+        ing1_box.className = ''; // Remove existing class
+        ing30_box.className = ''; // Remove existing class
+        ing60_box.className = ''; // Remove existing class
+        species_box.className = ''; // Remove existing class
+        ss10_box.className = ''; // Remove existing class
+        ss25_box.className = ''; // Remove existing class
+        ss50_box.className = ''; // Remove existing class
+        ss75_box.className = ''; // Remove existing class
+        ss100_box.className = ''; // Remove existing class
+    
+        rateToColor(nature_box, nature_rating);
+        rateToColor(ing1_box, ingredient_rating);
+        rateToColor(ing30_box, ingredient_rating);
+        rateToColor(ing60_box, ingredient_rating);
+        rateToColor(species_box, tierlist_rating);
+        rateToColor(ss10_box, ss10_rating);
+        rateToColor(ss25_box, ss25_rating);
+        rateToColor(ss50_box, ss50_rating);
+        rateToColor(ss75_box, ss75_rating);
+        rateToColor(ss100_box, ss100_rating);
+    }
+
+
+}
+
 const percentage = document.getElementById('percentage'); // Initial color setting
 updateTextColor(percentage);
+
+let subrating_data = document.getElementById('subrating_data');
+updateBoxColor(subrating_data)
+
 const observer = new MutationObserver(() => { // Create a MutationObserver to watch for changes to the div's innerHTML
     updateTextColor(percentage);
+    updateBoxColor(subrating_data);
 });
 observer.observe(percentage, { childList: true, subtree: true }); // Start observing the div for changes in its child nodes (e.g., text changes)
-
+observer.observe(subrating_data, { childList: true, subtree: true });
 
 // Upload screenshot
 document.getElementById('imageUpload').addEventListener('change', function(event) {

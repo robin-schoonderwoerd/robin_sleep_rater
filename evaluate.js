@@ -27,6 +27,19 @@ class PokemonRater {
         document.getElementById('warning').innerText = warning;
         document.getElementById("percentage").innerText = '';
         document.getElementById("score").innerText = '';
+
+        setTimeout(() => {
+            document.getElementById('ing1').className = '';
+            document.getElementById('ing30').className = '';
+            document.getElementById('ing60').className = '';
+            document.getElementById('nature').className = '';
+            document.getElementById('species').className = '';
+            document.getElementById('ss10').className = '';
+            document.getElementById('ss25').className = '';
+            document.getElementById('ss50').className = '';
+            document.getElementById('ss75').className = '';
+            document.getElementById('ss100').className = '';
+        }, 0);
         console.log(warning)
         throw new Error(warning);
     }
@@ -65,7 +78,6 @@ class PokemonRater {
 
     _getSubskillScoreBounds() {
         const allScoresPerSpecialty = Object.values(specialtyData[this.specialty]['subskills']);
-        console.log(allScoresPerSpecialty)
 
         const subskillScoresSorted = allScoresPerSpecialty.slice().sort((a, b) => b - a); // Sort in descending order
         const largest5Scores = subskillScoresSorted.slice(0, 5); // Take the top 5 scores
@@ -82,12 +94,12 @@ class PokemonRater {
     rateSubskills() {
         const subskills = [this.ss10, this.ss25, this.ss50, this.ss75, this.ss100];
         // Retrieve unweighted subskill scores
-        const subskillsUnweighted = subskills.map(subskill => {
+        this.subskillsUnweighted = subskills.map(subskill => {
             return specialtyData[this.specialty]['subskills'][subskill];
         });
 
         // Calculate weighted subskill scores
-        const subskillsWeighted = subskillsUnweighted.map((score, index) => 
+        const subskillsWeighted = this.subskillsUnweighted.map((score, index) => 
             score * PokemonRater.SUBSKILL_UNLOCK_WEIGHTS[index]
         );
 
@@ -177,6 +189,16 @@ Species: ${this.scoreToRating(this.applyFeelGoodFactor(this.tierlistRating))}`;
         document.getElementById("score").innerText = subscores;
         document.getElementById("warning").innerText = '';
     }
+
+    storeSubratingData() {
+        const subrating_data_input = document.getElementById("subrating_data");
+    
+        // Store individual values
+        subrating_data_input.dataset.natureRating = this.natureRating;
+        subrating_data_input.dataset.ingredientRating = this.ingredientRating;
+        subrating_data_input.dataset.tierlistRating = this.tierlistRating;
+        subrating_data_input.dataset.ssRating = this.subskillsUnweighted;
+    }
     
 }
 
@@ -194,12 +216,15 @@ function extract_stats() {
     ]
 }
 
+
+
 function evaluate_pokkie() {
     try {
         const rater = new PokemonRater(...extract_stats());
         rater.checkInputs();
         rater.perform();
         rater.generateOutput();
+        rater.storeSubratingData();
     } catch {
         console.log('Please fix your inputs')
     }

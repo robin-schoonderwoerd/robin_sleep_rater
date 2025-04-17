@@ -24,13 +24,13 @@
             <div class="subcontainer">
                 <div class="column">
                     <label for="species">Select a Pokemon:</label>
-                    <select id="species" class="center" onchange="updateOptions('species', 'ing1', 'ing30', 'ing60')">
+                    <select id="species" onchange="updateOptions('species', 'ing1', 'ing30', 'ing60')">
                     </select>
                     <br>
                 </div>
                 <div class="column">
                     <label for="nature">Nature:</label>
-                    <select id="nature" class="center">
+                    <select id="nature">
                     </select>
                     <br>
                 </div>
@@ -40,19 +40,19 @@
                 <div class="subcontainer">
                     <div class="column3">
                         <label for="ing1">Base ingredient:</label>
-                        <select id="ing1" class="center" disabled>
+                        <select id="ing1" disabled>
                         </select>
                         <br>
                     </div>
                     <div class="column3">
                         <label for="ing30">Lvl 30 ingredient:</label>
-                        <select id="ing30" class="center" disabled>
+                        <select id="ing30" disabled>
                         </select>
                         <br>
                     </div>
                     <div class="column3">
                         <label for="ing60">Lvl 60 ingredient:</label>
-                        <select id="ing60" class="center" disabled>
+                        <select id="ing60" disabled>
                         </select>
                         <br>
                     </div>
@@ -62,29 +62,29 @@
             <div class="subcontainer">
                 <div class="column">
                     <label for="ss10">Lvl 10 subskill:</label>
-                    <select id="ss10" class="center">
+                    <select id="ss10">
                     </select>
                     <br>
 
                     <label for="ss50">Lvl 50 subskill:</label>
-                    <select id="ss50" class="center">
+                    <select id="ss50">
                     </select>
                     <br>
 
                     <label for="ss100">Lvl 100 subskill:</label>
-                    <select id="ss100" class="center">
+                    <select id="ss100">
                     </select>
                     <br>
                 </div>
 
                 <div class="column">
                     <label for="ss25">Lvl 25 subskill:</label>
-                    <select id="ss25" class="center">
+                    <select id="ss25">
                     </select>
                     <br>
 
                     <label for="ss75">Lvl 75 subskill:</label>
-                    <select id="ss75" class="center">
+                    <select id="ss75">
                     </select>
                     <br>
 
@@ -123,6 +123,7 @@
                 <canvas id="outputCanvasSS100"></canvas>
             </div>
         </div>
+        <div id="subrating_data"></div>
         <script src="./pokemon_data.js"></script>
         <script src="./specialty_data.js"></script>
         <script src="./main.js"></script>
