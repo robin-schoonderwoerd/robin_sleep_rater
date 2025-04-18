@@ -31,7 +31,7 @@ const specialtyData = {
             "Berry Finding S":1.0,
             "Dream Shard Bonus":0.2,
             "Energy Recovery Bonus":0.1,
-            "Helping Bonus":0.5,
+            "Helping Bonus":0.7,
             "Helping Speed S":0.4,
             "Helping Speed M":0.5,
             "Ingredient Finder S":0.0,
@@ -101,10 +101,10 @@ const specialtyData = {
             "Sleep EXP Bonus":0.3
         },
         "ratingWeights":{
-            "nature":0.2,
-            "subskills":0.45,
+            "nature":0.15,
+            "subskills":0.55,
             "ingredients":0.2,
-            "tierlist":0.15
+            "tierlist":0.1
         }
     },
     "Skill":{
@@ -159,6 +159,60 @@ const specialtyData = {
             "subskills":0.6,
             "ingredients":0,
             "tierlist":0.2
+        }
+    },
+    "SkillPower":{
+        "natures":{
+            "Adamant":0.8,
+            "Bashful":0.5,
+            "Bold":0.0,
+            "Brave":0.8,
+            "Calm":0.5,
+            "Careful":1.0,
+            "Docile":0.5,
+            "Gentle":0.9,
+            "Hardy":0.5,
+            "Hasty":0.5,
+            "Impish":0.5,
+            "Jolly":0.6,
+            "Lax":0.0,
+            "Lonely":0.7,
+            "Mild":0.1,
+            "Modest":0.0,
+            "Naive":0.1,
+            "Naughty":0.3,
+            "Quiet":0.1,
+            "Quirky":0.5,
+            "Rash":0.0,
+            "Relaxed":0.3,
+            "Sassy":1.0,
+            "Serious":0.5,
+            "Timid":0.0
+        },
+        "subskills":{
+            "Berry Finding S":0.9,
+            "Dream Shard Bonus":0.3,
+            "Energy Recovery Bonus":0.2,
+            "Helping Bonus":0.9,
+            "Helping Speed S":0.6,
+            "Helping Speed M":0.7,
+            "Ingredient Finder S":0.0,
+            "Ingredient Finder M":0.0,
+            "Inventory Up S":0.2,
+            "Inventory Up M":0.3,
+            "Inventory Up L":0.4,
+            "Research EXP Bonus":0.2,
+            "Skill Level Up S":0.6,
+            "Skill Level Up M":0.7,
+            "Skill Trigger S":0.8,
+            "Skill Trigger M":1.0,
+            "Sleep EXP Bonus":0.3
+        },
+        "ratingWeights":{
+            "nature":0.2,
+            "subskills":0.65,
+            "ingredients":0,
+            "tierlist":0.15
         }
     }
 }

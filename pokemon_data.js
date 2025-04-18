@@ -292,13 +292,13 @@ const pokemonData = {
     },
     "Psyduck":{
        "id":54,
-       "specialty":"Skill",
+       "specialty":"SkillPower",
        "tierlist":0.8,
        "XPHard":false
     },
     "Golduck":{
        "id":55,
-       "specialty":"Skill",
+       "specialty":"SkillPower",
        "tierlist":0.8,
        "XPHard":false
     },
@@ -754,25 +754,25 @@ const pokemonData = {
     },
     "Mareep":{
        "id":179,
-       "specialty":"Skill",
+       "specialty":"SkillPower",
        "tierlist":0.8,
        "XPHard":false
     },
     "Flaaffy":{
        "id":180,
-       "specialty":"Skill",
+       "specialty":"SkillPower",
        "tierlist":0.8,
        "XPHard":false
     },
     "Ampharos":{
        "id":181,
-       "specialty":"Skill",
+       "specialty":"SkillPower",
        "tierlist":0.8,
        "XPHard":false
     },
     "Sudowoodo":{
        "id":185,
-       "specialty":"Skill",
+       "specialty":"SkillPower",
        "tierlist":0.0,
        "XPHard":false
     },
@@ -823,13 +823,13 @@ const pokemonData = {
     },
     "Espeon":{
        "id":196,
-       "specialty":"Skill",
+       "specialty":"SkillPower",
        "tierlist":0.8,
        "XPHard":false
     },
     "Umbreon":{
        "id":197,
-       "specialty":"Skill",
+       "specialty":"SkillPower",
        "tierlist":0.0,
        "XPHard":false
     },
@@ -1027,19 +1027,19 @@ const pokemonData = {
     },
     "Slakoth":{
        "id":287,
-       "specialty":"Skill",
+       "specialty":"SkillPower",
        "tierlist":0.4,
        "XPHard":false
     },
     "Vigoroth":{
        "id":288,
-       "specialty":"Skill",
+       "specialty":"SkillPower",
        "tierlist":0.4,
        "XPHard":false
     },
     "Slaking":{
        "id":289,
-       "specialty":"Skill",
+       "specialty":"SkillPower",
        "tierlist":0.4,
        "XPHard":false
     },
@@ -1171,19 +1171,19 @@ const pokemonData = {
     },
     "Drifloon":{
        "id":425,
-       "specialty":"Skill",
+       "specialty":"SkillPower",
        "tierlist":0.2,
        "XPHard":false
     },
     "Drifblim":{
        "id":426,
-       "specialty":"Skill",
+       "specialty":"SkillPower",
        "tierlist":0.2,
        "XPHard":false
     },
     "Bonsly":{
        "id":438,
-       "specialty":"Skill",
+       "specialty":"SkillPower",
        "tierlist":0.0,
        "XPHard":false
     },
@@ -1312,7 +1312,7 @@ const pokemonData = {
     },
     "Darkrai":{
       "id":491,
-      "specialty":"Skill",
+      "specialty":"SkillPower",
       "tierlist":0.8,
       "XPHard":true
     },
@@ -1330,13 +1330,13 @@ const pokemonData = {
     },
     "Rufflet":{
        "id":627,
-       "specialty":"Skill",
+       "specialty":"SkillPower",
        "tierlist":0.4,
        "XPHard":false
     },
     "Braviary":{
        "id":628,
-       "specialty":"Skill",
+       "specialty":"SkillPower",
        "tierlist":0.4,
        "XPHard":false
     },
@@ -1444,7 +1444,7 @@ const pokemonData = {
     },
     "Mimikyu":{
        "id":778,
-       "specialty":"Skill",
+       "specialty":"SkillPower",
        "tierlist":0.6,
        "XPHard":true
     },
