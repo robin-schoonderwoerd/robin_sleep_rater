@@ -533,6 +533,21 @@ const pokemonData = {
        "tierlist":0.2,
        "XPHard":false
     },
+    "Chansey":{
+      "id":113,
+      "specialty":"Ingredient",
+      "tierlist":1.0,
+      "XPHard":false,
+      "ingA":"Fancy Egg",
+      "ingB":"Soft Potato",
+      "ingC":"Honey",
+      "AAA":1.0,
+      "AAB":0.6,
+      "ABA":0.2,
+      "ABB":0.2,
+      "AAC":0.6,
+      "ABC":0.0
+    },
     "Kangaskhan":{
        "id":115,
        "specialty":"Ingredient",
@@ -875,7 +890,7 @@ const pokemonData = {
     "Delibird":{
        "id":225,
        "specialty":"Ingredient",
-       "tierlist":0.8,
+       "tierlist":0.6,
        "XPHard":true,
        "ingA":"Fancy Egg",
        "ingB":"Fancy Apple",
@@ -898,6 +913,21 @@ const pokemonData = {
        "specialty":"Berry",
        "tierlist":0.4,
        "XPHard":false
+    },
+    "Blissey":{
+      "id":242,
+      "specialty":"Ingredient",
+      "tierlist":1.0,
+      "XPHard":false,
+      "ingA":"Fancy Egg",
+      "ingB":"Soft Potato",
+      "ingC":"Honey",
+      "AAA":1.0,
+      "AAB":0.6,
+      "ABA":0.2,
+      "ABB":0.2,
+      "AAC":0.6,
+      "ABC":0.0
     },
     "Raikou":{
        "id":243,
@@ -1202,6 +1232,21 @@ const pokemonData = {
        "AAC":0.4,
        "ABC":0.4
     },
+    "Happiny":{
+      "id":440,
+      "specialty":"Ingredient",
+      "tierlist":1.0,
+      "XPHard":false,
+      "ingA":"Fancy Egg",
+      "ingB":"Soft Potato",
+      "ingC":"Honey",
+      "AAA":1.0,
+      "AAB":0.6,
+      "ABA":0.2,
+      "ABB":0.2,
+      "AAC":0.6,
+      "ABC":0.0
+    },
     "Riolu":{
        "id":447,
        "specialty":"Skill",
@@ -1306,7 +1351,7 @@ const pokemonData = {
     },
     "Cresselia":{
        "id":488,
-       "specialty":"Skill",
+       "specialty":"SkillPower",
        "tierlist":0.8,
        "XPHard":true
     },
