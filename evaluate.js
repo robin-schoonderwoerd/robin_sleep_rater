@@ -53,7 +53,7 @@ class PokemonRater {
         };
         let subskills = [this.ss10, this.ss25, this.ss50, this.ss75, this.ss100]
         for (let i = 0; i < subskills.length; i++) {
-            if (subskills[i] === undefined || subskills[i] === '') {
+            if ((subskills[i] === undefined || subskills[i] === '') && this.species != 'Darkrai') {
                 this.showWarning("Not all subskills selected")
             }
         }
@@ -95,7 +95,7 @@ class PokemonRater {
         const subskills = [this.ss10, this.ss25, this.ss50, this.ss75, this.ss100];
         // Retrieve unweighted subskill scores
         this.subskillsUnweighted = subskills.map(subskill => {
-            return specialtyData[this.specialty]['subskills'][subskill];
+            return specialtyData[this.specialty]['subskills'][subskill] ?? 0;
         });
 
         // Calculate weighted subskill scores
@@ -107,7 +107,6 @@ class PokemonRater {
         this._getSubskillScoreBounds();
         const subskillScoreRange = this.maxSubskillScore - this.minSubskillScore;
         this.subskillRating = (subskillsWeighted.reduce((a, b) => a + b, 0) - this.minSubskillScore) / subskillScoreRange;
-
     }
 
     _mapIngredient() {
