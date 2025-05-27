@@ -848,6 +848,12 @@ const pokemonData = {
        "tierlist":0.0,
        "XPHard":false
     },
+    "Murkrow":{
+      "id":198,
+      "specialty":"Skill",
+      "tierlist":0.6,
+      "XPHard":true
+    },
     "Slowking":{
        "id":199,
        "specialty":"Ingredient",
@@ -1210,6 +1216,12 @@ const pokemonData = {
        "specialty":"SkillPower",
        "tierlist":0.2,
        "XPHard":false
+    },
+    "Honchkrow":{
+      "id":430,
+      "specialty":"Skill",
+      "tierlist":0.6,
+      "XPHard":true
     },
     "Bonsly":{
        "id":438,
