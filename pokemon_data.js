@@ -536,7 +536,7 @@ const pokemonData = {
     "Chansey":{
       "id":113,
       "specialty":"Ingredient",
-      "tierlist":1.0,
+      "tierlist":0.8,
       "XPHard":false,
       "ingA":"Fancy Egg",
       "ingB":"Soft Potato",
@@ -923,7 +923,7 @@ const pokemonData = {
     "Blissey":{
       "id":242,
       "specialty":"Ingredient",
-      "tierlist":1.0,
+      "tierlist":0.8,
       "XPHard":false,
       "ingA":"Fancy Egg",
       "ingB":"Soft Potato",
@@ -1262,7 +1262,7 @@ const pokemonData = {
     "Happiny":{
       "id":440,
       "specialty":"Ingredient",
-      "tierlist":1.0,
+      "tierlist":0.8,
       "XPHard":false,
       "ingA":"Fancy Egg",
       "ingB":"Soft Potato",
