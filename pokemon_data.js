@@ -8,11 +8,11 @@ const pokemonData = {
        "ingB":"Snoozy Tomato",
        "ingC":"Soft Potato",
        "AAA":1.0,
-       "AAB":0.2,
+       "AAB":0.4,
        "ABA":0.2,
-       "ABB":0.2,
-       "AAC":0.2,
-       "ABC":0.4
+       "ABB":0.0,
+       "AAC":0.4,
+       "ABC":0.2
     },
     "Ivysaur":{
        "id":2,
@@ -23,11 +23,11 @@ const pokemonData = {
        "ingB":"Snoozy Tomato",
        "ingC":"Soft Potato",
        "AAA":1.0,
-       "AAB":0.2,
+       "AAB":0.4,
        "ABA":0.2,
-       "ABB":0.2,
-       "AAC":0.2,
-       "ABC":0.4
+       "ABB":0.0,
+       "AAC":0.4,
+       "ABC":0.2
     },
     "Venusaur":{
        "id":3,
@@ -38,11 +38,11 @@ const pokemonData = {
        "ingB":"Snoozy Tomato",
        "ingC":"Soft Potato",
        "AAA":1.0,
-       "AAB":0.2,
+       "AAB":0.4,
        "ABA":0.2,
-       "ABB":0.2,
-       "AAC":0.2,
-       "ABC":0.4
+       "ABB":0.0,
+       "AAC":0.4,
+       "ABC":0.2
     },
     "Charmander":{
        "id":4,
@@ -54,10 +54,10 @@ const pokemonData = {
        "ingC":"Fiery Herb",
        "AAA":1.0,
        "AAB":0.4,
-       "ABA":1.0,
-       "ABB":0.2,
-       "AAC":0.6,
-       "ABC":1.0
+       "ABA":0.8,
+       "ABB":0.6,
+       "AAC":0.2,
+       "ABC":0.0
     },
     "Charmeleon":{
        "id":5,
@@ -69,10 +69,10 @@ const pokemonData = {
        "ingC":"Fiery Herb",
        "AAA":1.0,
        "AAB":0.4,
-       "ABA":1.0,
-       "ABB":0.2,
-       "AAC":0.6,
-       "ABC":1.0
+       "ABA":0.8,
+       "ABB":0.6,
+       "AAC":0.2,
+       "ABC":0.0
     },
     "Charizard":{
        "id":6,
@@ -84,10 +84,10 @@ const pokemonData = {
        "ingC":"Fiery Herb",
        "AAA":1.0,
        "AAB":0.4,
-       "ABA":1.0,
-       "ABB":0.2,
-       "AAC":0.6,
-       "ABC":1.0
+       "ABA":0.8,
+       "ABB":0.6,
+       "AAC":0.2,
+       "ABC":0.0
     },
     "Squirtle":{
        "id":7,
@@ -98,10 +98,10 @@ const pokemonData = {
        "ingB":"Soothing Cacao",
        "ingC":"Bean Sausage",
        "AAA":1.0,
-       "AAB":1.0,
+       "AAB":0.6,
        "ABA":0.4,
        "ABB":0.8,
-       "AAC":0.2,
+       "AAC":0.4,
        "ABC":0.0
     },
     "Wartortle":{
@@ -113,10 +113,10 @@ const pokemonData = {
        "ingB":"Soothing Cacao",
        "ingC":"Bean Sausage",
        "AAA":1.0,
-       "AAB":1.0,
+       "AAB":0.6,
        "ABA":0.4,
        "ABB":0.8,
-       "AAC":0.2,
+       "AAC":0.4,
        "ABC":0.0
     },
     "Blastoise":{
@@ -128,10 +128,10 @@ const pokemonData = {
        "ingB":"Soothing Cacao",
        "ingC":"Bean Sausage",
        "AAA":1.0,
-       "AAB":1.0,
+       "AAB":0.6,
        "ABA":0.4,
        "ABB":0.8,
-       "AAC":0.2,
+       "AAC":0.4,
        "ABC":0.0
     },
     "Caterpie":{
@@ -256,12 +256,12 @@ const pokemonData = {
        "ingA":"Snoozy Tomato",
        "ingB":"Large Leek",
        "ingC":"Greengrass Soybeans",
-       "AAA":0.4,
-       "AAB":0.6,
+       "AAA":0.6,
+       "AAB":0.4,
        "ABA":0.4,
        "ABB":1.0,
-       "AAC":0.8,
-       "ABC":0.2
+       "AAC":0.6,
+       "ABC":0.0
     },
     "Dugtrio":{
        "id":51,
@@ -271,12 +271,12 @@ const pokemonData = {
        "ingA":"Snoozy Tomato",
        "ingB":"Large Leek",
        "ingC":"Greengrass Soybeans",
-       "AAA":0.4,
-       "AAB":0.6,
+       "AAA":0.6,
+       "AAB":0.4,
        "ABA":0.4,
        "ABB":1.0,
-       "AAC":0.8,
-       "ABC":0.2
+       "AAC":0.6,
+       "ABC":0.0
     },
     "Meowth":{
        "id":52,
@@ -334,12 +334,12 @@ const pokemonData = {
        "ingA":"Snoozy Tomato",
        "ingB":"Soft Potato",
        "ingC":"Large Leek",
-       "AAA":0.8,
-       "AAB":1.0,
+       "AAA":1.0,
+       "AAB":0.8,
        "ABA":0.4,
-       "ABB":0.8,
+       "ABB":0.4,
        "AAC":0.4,
-       "ABC":0.4
+       "ABC":0.0
     },
     "Weepinbell":{
        "id":70,
@@ -349,12 +349,12 @@ const pokemonData = {
        "ingA":"Snoozy Tomato",
        "ingB":"Soft Potato",
        "ingC":"Large Leek",
-       "AAA":0.8,
-       "AAB":1.0,
+       "AAA":1.0,
+       "AAB":0.8,
        "ABA":0.4,
-       "ABB":0.8,
+       "ABB":0.4,
        "AAC":0.4,
-       "ABC":0.4
+       "ABC":0.0
     },
     "Victreebel":{
        "id":71,
@@ -364,12 +364,12 @@ const pokemonData = {
        "ingA":"Snoozy Tomato",
        "ingB":"Soft Potato",
        "ingC":"Large Leek",
-       "AAA":0.8,
-       "AAB":1.0,
+       "AAA":1.0,
+       "AAB":0.8,
        "ABA":0.4,
-       "ABB":0.8,
+       "ABB":0.4,
        "AAC":0.4,
-       "ABC":0.4
+       "ABC":0.0
     },
     "Geodude":{
        "id":74,
@@ -380,11 +380,11 @@ const pokemonData = {
        "ingB":"Soft Potato",
        "ingC":"Tasty Mushroom",
        "AAA":1.0,
-       "AAB":0.2,
-       "ABA":0.2,
+       "AAB":0.4,
+       "ABA":0.0,
        "ABB":0.6,
-       "AAC":1.0,
-       "ABC":0.8
+       "AAC":0.6,
+       "ABC":0.4
     },
     "Graveler":{
        "id":75,
@@ -395,11 +395,11 @@ const pokemonData = {
        "ingB":"Soft Potato",
        "ingC":"Tasty Mushroom",
        "AAA":1.0,
-       "AAB":0.2,
-       "ABA":0.2,
+       "AAB":0.4,
+       "ABA":0.0,
        "ABB":0.6,
-       "AAC":1.0,
-       "ABC":0.8
+       "AAC":0.6,
+       "ABC":0.4
     },
     "Golem":{
        "id":76,
@@ -410,11 +410,11 @@ const pokemonData = {
        "ingB":"Soft Potato",
        "ingC":"Tasty Mushroom",
        "AAA":1.0,
-       "AAB":0.2,
-       "ABA":0.2,
+       "AAB":0.4,
+       "ABA":0.0,
        "ABB":0.6,
-       "AAC":1.0,
-       "ABC":0.8
+       "AAC":0.6,
+       "ABC":0.4
     },
     "Slowpoke":{
        "id":79,
@@ -479,11 +479,11 @@ const pokemonData = {
        "ingB":"Tasty Mushroom",
        "ingC":"Pure Oil",
        "AAA":0.8,
-       "AAB":0.2,
-       "ABA":0.2,
+       "AAB":0.4,
+       "ABA":0.0,
        "ABB":1.0,
-       "AAC":0.6,
-       "ABC":0.2
+       "AAC":0.4,
+       "ABC":0.0
     },
     "Haunter":{
        "id":93,
@@ -494,11 +494,11 @@ const pokemonData = {
        "ingB":"Tasty Mushroom",
        "ingC":"Pure Oil",
        "AAA":0.8,
-       "AAB":0.2,
-       "ABA":0.2,
+       "AAB":0.4,
+       "ABA":0.0,
        "ABB":1.0,
-       "AAC":0.6,
-       "ABC":0.2
+       "AAC":0.4,
+       "ABC":0.0
     },
     "Gengar":{
        "id":94,
@@ -509,11 +509,11 @@ const pokemonData = {
        "ingB":"Tasty Mushroom",
        "ingC":"Pure Oil",
        "AAA":0.8,
-       "AAB":0.2,
-       "ABA":0.2,
+       "AAB":0.4,
+       "ABA":0.0,
        "ABB":1.0,
-       "AAC":0.6,
-       "ABC":0.2
+       "AAC":0.4,
+       "ABC":0.0
     },
     "Onix":{
        "id":95,
@@ -556,12 +556,12 @@ const pokemonData = {
        "ingA":"Warming Ginger",
        "ingB":"Soft Potato",
        "ingC":"Greengrass Soybeans",
-       "AAA":0.8,
-       "AAB":0.2,
-       "ABA":0.2,
+       "AAA":1.0,
+       "AAB":0.4,
+       "ABA":0.0,
        "ABB":0.2,
-       "AAC":1.0,
-       "ABC":0.2
+       "AAC":0.4,
+       "ABC":0.0
     },
     "Mr. Mime":{
        "id":122,
@@ -571,12 +571,12 @@ const pokemonData = {
        "ingA":"Snoozy Tomato",
        "ingB":"Soft Potato",
        "ingC":"Large Leek",
-       "AAA":0.8,
-       "AAB":1.0,
-       "ABA":0.2,
-       "ABB":0.6,
+       "AAA":1.0,
+       "AAB":0.8,
+       "ABA":0.4,
+       "ABB":0.4,
        "AAC":0.4,
-       "ABC":0.4
+       "ABC":0.0
     },
     "Pinsir":{
        "id":127,
@@ -586,11 +586,11 @@ const pokemonData = {
        "ingA":"Honey",
        "ingB":"Fancy Apple",
        "ingC":"Bean Sausage",
-       "AAA":0.6,
-       "AAB":1.0,
-       "ABA":0.8,
-       "ABB":0.4,
-       "AAC":0.0,
+       "AAA":1.0,
+       "AAB":0.6,
+       "ABA":0.6,
+       "ABB":0.2,
+       "AAC":0.2,
        "ABC":0.0
     },
     "Ditto":{
@@ -601,8 +601,8 @@ const pokemonData = {
        "ingA":"Pure Oil",
        "ingB":"Large Leek",
        "ingC":"Slowpoke Tail",
-       "AAA":0.2,
-       "AAB":0.2,
+       "AAA":0.4,
+       "AAB":0.0,
        "ABA":0.2,
        "ABB":0.8,
        "AAC":0.8,
@@ -647,11 +647,11 @@ const pokemonData = {
        "ingB":"Greengrass Corn",
        "ingC":"Pure Oil",
        "AAA":1.0,
-       "AAB":1.0,
-       "ABA":1.0,
-       "ABB":0.6,
-       "AAC":0.6,
-       "ABC":1.0
+       "AAB":0.6,
+       "ABA":0.8,
+       "ABB":0.8,
+       "AAC":0.0,
+       "ABC":0.6
     },
     "Dragonair":{
        "id":148,
@@ -662,11 +662,11 @@ const pokemonData = {
        "ingB":"Greengrass Corn",
        "ingC":"Pure Oil",
        "AAA":1.0,
-       "AAB":1.0,
-       "ABA":1.0,
-       "ABB":0.6,
-       "AAC":0.6,
-       "ABC":1.0
+       "AAB":0.6,
+       "ABA":0.8,
+       "ABB":0.8,
+       "AAC":0.0,
+       "ABC":0.6
     },
     "Dragonite":{
        "id":149,
@@ -677,11 +677,11 @@ const pokemonData = {
        "ingB":"Greengrass Corn",
        "ingC":"Pure Oil",
        "AAA":1.0,
-       "AAB":1.0,
-       "ABA":1.0,
-       "ABB":0.6,
-       "AAC":0.6,
-       "ABC":1.0
+       "AAB":0.6,
+       "ABA":0.8,
+       "ABB":0.8,
+       "AAC":0.0,
+       "ABC":0.6
     },
     "Chikorita":{
        "id":152,
@@ -800,11 +800,11 @@ const pokemonData = {
        "ingB":"Soft Potato",
        "ingC":"Bean Sausage",
        "AAA":1.0,
-       "AAB":0.8,
-       "ABA":0.8,
+       "AAB":0.6,
+       "ABA":0.2,
        "ABB":0.2,
        "AAC":0.4,
-       "ABC":0.4
+       "ABC":0.0
     },
     "Paldean Wooper":{
        "id":"194-paldeanwooper",
@@ -824,17 +824,17 @@ const pokemonData = {
     "Quagsire":{
        "id":195,
        "specialty":"Ingredient",
-       "tierlist":0.8,
+       "tierlist":0.6,
        "XPHard":false,
        "ingA":"Tasty Mushroom",
        "ingB":"Soft Potato",
        "ingC":"Bean Sausage",
        "AAA":1.0,
-       "AAB":0.8,
-       "ABA":0.8,
+       "AAB":0.6,
+       "ABA":0.2,
        "ABB":0.2,
        "AAC":0.4,
-       "ABC":0.4
+       "ABC":0.0
     },
     "Espeon":{
        "id":196,
@@ -902,11 +902,11 @@ const pokemonData = {
        "ingB":"Fancy Apple",
        "ingC":"Soothing Cacao",
        "AAA":1.0,
-       "AAB":0.8,
-       "ABA":0.8,
-       "ABB":0.4,
+       "AAB":0.4,
+       "ABA":0.2,
+       "ABB":0.2,
        "AAC":0.6,
-       "ABC":0.4
+       "ABC":0.0
     },
     "Houndour":{
        "id":228,
@@ -962,11 +962,11 @@ const pokemonData = {
        "ingB":"Greengrass Soybeans",
        "ingC":"Bean Sausage",
        "AAA":1.0,
-       "AAB":0.8,
-       "ABA":0.4,
-       "ABB":0.6,
-       "AAC":1.0,
-       "ABC":0.6
+       "AAB":0.6,
+       "ABA":0.2,
+       "ABB":0.8,
+       "AAC":0.8,
+       "ABC":0.0
     },
     "Pupitar":{
        "id":247,
@@ -977,11 +977,11 @@ const pokemonData = {
        "ingB":"Greengrass Soybeans",
        "ingC":"Bean Sausage",
        "AAA":1.0,
-       "AAB":0.8,
-       "ABA":0.4,
-       "ABB":0.6,
-       "AAC":1.0,
-       "ABC":0.6
+       "AAB":0.6,
+       "ABA":0.2,
+       "ABB":0.8,
+       "AAC":0.8,
+       "ABC":0.0
     },
     "Tyranitar":{
        "id":248,
@@ -992,11 +992,11 @@ const pokemonData = {
        "ingB":"Greengrass Soybeans",
        "ingC":"Bean Sausage",
        "AAA":1.0,
-       "AAB":0.8,
-       "ABA":0.4,
-       "ABB":0.6,
-       "AAC":1.0,
-       "ABC":0.6
+       "AAB":0.6,
+       "ABA":0.2,
+       "ABB":0.8,
+       "AAC":0.8,
+       "ABC":0.0
     },
     "Ralts":{
        "id":280,
@@ -1024,12 +1024,12 @@ const pokemonData = {
        "ingA":"Bean Sausage",
        "ingB":"Rousing Coffee",
        "ingC":"Greengrass Soybeans",
-       "AAA":0.6,
-       "AAB":1.0,
+       "AAA":1.0,
+       "AAB":0.6,
        "ABA":0.4,
        "ABB":0.8,
        "AAC":0.4,
-       "ABC":1.0
+       "ABC":0.0
     },
     "Lairon":{
        "id":305,
@@ -1039,12 +1039,12 @@ const pokemonData = {
        "ingA":"Bean Sausage",
        "ingB":"Rousing Coffee",
        "ingC":"Greengrass Soybeans",
-       "AAA":0.6,
-       "AAB":1.0,
+       "AAA":1.0,
+       "AAB":0.6,
        "ABA":0.4,
        "ABB":0.8,
        "AAC":0.4,
-       "ABC":1.0
+       "ABC":0.0
     },
     "Aggron":{
        "id":306,
@@ -1054,12 +1054,12 @@ const pokemonData = {
        "ingA":"Bean Sausage",
        "ingB":"Rousing Coffee",
        "ingC":"Greengrass Soybeans",
-       "AAA":0.6,
-       "AAB":1.0,
+       "AAA":1.0,
+       "AAB":0.6,
        "ABA":0.4,
        "ABB":0.8,
        "AAC":0.4,
-       "ABC":1.0
+       "ABC":0.0
     },
     "Slakoth":{
        "id":287,
@@ -1084,6 +1084,21 @@ const pokemonData = {
        "specialty":"Skill",
        "tierlist":0.0,
        "XPHard":false
+    },
+    "Mawile":{
+      "id":303,
+      "specialty":"Ingredient",
+      "tierlist":0.6,
+      "XPHard":true,
+      "ingA":"Pure Oil",
+      "ingB":"Greengrass Corn",
+      "ingC":"Snoozy Tomato",
+      "AAA":1.0,
+      "AAB":0.6,
+      "ABA":0.2,
+      "ABB":0.0,
+      "AAC":0.4,
+      "ABC":0.2
     },
     "Gulpin":{
        "id":316,
@@ -1130,10 +1145,10 @@ const pokemonData = {
        "ingB":"Fancy Apple",
        "ingC":"Tasty Mushroom",
        "AAA":1.0,
-       "AAB":0.6,
-       "ABA":0.8,
+       "AAB":0.4,
+       "ABA":0.0,
        "ABB":0.4,
-       "AAC":0.2,
+       "AAC":0.4,
        "ABC":0.8
     },
     "Wynaut":{
@@ -1168,12 +1183,12 @@ const pokemonData = {
        "ingA":"Snoozy Tomato",
        "ingB":"Pure Oil",
        "ingC":"Rousing Coffee",
-       "AAA":0.4,
-       "AAB":1.0,
-       "ABA":0.6,
-       "ABB":0.4,
-       "AAC":0.8,
-       "ABC":0.4
+       "AAA":1.0,
+       "AAB":0.4,
+       "ABA":0.2,
+       "ABB":0.8,
+       "AAC":0.6,
+       "ABC":0.0
     },
     "Luxio":{
        "id":404,
@@ -1183,12 +1198,12 @@ const pokemonData = {
        "ingA":"Snoozy Tomato",
        "ingB":"Pure Oil",
        "ingC":"Rousing Coffee",
-       "AAA":0.4,
-       "AAB":1.0,
-       "ABA":0.6,
-       "ABB":0.4,
-       "AAC":0.8,
-       "ABC":0.4
+       "AAA":1.0,
+       "AAB":0.4,
+       "ABA":0.2,
+       "ABB":0.8,
+       "AAC":0.6,
+       "ABC":0.0
     },
     "Luxray":{
        "id":405,
@@ -1198,12 +1213,12 @@ const pokemonData = {
        "ingA":"Snoozy Tomato",
        "ingB":"Pure Oil",
        "ingC":"Rousing Coffee",
-       "AAA":0.4,
-       "AAB":1.0,
-       "ABA":0.6,
-       "ABB":0.4,
-       "AAC":0.8,
-       "ABC":0.4
+       "AAA":1.0,
+       "AAB":0.4,
+       "ABA":0.2,
+       "ABB":0.8,
+       "AAC":0.6,
+       "ABC":0.0
     },
     "Drifloon":{
        "id":425,
@@ -1237,12 +1252,12 @@ const pokemonData = {
        "ingA":"Snoozy Tomato",
        "ingB":"Soft Potato",
        "ingC":"Large Leek",
-       "AAA":0.8,
-       "AAB":1.0,
-       "ABA":0.2,
-       "ABB":0.6,
+       "AAA":1.0,
+       "AAB":0.8,
+       "ABA":0.4,
+       "ABB":0.4,
        "AAC":0.4,
-       "ABC":0.4
+       "ABC":0.0
     },
     "Happiny":{
       "id":440,
@@ -1280,7 +1295,7 @@ const pokemonData = {
        "ingB":"Bean Sausage",
        "AAA":1.0,
        "AAB":0.6,
-       "ABA":0.2,
+       "ABA":0.0,
        "ABB":0.2
     },
     "Toxicroak":{
@@ -1292,7 +1307,7 @@ const pokemonData = {
        "ingB":"Bean Sausage",
        "AAA":1.0,
        "AAB":0.6,
-       "ABA":0.2,
+       "ABA":0.0,
        "ABB":0.2
     },
     "Snover":{
@@ -1303,12 +1318,12 @@ const pokemonData = {
        "ingA":"Snoozy Tomato",
        "ingB":"Fancy Egg",
        "ingC":"Tasty Mushroom",
-       "AAA":0.8,
-       "AAB":0.8,
-       "ABA":0.2,
-       "ABB":0.6,
-       "AAC":1.0,
-       "ABC":0.2
+       "AAA":1.0,
+       "AAB":0.4,
+       "ABA":0.0,
+       "ABB":0.8,
+       "AAC":0.6,
+       "ABC":0.0
     },
     "Abomasnow":{
        "id":460,
@@ -1318,12 +1333,12 @@ const pokemonData = {
        "ingA":"Snoozy Tomato",
        "ingB":"Fancy Egg",
        "ingC":"Tasty Mushroom",
-       "AAA":0.8,
-       "AAB":0.8,
-       "ABA":0.2,
-       "ABB":0.6,
-       "AAC":1.0,
-       "ABC":0.2
+       "AAA":1.0,
+       "AAB":0.4,
+       "ABA":0.0,
+       "ABB":0.8,
+       "AAC":0.6,
+       "ABC":0.0
     },
     "Weavile":{
        "id":461,
@@ -1418,11 +1433,11 @@ const pokemonData = {
        "ingB":"Tasty Mushroom",
        "ingC":"Honey",
        "AAA":1.0,
-       "AAB":0.8,
-       "ABA":0.6,
-       "ABB":0.6,
-       "AAC":0.8,
-       "ABC":0.2
+       "AAB":0.6,
+       "ABA":0.2,
+       "ABB":0.2,
+       "AAC":0.6,
+       "ABC":0.0
     },
     "Charjabug":{
        "id":737,
@@ -1433,11 +1448,11 @@ const pokemonData = {
        "ingB":"Tasty Mushroom",
        "ingC":"Honey",
        "AAA":1.0,
-       "AAB":0.8,
-       "ABA":0.6,
-       "ABB":0.6,
-       "AAC":0.8,
-       "ABC":0.2
+       "AAB":0.6,
+       "ABA":0.2,
+       "ABB":0.2,
+       "AAC":0.6,
+       "ABC":0.0
     },
     "Vikavolt":{
        "id":738,
@@ -1448,11 +1463,11 @@ const pokemonData = {
        "ingB":"Tasty Mushroom",
        "ingC":"Honey",
        "AAA":1.0,
-       "AAB":0.8,
-       "ABA":0.6,
-       "ABB":0.6,
-       "AAC":0.8,
-       "ABC":0.2
+       "AAB":0.6,
+       "ABA":0.2,
+       "ABB":0.2,
+       "AAC":0.6,
+       "ABC":0.0
     },
     "Stufful":{
        "id":759,
@@ -1463,11 +1478,11 @@ const pokemonData = {
        "ingB":"Bean Sausage",
        "ingC":"Fancy Egg",
        "AAA":1.0,
-       "AAB":0.8,
-       "ABA":0.4,
-       "ABB":0.2,
+       "AAB":0.6,
+       "ABA":0.2,
+       "ABB":0.4,
        "AAC":0.2,
-       "ABC":0.6
+       "ABC":0.0
     },
     "Bewear":{
        "id":760,
@@ -1478,11 +1493,11 @@ const pokemonData = {
        "ingB":"Bean Sausage",
        "ingC":"Fancy Egg",
        "AAA":1.0,
-       "AAB":0.8,
-       "ABA":0.4,
-       "ABB":0.2,
+       "AAB":0.6,
+       "ABA":0.2,
+       "ABB":0.4,
        "AAC":0.2,
-       "ABC":0.6
+       "ABC":0.0
     },
     "Comfey":{
        "id":764,
@@ -1492,12 +1507,12 @@ const pokemonData = {
        "ingA":"Greengrass Corn",
        "ingB":"Warming Ginger",
        "ingC":"Soothing Cacao",
-       "AAA":0.8,
-       "AAB":1.0,
-       "ABA":0.8,
-       "ABB":0.2,
+       "AAA":1.0,
+       "AAB":0.6,
+       "ABA":0.4,
+       "ABB":0.4,
        "AAC":0.4,
-       "ABC":0.4
+       "ABC":0.0
     },
     "Mimikyu":{
        "id":778,
@@ -1514,11 +1529,11 @@ const pokemonData = {
        "ingB":"Soft Potato",
        "ingC":"Fancy Egg",
        "AAA":1.0,
-       "AAB":1.0,
-       "ABA":0.8,
+       "AAB":0.8,
+       "ABA":0.4,
        "ABB":0.2,
        "AAC":0.4,
-       "ABC":0.4
+       "ABC":0.0
     },
     "Sprigatito":{
        "id":906,
@@ -1529,11 +1544,11 @@ const pokemonData = {
        "ingB":"Moomoo Milk",
        "ingC":"Warming Ginger",
        "AAA":1.0,
-       "AAB":0.8,
-       "ABA":0.8,
-       "ABB":0.0,
-       "AAC":0.2,
-       "ABC":0.4
+       "AAB":0.4,
+       "ABA":0.2,
+       "ABB":0.4,
+       "AAC":0.4,
+       "ABC":0.0
     },
     "Floragato":{
        "id":907,
@@ -1544,11 +1559,11 @@ const pokemonData = {
        "ingB":"Moomoo Milk",
        "ingC":"Warming Ginger",
        "AAA":1.0,
-       "AAB":0.8,
-       "ABA":0.8,
-       "ABB":0.0,
-       "AAC":0.2,
-       "ABC":0.4
+       "AAB":0.4,
+       "ABA":0.2,
+       "ABB":0.4,
+       "AAC":0.4,
+       "ABC":0.0
     },
     "Meowscarada":{
        "id":908,
@@ -1559,11 +1574,11 @@ const pokemonData = {
        "ingB":"Moomoo Milk",
        "ingC":"Warming Ginger",
        "AAA":1.0,
-       "AAB":0.8,
-       "ABA":0.8,
-       "ABB":0.0,
-       "AAC":0.2,
-       "ABC":0.4
+       "AAB":0.4,
+       "ABA":0.2,
+       "ABB":0.4,
+       "AAC":0.4,
+       "ABC":0.0
     },
     "Fuecoco":{
        "id":909,
@@ -1574,11 +1589,11 @@ const pokemonData = {
        "ingB":"Bean Sausage",
        "ingC":"Fiery Herb",
        "AAA":1.0,
-       "AAB":0.2,
+       "AAB":0.4,
        "ABA":0.2,
-       "ABB":0.0,
-       "AAC":0.6,
-       "ABC":0.4
+       "ABB":0.2,
+       "AAC":0.4,
+       "ABC":0.0
     },
     "Crocalor":{
        "id":910,
@@ -1589,11 +1604,11 @@ const pokemonData = {
        "ingB":"Bean Sausage",
        "ingC":"Fiery Herb",
        "AAA":1.0,
-       "AAB":0.2,
+       "AAB":0.4,
        "ABA":0.2,
-       "ABB":0.0,
-       "AAC":0.6,
-       "ABC":0.4
+       "ABB":0.2,
+       "AAC":0.4,
+       "ABC":0.0
     },
     "Skeledirge":{
        "id":911,
@@ -1604,11 +1619,11 @@ const pokemonData = {
        "ingB":"Bean Sausage",
        "ingC":"Fiery Herb",
        "AAA":1.0,
-       "AAB":0.2,
+       "AAB":0.4,
        "ABA":0.2,
-       "ABB":0.0,
-       "AAC":0.6,
-       "ABC":0.4
+       "ABB":0.2,
+       "AAC":0.4,
+       "ABC":0.0
     },
     "Quaxly":{
        "id":912,
@@ -1618,12 +1633,12 @@ const pokemonData = {
        "ingA":"Greengrass Soybeans",
        "ingB":"Large Leek",
        "ingC":"Pure Oil",
-       "AAA":0.0,
-       "AAB":1.0,
+       "AAA":0.8,
+       "AAB":0.4,
        "ABA":0.2,
        "ABB":1.0,
-       "AAC":0.8,
-       "ABC":0.2
+       "AAC":0.4,
+       "ABC":0.0
     },
     "Quaxwell":{
        "id":913,
@@ -1633,12 +1648,12 @@ const pokemonData = {
        "ingA":"Greengrass Soybeans",
        "ingB":"Large Leek",
        "ingC":"Pure Oil",
-       "AAA":0.0,
-       "AAB":1.0,
+       "AAA":0.8,
+       "AAB":0.4,
        "ABA":0.2,
        "ABB":1.0,
-       "AAC":0.8,
-       "ABC":0.2
+       "AAC":0.4,
+       "ABC":0.0
     },
     "Quaquaval":{
        "id":914,
@@ -1648,12 +1663,12 @@ const pokemonData = {
        "ingA":"Greengrass Soybeans",
        "ingB":"Large Leek",
        "ingC":"Pure Oil",
-       "AAA":0.0,
-       "AAB":1.0,
+       "AAA":0.8,
+       "AAB":0.4,
        "ABA":0.2,
        "ABB":1.0,
-       "AAC":0.8,
-       "ABC":0.2
+       "AAC":0.4,
+       "ABC":0.0
     },
     "Pawmi":{
       "id":921,
@@ -1676,7 +1691,7 @@ const pokemonData = {
     "Clodsire":{
        "id":980,
        "specialty":"Ingredient",
-       "tierlist":0.8,
+       "tierlist":0.6,
        "XPHard":false,
        "ingA":"Soothing Cacao",
        "ingB":"Rousing Coffee",
