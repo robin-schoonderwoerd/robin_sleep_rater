@@ -458,6 +458,21 @@ const pokemonData = {
        "tierlist":0.8,
        "XPHard":false
     },
+    "Farfetch'd":{
+      "id":83,
+      "specialty":"Ingredient",
+      "tierlist":0.8,
+      "XPHard":true,
+      "ingA":"Large Leek",
+      "ingB":"Bean Sausage",
+      "ingC":"Warming Ginger",
+      "AAA":1.0,
+      "AAB":0.6,
+      "ABA":0.2,
+      "ABB":0.4,
+      "AAC":0.6,
+      "ABC":0.0
+    },
     "Doduo":{
        "id":84,
        "specialty":"Berry",
