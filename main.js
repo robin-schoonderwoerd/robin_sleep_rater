@@ -393,9 +393,9 @@ document.getElementById('imageUpload').addEventListener('change', function(event
 
                         // Prefill selectpickers
                         var fill_element = document.getElementById(element_list[i]);
-                        console.log(words[0].replace(/[^a-zA-Z\s]/g, ''))
+                        console.log(words[0].replace(/[^a-zA-Z\s']/g, ''))
 
-                        fill_element.value = words[0].replace(/[^a-zA-Z\s]/g, '')
+                        fill_element.value = words[0].replace(/[^a-zA-Z\s']/g, '')
                         if (element_list[i] === 'species') {
                             updateOptions('species', 'ing1', 'ing30', 'ing60')
                         }
