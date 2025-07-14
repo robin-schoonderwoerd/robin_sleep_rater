@@ -1013,6 +1013,60 @@ const pokemonData = {
        "AAC":0.8,
        "ABC":0.0
     },
+    "Treecko":{
+      "id":252,
+      "specialty":"Berry",
+      "tierlist":1.0,
+      "XPHard":false
+    },
+    "Grovyle":{
+      "id":253,
+      "specialty":"Berry",
+      "tierlist":1.0,
+      "XPHard":false
+    },
+    "Sceptile":{
+      "id":254,
+      "specialty":"Berry",
+      "tierlist":1.0,
+      "XPHard":false
+    },
+    "Torchic":{
+      "id":255,
+      "specialty":"Berry",
+      "tierlist":0.6,
+      "XPHard":false
+    },
+    "Combusken":{
+      "id":256,
+      "specialty":"Berry",
+      "tierlist":0.6,
+      "XPHard":false
+    },
+    "Blaziken":{
+      "id":257,
+      "specialty":"Berry",
+      "tierlist":0.6,
+      "XPHard":false
+    },
+    "Mudkip":{
+      "id":258,
+      "specialty":"Berry",
+      "tierlist":1.0,
+      "XPHard":false
+    },
+    "Marshtomp":{
+      "id":259,
+      "specialty":"Berry",
+      "tierlist":1.0,
+      "XPHard":false
+    },
+    "Swampert":{
+      "id":260,
+      "specialty":"Berry",
+      "tierlist":1.0,
+      "XPHard":false
+    },
     "Ralts":{
        "id":280,
        "specialty":"Skill",
@@ -1030,51 +1084,6 @@ const pokemonData = {
        "specialty":"Skill",
        "tierlist":1.0,
        "XPHard":false
-    },
-    "Aron":{
-       "id":304,
-       "specialty":"Ingredient",
-       "tierlist":0.8,
-       "XPHard":false,
-       "ingA":"Bean Sausage",
-       "ingB":"Rousing Coffee",
-       "ingC":"Greengrass Soybeans",
-       "AAA":1.0,
-       "AAB":0.6,
-       "ABA":0.4,
-       "ABB":0.8,
-       "AAC":0.4,
-       "ABC":0.0
-    },
-    "Lairon":{
-       "id":305,
-       "specialty":"Ingredient",
-       "tierlist":0.8,
-       "XPHard":false,
-       "ingA":"Bean Sausage",
-       "ingB":"Rousing Coffee",
-       "ingC":"Greengrass Soybeans",
-       "AAA":1.0,
-       "AAB":0.6,
-       "ABA":0.4,
-       "ABB":0.8,
-       "AAC":0.4,
-       "ABC":0.0
-    },
-    "Aggron":{
-       "id":306,
-       "specialty":"Ingredient",
-       "tierlist":0.8,
-       "XPHard":false,
-       "ingA":"Bean Sausage",
-       "ingB":"Rousing Coffee",
-       "ingC":"Greengrass Soybeans",
-       "AAA":1.0,
-       "AAB":0.6,
-       "ABA":0.4,
-       "ABB":0.8,
-       "AAC":0.4,
-       "ABC":0.0
     },
     "Slakoth":{
        "id":287,
@@ -1114,6 +1123,63 @@ const pokemonData = {
       "ABB":0.0,
       "AAC":0.4,
       "ABC":0.2
+    },
+    "Aron":{
+      "id":304,
+      "specialty":"Ingredient",
+      "tierlist":0.8,
+      "XPHard":false,
+      "ingA":"Bean Sausage",
+      "ingB":"Rousing Coffee",
+      "ingC":"Greengrass Soybeans",
+      "AAA":1.0,
+      "AAB":0.6,
+      "ABA":0.4,
+      "ABB":0.8,
+      "AAC":0.4,
+      "ABC":0.0
+    },
+    "Lairon":{
+      "id":305,
+      "specialty":"Ingredient",
+      "tierlist":0.8,
+      "XPHard":false,
+      "ingA":"Bean Sausage",
+      "ingB":"Rousing Coffee",
+      "ingC":"Greengrass Soybeans",
+      "AAA":1.0,
+      "AAB":0.6,
+      "ABA":0.4,
+      "ABB":0.8,
+      "AAC":0.4,
+      "ABC":0.0
+    },
+    "Aggron":{
+      "id":306,
+      "specialty":"Ingredient",
+      "tierlist":0.8,
+      "XPHard":false,
+      "ingA":"Bean Sausage",
+      "ingB":"Rousing Coffee",
+      "ingC":"Greengrass Soybeans",
+      "AAA":1.0,
+      "AAB":0.6,
+      "ABA":0.4,
+      "ABB":0.8,
+      "AAC":0.4,
+      "ABC":0.0
+    },
+    "Plusle":{
+      "id":311,
+      "specialty":"Skill",
+      "tierlist":0.4,
+      "XPHard":true
+    },
+    "Minun":{
+      "id":312,
+      "specialty":"Skill",
+      "tierlist":0.0,
+      "XPHard":true
     },
     "Gulpin":{
        "id":316,
