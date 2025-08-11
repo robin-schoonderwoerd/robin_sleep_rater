@@ -1616,6 +1616,24 @@ const pokemonData = {
        "AAC":0.4,
        "ABC":0.0
     },
+    "Toxel":{
+      "id":848,
+      "specialty":"Skill",
+      "tierlist":0.2,
+      "XPHard":false
+    },
+    "Toxtricity":{
+      "id":"849-toxtricityampedform",
+      "specialty":"Skill",
+      "tierlist":0.2,
+      "XPHard":false
+    },
+    "Toxtricity - Low Key Form":{
+      "id":"849-toxtricitylowkeyform",
+      "specialty":"Skill",
+      "tierlist":0.2,
+      "XPHard":false
+    },
     "Sprigatito":{
        "id":906,
        "specialty":"Ingredient",
