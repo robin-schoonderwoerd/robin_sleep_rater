@@ -789,7 +789,7 @@ const pokemonData = {
       "XPHard":false
     },
     "Xatu":{
-      "id":177,
+      "id":178,
       "specialty":"Berry",
       "tierlist":0.6,
       "XPHard":false
