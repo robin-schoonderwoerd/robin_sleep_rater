@@ -612,7 +612,7 @@ const pokemonData = {
        "id":132,
        "specialty":"Ingredient",
        "tierlist":0.2,
-       "XPHard":true,
+       "XPHard":false,
        "ingA":"Pure Oil",
        "ingB":"Large Leek",
        "ingC":"Slowpoke Tail",
@@ -781,6 +781,18 @@ const pokemonData = {
        "specialty":"Skill",
        "tierlist":0.0,
        "XPHard":false
+    },
+    "Natu":{
+      "id":177,
+      "specialty":"Berry",
+      "tierlist":0.6,
+      "XPHard":false
+    },
+    "Xatu":{
+      "id":177,
+      "specialty":"Berry",
+      "tierlist":0.6,
+      "XPHard":false
     },
     "Mareep":{
        "id":179,
@@ -953,7 +965,7 @@ const pokemonData = {
     "Raikou":{
        "id":243,
        "specialty":"Skill",
-       "tierlist":0.6,
+       "tierlist":0.8,
        "XPHard":true
     },
     "Entei":{
@@ -1112,7 +1124,7 @@ const pokemonData = {
     "Mawile":{
       "id":303,
       "specialty":"Ingredient",
-      "tierlist":0.6,
+      "tierlist":0.4,
       "XPHard":true,
       "ingA":"Pure Oil",
       "ingB":"Greengrass Corn",
@@ -1173,13 +1185,13 @@ const pokemonData = {
       "id":311,
       "specialty":"Skill",
       "tierlist":0.4,
-      "XPHard":true
+      "XPHard":false
     },
     "Minun":{
       "id":312,
       "specialty":"Skill",
       "tierlist":0.0,
-      "XPHard":true
+      "XPHard":false
     },
     "Gulpin":{
        "id":316,
