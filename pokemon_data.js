@@ -1517,6 +1517,36 @@ const pokemonData = {
        "tierlist":1.0,
        "XPHard":true
     },
+    "Pumpkaboo":{
+      "id":710,
+      "specialty":"Ingredient",
+      "tierlist":0.6,
+      "XPHard":false,
+      "ingA":"Plump Pumpkin",
+      "ingB":"Greengrass Soybeans",
+      "ingC":"Soft Potato",
+      "AAA":1.0,
+      "AAB":0.6,
+      "ABA":0.2,
+      "ABB":0.2,
+      "AAC":0.6,
+      "ABC":0.0
+    },
+    "Gourgeist":{
+      "id":711,
+      "specialty":"Ingredient",
+      "tierlist":0.6,
+      "XPHard":false,
+      "ingA":"Plump Pumpkin",
+      "ingB":"Greengrass Soybeans",
+      "ingC":"Soft Potato",
+      "AAA":1.0,
+      "AAB":0.6,
+      "ABA":0.2,
+      "ABB":0.2,
+      "AAC":0.6,
+      "ABC":0.0
+    },
     "Grubbin":{
        "id":736,
        "specialty":"Ingredient",
