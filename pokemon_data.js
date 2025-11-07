@@ -533,7 +533,7 @@ const pokemonData = {
     "Onix":{
        "id":95,
        "specialty":"Berry",
-       "tierlist":1.0,
+       "tierlist":0.8,
        "XPHard":true
     },
     "Cubone":{
@@ -827,7 +827,7 @@ const pokemonData = {
     "Wooper":{
        "id":194,
        "specialty":"Ingredient",
-       "tierlist":0.6,
+       "tierlist":0.8,
        "XPHard":false,
        "ingA":"Tasty Mushroom",
        "ingB":"Soft Potato",
@@ -842,7 +842,7 @@ const pokemonData = {
     "Paldean Wooper":{
        "id":"194-paldeanwooper",
        "specialty":"Ingredient",
-       "tierlist":0.6,
+       "tierlist":0.8,
        "XPHard":false,
        "ingA":"Soothing Cacao",
        "ingB":"Rousing Coffee",
@@ -857,7 +857,7 @@ const pokemonData = {
     "Quagsire":{
        "id":195,
        "specialty":"Ingredient",
-       "tierlist":0.6,
+       "tierlist":0.8,
        "XPHard":false,
        "ingA":"Tasty Mushroom",
        "ingB":"Soft Potato",
@@ -1340,7 +1340,7 @@ const pokemonData = {
     "Shinx":{
        "id":403,
        "specialty":"Ingredient",
-       "tierlist":0.6,
+       "tierlist":0.8,
        "XPHard":false,
        "ingA":"Snoozy Tomato",
        "ingB":"Pure Oil",
@@ -1355,7 +1355,7 @@ const pokemonData = {
     "Luxio":{
        "id":404,
        "specialty":"Ingredient",
-       "tierlist":0.6,
+       "tierlist":0.8,
        "XPHard":false,
        "ingA":"Snoozy Tomato",
        "ingB":"Pure Oil",
@@ -1370,7 +1370,7 @@ const pokemonData = {
     "Luxray":{
        "id":405,
        "specialty":"Ingredient",
-       "tierlist":0.6,
+       "tierlist":0.8,
        "XPHard":false,
        "ingA":"Snoozy Tomato",
        "ingB":"Pure Oil",
@@ -1451,7 +1451,7 @@ const pokemonData = {
     "Croagunk":{
        "id":453,
        "specialty":"Ingredient",
-       "tierlist":0.2,
+       "tierlist":0.4,
        "XPHard":false,
        "ingA":"Pure Oil",
        "ingB":"Bean Sausage",
@@ -1463,7 +1463,7 @@ const pokemonData = {
     "Toxicroak":{
        "id":454,
        "specialty":"Ingredient",
-       "tierlist":0.2,
+       "tierlist":0.4,
        "XPHard":false,
        "ingA":"Pure Oil",
        "ingB":"Bean Sausage",
@@ -1547,7 +1547,7 @@ const pokemonData = {
     "Darkrai":{
       "id":491,
       "specialty":"SkillPower",
-      "tierlist":0.6,
+      "tierlist":0.8,
       "XPHard":true
     },
     "Munna":{
@@ -1601,7 +1601,7 @@ const pokemonData = {
     "Pumpkaboo":{
       "id":710,
       "specialty":"Ingredient",
-      "tierlist":0.6,
+      "tierlist":0.8,
       "XPHard":false,
       "ingA":"Plump Pumpkin",
       "ingB":"Greengrass Soybeans",
@@ -1616,7 +1616,7 @@ const pokemonData = {
     "Gourgeist":{
       "id":711,
       "specialty":"Ingredient",
-      "tierlist":0.6,
+      "tierlist":0.8,
       "XPHard":false,
       "ingA":"Plump Pumpkin",
       "ingB":"Greengrass Soybeans",
@@ -1760,7 +1760,7 @@ const pokemonData = {
     "Sprigatito":{
        "id":906,
        "specialty":"Ingredient",
-       "tierlist":0.6,
+       "tierlist":0.8,
        "XPHard":false,
        "ingA":"Soft Potato",
        "ingB":"Moomoo Milk",
@@ -1775,7 +1775,7 @@ const pokemonData = {
     "Floragato":{
        "id":907,
        "specialty":"Ingredient",
-       "tierlist":0.6,
+       "tierlist":0.8,
        "XPHard":false,
        "ingA":"Soft Potato",
        "ingB":"Moomoo Milk",
@@ -1790,7 +1790,7 @@ const pokemonData = {
     "Meowscarada":{
        "id":908,
        "specialty":"Ingredient",
-       "tierlist":0.6,
+       "tierlist":0.8,
        "XPHard":false,
        "ingA":"Soft Potato",
        "ingB":"Moomoo Milk",
@@ -1895,25 +1895,25 @@ const pokemonData = {
     "Pawmi":{
       "id":921,
       "specialty":"Skill",
-      "tierlist":1.0,
+      "tierlist":0.8,
       "XPHard":false
     },
     "Pawmo":{
        "id":922,
        "specialty":"Skill",
-       "tierlist":1.0,
+       "tierlist":0.8,
        "XPHard":false
     },
     "Pawmot":{
        "id":923,
        "specialty":"Skill",
-       "tierlist":1.0,
+       "tierlist":0.8,
        "XPHard":false
     },
     "Clodsire":{
        "id":980,
        "specialty":"Ingredient",
-       "tierlist":0.6,
+       "tierlist":0.8,
        "XPHard":false,
        "ingA":"Soothing Cacao",
        "ingB":"Rousing Coffee",
