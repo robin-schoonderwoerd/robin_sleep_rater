@@ -101,10 +101,10 @@ const specialtyData = {
             "Sleep EXP Bonus":0.3
         },
         "ratingWeights":{
-            "nature":0.15,
-            "subskills":0.55,
-            "ingredients":0.2,
-            "tierlist":0.1
+            "nature":0.1,
+            "subskills":0.45,
+            "ingredients":0.4,
+            "tierlist":0.05
         }
     },
     "Skill":{

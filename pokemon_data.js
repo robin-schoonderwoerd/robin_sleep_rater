@@ -629,6 +629,12 @@ const pokemonData = {
        "tierlist":0.8,
        "XPHard":false
     },
+    "Eevee - Halloween":{
+      "id":"133-halloween",
+      "specialty":"Skill",
+      "tierlist":0.0,
+      "XPHard":false
+    },
     "Eevee - Holiday":{
       "id":"133-holiday",
       "specialty":"Berry",
@@ -1205,6 +1211,51 @@ const pokemonData = {
        "tierlist":0.2,
        "XPHard":false
     },
+    "Trapinch":{
+      "id":328,
+      "specialty":"Ingredient",
+      "tierlist":1.0,
+      "XPHard":false,
+      "ingA":"Glossy Avocado",
+      "ingB":"Fiery Herb",
+      "ingC":"Greengrass Soybeans",
+      "AAA":1.0,
+      "AAB":0.6,
+      "ABA":0.2,
+      "ABB":0.2,
+      "AAC":0.6,
+      "ABC":0.0
+    },
+    "Vibrava":{
+      "id":329,
+      "specialty":"Ingredient",
+      "tierlist":1.0,
+      "XPHard":false,
+      "ingA":"Glossy Avocado",
+      "ingB":"Fiery Herb",
+      "ingC":"Greengrass Soybeans",
+      "AAA":1.0,
+      "AAB":0.6,
+      "ABA":0.2,
+      "ABB":0.2,
+      "AAC":0.6,
+      "ABC":0.0
+    },
+    "Flygon":{
+      "id":330,
+      "specialty":"Ingredient",
+      "tierlist":1.0,
+      "XPHard":false,
+      "ingA":"Glossy Avocado",
+      "ingB":"Fiery Herb",
+      "ingC":"Greengrass Soybeans",
+      "AAA":1.0,
+      "AAB":0.6,
+      "ABA":0.2,
+      "ABB":0.2,
+      "AAC":0.6,
+      "ABC":0.0
+    },
     "Swablu":{
        "id":333,
        "specialty":"Berry",
@@ -1267,6 +1318,24 @@ const pokemonData = {
        "specialty":"Berry",
        "tierlist":0.8,
        "XPHard":false
+    },
+    "Bagon":{
+      "id":371,
+      "specialty":"Berry",
+      "tierlist":1.0,
+      "XPHard":true
+    },
+    "Shelgon":{
+      "id":372,
+      "specialty":"Berry",
+      "tierlist":1.0,
+      "XPHard":true
+    },
+    "Salamence":{
+      "id":373,
+      "specialty":"Berry",
+      "tierlist":1.0,
+      "XPHard":true
     },
     "Shinx":{
        "id":403,
@@ -1491,6 +1560,18 @@ const pokemonData = {
       "id":518,
       "specialty":"Berry",
       "tierlist": 0.2,
+      "XPHard":false
+    },
+    "Dwebble":{
+      "id":557,
+      "specialty":"Skill",
+      "tierlist":0.6,
+      "XPHard":false
+    },
+    "Crustle":{
+      "id":558,
+      "specialty":"Skill",
+      "tierlist":0.6,
       "XPHard":false
     },
     "Rufflet":{
