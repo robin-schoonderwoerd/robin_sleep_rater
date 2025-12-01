@@ -827,7 +827,7 @@ const pokemonData = {
     "Wooper":{
        "id":194,
        "specialty":"Ingredient",
-       "tierlist":0.8,
+       "tierlist":0.6,
        "XPHard":false,
        "ingA":"Tasty Mushroom",
        "ingB":"Soft Potato",
@@ -857,7 +857,7 @@ const pokemonData = {
     "Quagsire":{
        "id":195,
        "specialty":"Ingredient",
-       "tierlist":0.8,
+       "tierlist":0.6,
        "XPHard":false,
        "ingA":"Tasty Mushroom",
        "ingB":"Soft Potato",
@@ -1433,6 +1433,21 @@ const pokemonData = {
       "AAB":0.6,
       "ABA":0.2,
       "ABB":0.2,
+      "AAC":0.6,
+      "ABC":0.0
+    },
+    "Spiritomb":{
+      "id":442,
+      "specialty":"Ingredient",
+      "tierlist":0.8,
+      "XPHard":true,
+      "ingA":"Tasty Mushroom",
+      "ingB":"Plump Pumpkin",
+      "ingC":"Large Leek",
+      "AAA":1.0,
+      "AAB":0.6,
+      "ABA":0.2,
+      "ABB":0.6,
       "AAC":0.6,
       "ABC":0.0
     },
