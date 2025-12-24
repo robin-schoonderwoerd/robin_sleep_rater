@@ -1307,6 +1307,12 @@ const pokemonData = {
        "tierlist":0.8,
        "XPHard":false
     },
+    "Spheal - Holiday":{
+      "id":"363-holiday",
+      "specialty":"Skill",
+      "tierlist":0.6,
+      "XPHard":false
+    },
     "Sealeo":{
        "id":364,
        "specialty":"Berry",
@@ -1733,6 +1739,12 @@ const pokemonData = {
        "AAC":0.4,
        "ABC":0.0
     },
+    "Togedemaru":{
+      "id":777,
+      "specialty":"Skill",
+      "tierlist":0.4,
+      "XPHard":true
+    },
     "Mimikyu":{
        "id":778,
        "specialty":"SkillPower",
@@ -1742,7 +1754,7 @@ const pokemonData = {
     "Cramorant":{
        "id":845,
        "specialty":"Ingredient",
-       "tierlist":0.8,
+       "tierlist":0.6,
        "XPHard":true,
        "ingA":"Pure Oil",
        "ingB":"Soft Potato",
@@ -1775,7 +1787,7 @@ const pokemonData = {
     "Sprigatito":{
        "id":906,
        "specialty":"Ingredient",
-       "tierlist":0.8,
+       "tierlist":0.6,
        "XPHard":false,
        "ingA":"Soft Potato",
        "ingB":"Moomoo Milk",
@@ -1790,7 +1802,7 @@ const pokemonData = {
     "Floragato":{
        "id":907,
        "specialty":"Ingredient",
-       "tierlist":0.8,
+       "tierlist":0.6,
        "XPHard":false,
        "ingA":"Soft Potato",
        "ingB":"Moomoo Milk",
@@ -1805,7 +1817,7 @@ const pokemonData = {
     "Meowscarada":{
        "id":908,
        "specialty":"Ingredient",
-       "tierlist":0.8,
+       "tierlist":0.6,
        "XPHard":false,
        "ingA":"Soft Potato",
        "ingB":"Moomoo Milk",
@@ -1924,6 +1936,36 @@ const pokemonData = {
        "specialty":"Skill",
        "tierlist":0.8,
        "XPHard":false
+    },
+    "Cetoddle":{
+      "id":974,
+      "specialty":"Ingredient",
+      "tierlist":0.8,
+      "XPHard":false,
+      "ingA":"Soft Potato",
+      "ingB":"Bean Sausage",
+      "ingC":"Plump Pumpkin",
+      "AAA":1.0,
+      "AAB":0.4,
+      "ABA":0.2,
+      "ABB":0.2,
+      "AAC":0.6,
+      "ABC":0.0
+    },
+    "Cetitan":{
+      "id":975,
+      "specialty":"Ingredient",
+      "tierlist":0.8,
+      "XPHard":false,
+      "ingA":"Soft Potato",
+      "ingB":"Bean Sausage",
+      "ingC":"Plump Pumpkin",
+      "AAA":1.0,
+      "AAB":0.4,
+      "ABA":0.2,
+      "ABB":0.2,
+      "AAC":0.6,
+      "ABC":0.0
     },
     "Clodsire":{
        "id":980,
