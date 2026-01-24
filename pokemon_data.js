@@ -137,19 +137,19 @@ const pokemonData = {
     "Caterpie":{
        "id":10,
        "specialty":"Berry",
-       "tierlist":0.0,
+       "tierlist":0.2,
        "XPHard":false
     },
     "Metapod":{
        "id":11,
        "specialty":"Berry",
-       "tierlist":0.0,
+       "tierlist":0.2,
        "XPHard":false
     },
     "Butterfree":{
        "id":12,
        "specialty":"Berry",
-       "tierlist":0.0,
+       "tierlist":0.2,
        "XPHard":false
     },
     "Rattata":{
@@ -476,13 +476,13 @@ const pokemonData = {
     "Doduo":{
        "id":84,
        "specialty":"Berry",
-       "tierlist":0.6,
+       "tierlist":0.4,
        "XPHard":false
     },
     "Dodrio":{
        "id":85,
        "specialty":"Berry",
-       "tierlist":0.6,
+       "tierlist":0.4,
        "XPHard":false
     },
     "Gastly":{
@@ -656,7 +656,7 @@ const pokemonData = {
     "Flareon":{
        "id":136,
        "specialty":"Skill",
-       "tierlist":0.6,
+       "tierlist":0.4,
        "XPHard":false
     },
     "Dratini":{
@@ -913,6 +913,12 @@ const pokemonData = {
        "specialty":"Berry",
        "tierlist":1.0,
        "XPHard":true
+    },
+    "Shuckle":{
+      "id":213,
+      "specialty":"Skill",
+      "tierlist":0.8,
+      "XPHard":true
     },
     "Heracross":{
        "id":214,
@@ -1202,13 +1208,13 @@ const pokemonData = {
     "Gulpin":{
        "id":316,
        "specialty":"Skill",
-       "tierlist":0.2,
+       "tierlist":0.6,
        "XPHard":false
     },
     "Swalot":{
        "id":317,
        "specialty":"Skill",
-       "tierlist":0.2,
+       "tierlist":0.6,
        "XPHard":false
     },
     "Trapinch":{
@@ -1550,7 +1556,7 @@ const pokemonData = {
     "Glaceon":{
        "id":471,
        "specialty":"Skill",
-       "tierlist":0.6,
+       "tierlist":0.4,
        "XPHard":false
     },
     "Gallade":{
@@ -1742,7 +1748,7 @@ const pokemonData = {
     "Togedemaru":{
       "id":777,
       "specialty":"Skill",
-      "tierlist":0.4,
+      "tierlist":0.2,
       "XPHard":true
     },
     "Mimikyu":{
