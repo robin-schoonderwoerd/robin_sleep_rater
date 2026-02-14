@@ -2,7 +2,7 @@ const pokemonData = {
     "Bulbasaur":{
        "id":1,
        "specialty":"Ingredient",
-       "tierlist":0.8,
+       "tierlist":1.0,
        "XPHard":false,
        "ingA":"Honey",
        "ingB":"Snoozy Tomato",
@@ -17,7 +17,7 @@ const pokemonData = {
     "Ivysaur":{
        "id":2,
        "specialty":"Ingredient",
-       "tierlist":0.8,
+       "tierlist":1.0,
        "XPHard":false,
        "ingA":"Honey",
        "ingB":"Snoozy Tomato",
@@ -32,7 +32,7 @@ const pokemonData = {
     "Venusaur":{
        "id":3,
        "specialty":"Ingredient",
-       "tierlist":0.8,
+       "tierlist":1.0,
        "XPHard":false,
        "ingA":"Honey",
        "ingB":"Snoozy Tomato",
@@ -596,7 +596,7 @@ const pokemonData = {
     "Pinsir":{
        "id":127,
        "specialty":"Ingredient",
-       "tierlist":0.4,
+       "tierlist":0.2,
        "XPHard":true,
        "ingA":"Honey",
        "ingB":"Fancy Apple",
@@ -995,7 +995,7 @@ const pokemonData = {
     "Larvitar":{
        "id":246,
        "specialty":"Ingredient",
-       "tierlist":1.0,
+       "tierlist":0.8,
        "XPHard":true,
        "ingA":"Warming Ginger",
        "ingB":"Greengrass Soybeans",
@@ -1010,7 +1010,7 @@ const pokemonData = {
     "Pupitar":{
        "id":247,
        "specialty":"Ingredient",
-       "tierlist":1.0,
+       "tierlist":0.8,
        "XPHard":true,
        "ingA":"Warming Ginger",
        "ingB":"Greengrass Soybeans",
@@ -1025,7 +1025,7 @@ const pokemonData = {
     "Tyranitar":{
        "id":248,
        "specialty":"Ingredient",
-       "tierlist":1.0,
+       "tierlist":0.8,
        "XPHard":true,
        "ingA":"Warming Ginger",
        "ingB":"Greengrass Soybeans",
@@ -1136,7 +1136,7 @@ const pokemonData = {
     "Mawile":{
       "id":303,
       "specialty":"Ingredient",
-      "tierlist":0.4,
+      "tierlist":0.2,
       "XPHard":true,
       "ingA":"Pure Oil",
       "ingB":"Greengrass Corn",
@@ -1698,6 +1698,36 @@ const pokemonData = {
        "ABA":0.2,
        "ABB":0.2,
        "AAC":0.6,
+       "ABC":0.0
+    },
+    "Cutiefly":{
+       "id":742,
+       "specialty":"Ingredient",
+       "tierlist":0.6,
+       "XPHard":false,
+       "ingA":"Honey",
+       "ingB":"Pure Oil",
+       "ingC":"Greengrass Corn",
+       "AAA":1.0,
+       "AAB":0.4,
+       "ABA":0.0,
+       "ABB":0.8,
+       "AAC":0.4,
+       "ABC":0.0
+    },
+    "Ribombee":{
+       "id":743,
+       "specialty":"Ingredient",
+       "tierlist":0.6,
+       "XPHard":false,
+       "ingA":"Honey",
+       "ingB":"Pure Oil",
+       "ingC":"Greengrass Corn",
+       "AAA":1.0,
+       "AAB":0.4,
+       "ABA":0.0,
+       "ABB":0.8,
+       "AAC":0.4,
        "ABC":0.0
     },
     "Stufful":{
