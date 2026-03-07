@@ -53,7 +53,9 @@ class PokemonRater {
         };
         let subskills = [this.ss10, this.ss25, this.ss50, this.ss75, this.ss100]
         for (let i = 0; i < subskills.length; i++) {
-            if ((subskills[i] === undefined || subskills[i] === '') && this.species != 'Darkrai') {
+            const mythicalSpecies = ['Darkrai', 'Mew'];
+
+            if ((subskills[i] === undefined || subskills[i] === '') && !mythicalSpecies.includes(this.species)) {
                 this.showWarning("Not all subskills selected")
             }
         }
