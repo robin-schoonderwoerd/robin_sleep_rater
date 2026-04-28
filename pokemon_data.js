@@ -200,6 +200,18 @@ const pokemonData = {
        "tierlist":0.0,
        "XPHard":false
     },
+    "Sandshrew":{
+       "id":27,
+       "specialty":"Skill",
+       "tierlist":0.2,
+       "XPHard":false
+    },
+    "Sandslash":{
+       "id":28,
+       "specialty":"Skill",
+       "tierlist":0.2,
+       "XPHard":false
+    },
     "Clefairy":{
        "id":35,
        "specialty":"Berry",
