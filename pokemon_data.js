@@ -1637,6 +1637,18 @@ const pokemonData = {
        "tierlist":0.4,
        "XPHard":false
     },
+    "Tyrunt":{
+       "id":696,
+       "specialty":"Berry",
+       "tierlist":0.8,
+       "XPHard":false
+    },
+    "Tyrantrum":{
+       "id":697,
+       "specialty":"Berry",
+       "tierlist":0.8,
+       "XPHard":false
+    },
     "Sylveon":{
        "id":700,
        "specialty":"Skill",
