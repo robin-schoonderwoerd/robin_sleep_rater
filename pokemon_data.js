@@ -545,7 +545,7 @@ const pokemonData = {
     "Onix":{
        "id":95,
        "specialty":"Berry",
-       "tierlist":0.8,
+       "tierlist":1.0,
        "XPHard":true
     },
     "Cubone":{
@@ -1834,6 +1834,21 @@ const pokemonData = {
        "specialty":"SkillPower",
        "tierlist":0.4,
        "XPHard":true
+    },
+    "Drampa":{
+      "id":780,
+      "specialty":"Ingredient",
+      "tierlist":0.6,
+      "XPHard":true,
+      "ingA":"Greengrass Soybeans",
+      "ingB":"Glossy Avocado",
+      "ingC":"Bean Sausage",
+      "AAA":1.0,
+      "AAB":0.6,
+      "ABA":0.2,
+      "ABB":0.6,
+      "AAC":0.0,
+      "ABC":0.0
     },
     "Cramorant":{
        "id":845,
