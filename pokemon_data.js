@@ -1373,6 +1373,12 @@ const pokemonData = {
        "tierlist":0.4,
        "XPHard":true
     },
+    "Latios":{
+       "id":381,
+       "specialty":"SkillPower",
+       "tierlist":1.0,
+       "XPHard":true
+    },
     "Shinx":{
        "id":403,
        "specialty":"Ingredient",

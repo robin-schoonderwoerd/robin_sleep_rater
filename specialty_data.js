@@ -102,8 +102,8 @@ const specialtyData = {
         },
         "ratingWeights":{
             "nature":0.1,
-            "subskills":0.45,
-            "ingredients":0.4,
+            "subskills":0.5,
+            "ingredients":0.35,
             "tierlist":0.05
         }
     },
