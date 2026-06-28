@@ -75,8 +75,8 @@ function updateOptions(species, ing1, ing30, ing60) {
     var ss10_box = document.getElementById('ss10');
     var ss25_box = document.getElementById('ss25');
     var ss50_box = document.getElementById('ss50');
-    var ss75_box = document.getElementById('ss75');
-    var ss100_box = document.getElementById('ss100');
+    var ss70_box = document.getElementById('ss70');
+    var ss80_box = document.getElementById('ss80');
 
     image.src = (selected_species !== '') ? 'https://www.serebii.net/pokemonsleep/pokemon/' + pokemonData[selected_species].id + '.png' : './empty.png'
 
@@ -109,15 +109,15 @@ function updateOptions(species, ing1, ing30, ing60) {
         ss10_box.className = '';
         ss25_box.className = '';
         ss50_box.className = '';
-        ss75_box.className = '';
-        ss100_box.className = '';
+        ss70_box.className = '';
+        ss80_box.className = '';
     }, 0);
 }
 
 // Initial population of species
 populateSelect('species', all_species.sort());
 populateSelect('nature', all_natures);
-var subskills = ['ss10','ss25','ss50','ss75','ss100']
+var subskills = ['ss10','ss25','ss50','ss70','ss80']
 for (let i = 0; i < subskills.length; i++) {
     populateSelect(subskills[i], all_subskills)
 }
@@ -169,14 +169,14 @@ function updateBoxColor(subrating_data) {
         const ss10_box = document.getElementById('ss10');
         const ss25_box = document.getElementById('ss25');
         const ss50_box = document.getElementById('ss50');
-        const ss75_box = document.getElementById('ss75');
-        const ss100_box = document.getElementById('ss100');
+        const ss70_box = document.getElementById('ss70');
+        const ss80_box = document.getElementById('ss80');
     
         const nature_rating = subrating_data.dataset.natureRating;
         const ingredient_rating = subrating_data.dataset.ingredientRating;
         const tierlist_rating = subrating_data.dataset.tierlistRating;
         const ss_rating = subrating_data.dataset.ssRating;
-        const [ss10_rating, ss25_rating, ss50_rating, ss75_rating, ss100_rating] = ss_rating.split(',');
+        const [ss10_rating, ss25_rating, ss50_rating, ss70_rating, ss80_rating] = ss_rating.split(',');
     
         nature_box.className = ''; // Remove existing class
         ing1_box.className = ''; // Remove existing class
@@ -186,8 +186,8 @@ function updateBoxColor(subrating_data) {
         ss10_box.className = ''; // Remove existing class
         ss25_box.className = ''; // Remove existing class
         ss50_box.className = ''; // Remove existing class
-        ss75_box.className = ''; // Remove existing class
-        ss100_box.className = ''; // Remove existing class
+        ss70_box.className = ''; // Remove existing class
+        ss80_box.className = ''; // Remove existing class
     
         rateToColor(nature_box, nature_rating);
         rateToColor(ing1_box, ingredient_rating);
@@ -197,8 +197,8 @@ function updateBoxColor(subrating_data) {
         rateToColor(ss10_box, ss10_rating);
         rateToColor(ss25_box, ss25_rating);
         rateToColor(ss50_box, ss50_rating);
-        rateToColor(ss75_box, ss75_rating);
-        rateToColor(ss100_box, ss100_rating);
+        rateToColor(ss70_box, ss70_rating);
+        rateToColor(ss80_box, ss80_rating);
     }
 
 
@@ -250,8 +250,8 @@ document.getElementById('imageUpload').addEventListener('change', function(event
                     {x: 168, y: 1793, width: 470, height: 98}, // subskill10
                     {x: 814, y: 1793, width: 470, height: 98}, // subskill25
                     {x: 168, y: 2017, width: 470, height: 98}, // subskill50
-                    {x: 814, y: 2017, width: 470, height: 98}, // subskill75
-                    {x: 168, y: 2244, width: 470, height: 98}, // subskill100
+                    {x: 814, y: 2017, width: 470, height: 98}, // subskill70
+                    {x: 168, y: 2244, width: 470, height: 98}, // subskill80
                 ];
                 standardWidth = 1440;
                 standardHeight = 3200;
@@ -269,8 +269,8 @@ document.getElementById('imageUpload').addEventListener('change', function(event
                     {x: 168, y: 1751, width: 480, height: 98}, // subskill10
                     {x: 830, y: 1751, width: 480, height: 98}, // subskill25
                     {x: 168, y: 1989, width: 480, height: 98}, // subskill50
-                    {x: 830, y: 1989, width: 480, height: 98}, // subskill75
-                    {x: 168, y: 2224, width: 480, height: 98}, // subskill100
+                    {x: 830, y: 1989, width: 480, height: 98}, // subskill70
+                    {x: 168, y: 2224, width: 480, height: 98}, // subskill80
                 ];
                 standardWidth = 1476;
                 standardHeight = 3200;
@@ -288,8 +288,8 @@ document.getElementById('imageUpload').addEventListener('change', function(event
                     {x: 168, y: 1306, width: 500, height: 98}, // subskill10
                     {x: 830, y: 1306, width: 500, height: 98}, // subskill25
                     {x: 168, y: 1545, width: 500, height: 98}, // subskill50
-                    {x: 830, y: 1545, width: 500, height: 98}, // subskill75
-                    {x: 168, y: 1779, width: 500, height: 98}, // subskill100
+                    {x: 830, y: 1545, width: 500, height: 98}, // subskill70
+                    {x: 168, y: 1779, width: 500, height: 98}, // subskill80
                 ];
                 standardWidth = 1500;
                 standardHeight = 2668;
@@ -336,11 +336,11 @@ document.getElementById('imageUpload').addEventListener('change', function(event
             const outputCanvasSS50 = document.getElementById('outputCanvasSS50');
             let outputCtxSS50 = outputCanvasSS50.getContext('2d');
 
-            const outputCanvasSS75 = document.getElementById('outputCanvasSS75');
-            let outputCtxSS75 = outputCanvasSS75.getContext('2d');
+            const outputCanvasSS70 = document.getElementById('outputCanvasSS70');
+            let outputCtxSS70 = outputCanvasSS70.getContext('2d');
 
-            const outputCanvasSS100 = document.getElementById('outputCanvasSS100');
-            let outputCtxSS100 = outputCanvasSS100.getContext('2d');
+            const outputCanvasSS80 = document.getElementById('outputCanvasSS80');
+            let outputCtxSS80 = outputCanvasSS80.getContext('2d');
 
             const canvas_list = [
                 outputCanvasSpecies, 
@@ -348,8 +348,8 @@ document.getElementById('imageUpload').addEventListener('change', function(event
                 outputCanvasSS10,
                 outputCanvasSS25,
                 outputCanvasSS50,
-                outputCanvasSS75,
-                outputCanvasSS100
+                outputCanvasSS70,
+                outputCanvasSS80
             ]
             const ctx_list = [
                 outputCtxSpecies, 
@@ -357,18 +357,18 @@ document.getElementById('imageUpload').addEventListener('change', function(event
                 outputCtxSS10,
                 outputCtxSS25,
                 outputCtxSS50,
-                outputCtxSS75,
-                outputCtxSS100
+                outputCtxSS70,
+                outputCtxSS80
             ]
-            const element_list = ['species', 'nature', 'ss10', 'ss25', 'ss50', 'ss75', 'ss100']
+            const element_list = ['species', 'nature', 'ss10', 'ss25', 'ss50', 'ss70', 'ss80']
             const result_list = [
                 "resultSpecies",
                 "resultNature",
                 "resultSS10",
                 "resultSS25",
                 "resultSS50",
-                "resultSS75",
-                "resultSS100",
+                "resultSS70",
+                "resultSS80",
             ]
 
 

@@ -1,6 +1,6 @@
 
 class PokemonRater {
-    static SUBSKILL_UNLOCK_WEIGHTS = [1, 1, 0.85, 0.4, 0.1]; // lvl 10, 25, 50, 75, 100
+    static SUBSKILL_UNLOCK_WEIGHTS = [1, 1, 0.95, 0.7, 0.3]; // lvl 10, 25, 50, 70, 80
 
     // Ingredient species
     // ex. ["Bulbasaur", "Ivysaur"]
@@ -11,14 +11,14 @@ class PokemonRater {
     static XP_NATURE_UP = ['Timid', 'Hasty', 'Jolly', 'Naive'];
     static XP_NATURE_DOWN = ['Brave', 'Relaxed', 'Quiet', 'Sassy'];
 
-    constructor(species, nature, ss10, ss25, ss50, ss75, ss100, ing30, ing60) {
+    constructor(species, nature, ss10, ss25, ss50, ss70, ss80, ing30, ing60) {
         this.species = species;
         this.nature = nature;
         this.ss10 = ss10;
         this.ss25 = ss25;
         this.ss50 = ss50;
-        this.ss75 = ss75;
-        this.ss100 = ss100;
+        this.ss70 = ss70;
+        this.ss80 = ss80;
         this.ing30 = ing30;
         this.ing60 = ing60;
     }
@@ -37,8 +37,8 @@ class PokemonRater {
             document.getElementById('ss10').className = '';
             document.getElementById('ss25').className = '';
             document.getElementById('ss50').className = '';
-            document.getElementById('ss75').className = '';
-            document.getElementById('ss100').className = '';
+            document.getElementById('ss70').className = '';
+            document.getElementById('ss80').className = '';
         }, 0);
         console.log(warning)
         throw new Error(warning);
@@ -51,7 +51,7 @@ class PokemonRater {
         if (this.nature === undefined || this.nature === '') {
             this.showWarning("No nature selected")
         };
-        let subskills = [this.ss10, this.ss25, this.ss50, this.ss75, this.ss100]
+        let subskills = [this.ss10, this.ss25, this.ss50, this.ss70, this.ss80]
         for (let i = 0; i < subskills.length; i++) {
             const mythicalSpecies = ['Darkrai', 'Mew'];
 
@@ -94,7 +94,7 @@ class PokemonRater {
     }
 
     rateSubskills() {
-        const subskills = [this.ss10, this.ss25, this.ss50, this.ss75, this.ss100];
+        const subskills = [this.ss10, this.ss25, this.ss50, this.ss70, this.ss80];
         // Retrieve unweighted subskill scores
         this.subskillsUnweighted = subskills.map(subskill => {
             return specialtyData[this.specialty]['subskills'][subskill] ?? 0;
@@ -210,8 +210,8 @@ function extract_stats() {
         document.getElementById('ss10').value,
         document.getElementById('ss25').value,
         document.getElementById('ss50').value,
-        document.getElementById('ss75').value,
-        document.getElementById('ss100').value,
+        document.getElementById('ss70').value,
+        document.getElementById('ss80').value,
         document.getElementById('ing30').value,
         document.getElementById('ing60').value
     ]
