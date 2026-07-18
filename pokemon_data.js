@@ -251,13 +251,13 @@ const pokemonData = {
     "Jigglypuff":{
        "id":39,
        "specialty":"Skill",
-       "tierlist":0.4,
+       "tierlist":0.2,
        "XPHard":false
     },
     "Wigglytuff":{
        "id":40,
        "specialty":"Skill",
-       "tierlist":0.4,
+       "tierlist":0.2,
        "XPHard":false
     },
     "Diglett":{
@@ -317,13 +317,13 @@ const pokemonData = {
     "Mankey":{
        "id":56,
        "specialty":"Berry",
-       "tierlist":0.2,
+       "tierlist":0.0,
        "XPHard":false
     },
     "Primeape":{
        "id":57,
        "specialty":"Berry",
-       "tierlist":0.2,
+       "tierlist":0.0,
        "XPHard":false
     },
     "Growlithe":{
@@ -791,7 +791,7 @@ const pokemonData = {
     "Igglybuff":{
        "id":174,
        "specialty":"Skill",
-       "tierlist":0.4,
+       "tierlist":0.2,
        "XPHard":false
     },
     "Togepi":{
@@ -1076,19 +1076,19 @@ const pokemonData = {
     "Torchic":{
       "id":255,
       "specialty":"Berry",
-      "tierlist":0.6,
+      "tierlist":0.4,
       "XPHard":false
     },
     "Combusken":{
       "id":256,
       "specialty":"Berry",
-      "tierlist":0.6,
+      "tierlist":0.4,
       "XPHard":false
     },
     "Blaziken":{
       "id":257,
       "specialty":"Berry",
-      "tierlist":0.6,
+      "tierlist":0.4,
       "XPHard":false
     },
     "Mudkip":{
@@ -1379,6 +1379,60 @@ const pokemonData = {
        "tierlist":1.0,
        "XPHard":true
     },
+    "Turtwig":{
+      "id":387,
+      "specialty":"Skill",
+      "tierlist":0.8,
+      "XPHard":false
+    },
+    "Grotle":{
+      "id":388,
+      "specialty":"Skill",
+      "tierlist":0.8,
+      "XPHard":false
+    },
+    "Torterra":{
+      "id":389,
+      "specialty":"Skill",
+      "tierlist":0.8,
+      "XPHard":false
+    },
+    "Chimchar":{
+      "id":390,
+      "specialty":"SkillPower",
+      "tierlist":1.0,
+      "XPHard":false
+    },
+    "Monferno":{
+      "id":391,
+      "specialty":"SkillPower",
+      "tierlist":1.0,
+      "XPHard":false
+    },
+    "Infernape":{
+      "id":392,
+      "specialty":"SkillPower",
+      "tierlist":1.0,
+      "XPHard":false
+    },
+    "Piplup":{
+      "id":393,
+      "specialty":"Berry",
+      "tierlist":0.8,
+      "XPHard":false
+    },
+    "Prinplup":{
+      "id":394,
+      "specialty":"Berry",
+      "tierlist":0.8,
+      "XPHard":false
+    },
+    "Empoleon":{
+      "id":395,
+      "specialty":"Berry",
+      "tierlist":0.8,
+      "XPHard":false
+    },
     "Shinx":{
        "id":403,
        "specialty":"Ingredient",
@@ -1658,7 +1712,7 @@ const pokemonData = {
     "Sylveon":{
        "id":700,
        "specialty":"Skill",
-       "tierlist":0.4,
+       "tierlist":0.2,
        "XPHard":false
     },
     "Dedenne":{
@@ -2027,19 +2081,19 @@ const pokemonData = {
     "Pawmi":{
       "id":921,
       "specialty":"Skill",
-      "tierlist":0.8,
+      "tierlist":0.6,
       "XPHard":false
     },
     "Pawmo":{
        "id":922,
        "specialty":"Skill",
-       "tierlist":0.8,
+       "tierlist":0.6,
        "XPHard":false
     },
     "Pawmot":{
        "id":923,
        "specialty":"Skill",
-       "tierlist":0.8,
+       "tierlist":0.6,
        "XPHard":false
     },
     "Cetoddle":{
