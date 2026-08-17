@@ -190,7 +190,7 @@ const specialtyData = {
             "Timid":0.0
         },
         "subskills":{
-            "Berry Finding S":0.9,
+            "Berry Finding S":1.0,
             "Dream Shard Bonus":0.3,
             "Energy Recovery Bonus":0.2,
             "Helping Bonus":0.9,
@@ -205,7 +205,7 @@ const specialtyData = {
             "Skill Level Up S":0.3,
             "Skill Level Up M":0.5,
             "Skill Trigger S":0.8,
-            "Skill Trigger M":1.0,
+            "Skill Trigger M":0.9,
             "Sleep EXP Bonus":0.3
         },
         "ratingWeights":{

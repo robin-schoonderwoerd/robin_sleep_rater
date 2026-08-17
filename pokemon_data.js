@@ -200,6 +200,12 @@ const pokemonData = {
        "tierlist":0.0,
        "XPHard":false
     },
+    "Pikachu - Captain":{
+       "id":"25-captain",
+       "specialty":"Berry",
+       "tierlist":0.2,
+       "XPHard":false
+    },
     "Sandshrew":{
        "id":27,
        "specialty":"Skill",
@@ -251,13 +257,13 @@ const pokemonData = {
     "Jigglypuff":{
        "id":39,
        "specialty":"Skill",
-       "tierlist":0.2,
+       "tierlist":0.4,
        "XPHard":false
     },
     "Wigglytuff":{
        "id":40,
        "specialty":"Skill",
-       "tierlist":0.2,
+       "tierlist":0.4,
        "XPHard":false
     },
     "Diglett":{
@@ -719,7 +725,7 @@ const pokemonData = {
     "Mew":{
       "id":151,
       "specialty":"SkillPower",
-      "tierlist":0.4,
+      "tierlist":0.2,
       "XPHard":true
     },
     "Chikorita":{
@@ -785,13 +791,13 @@ const pokemonData = {
     "Cleffa":{
        "id":173,
        "specialty":"Berry",
-       "tierlist":0.4,
+       "tierlist":0.2,
        "XPHard":false
     },
     "Igglybuff":{
        "id":174,
        "specialty":"Skill",
-       "tierlist":0.2,
+       "tierlist":0.4,
        "XPHard":false
     },
     "Togepi":{
@@ -1712,8 +1718,14 @@ const pokemonData = {
     "Sylveon":{
        "id":700,
        "specialty":"Skill",
-       "tierlist":0.2,
+       "tierlist":0.4,
        "XPHard":false
+    },
+    "Hawlucha":{
+       "id":701,
+       "specialty":"Skill",
+       "tierlist":0.2,
+       "XPHard":true
     },
     "Dedenne":{
        "id":702,
@@ -2095,6 +2107,24 @@ const pokemonData = {
        "specialty":"Skill",
        "tierlist":0.6,
        "XPHard":false
+    },
+    "Tinkatink":{
+      "id":957,
+      "specialty":"Berry",
+      "tierlist":1.0,
+      "XPHard":false
+    },
+    "Tinkatuff":{
+      "id":958,
+      "specialty":"Berry",
+      "tierlist":1.0,
+      "XPHard":false
+    },
+    "Tinkaton":{
+      "id":959,
+      "specialty":"Berry",
+      "tierlist":1.0,
+      "XPHard":false
     },
     "Cetoddle":{
       "id":974,
