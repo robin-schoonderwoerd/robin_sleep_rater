@@ -257,13 +257,13 @@ const pokemonData = {
     "Jigglypuff":{
        "id":39,
        "specialty":"Skill",
-       "tierlist":0.4,
+       "tierlist":0.8,
        "XPHard":false
     },
     "Wigglytuff":{
        "id":40,
        "specialty":"Skill",
-       "tierlist":0.4,
+       "tierlist":0.8,
        "XPHard":false
     },
     "Diglett":{
@@ -392,7 +392,7 @@ const pokemonData = {
     "Geodude":{
        "id":74,
        "specialty":"Ingredient",
-       "tierlist":0.6,
+       "tierlist":0.4,
        "XPHard":false,
        "ingA":"Greengrass Soybeans",
        "ingB":"Soft Potato",
@@ -407,7 +407,7 @@ const pokemonData = {
     "Graveler":{
        "id":75,
        "specialty":"Ingredient",
-       "tierlist":0.6,
+       "tierlist":0.4,
        "XPHard":false,
        "ingA":"Greengrass Soybeans",
        "ingB":"Soft Potato",
@@ -422,7 +422,7 @@ const pokemonData = {
     "Golem":{
        "id":76,
        "specialty":"Ingredient",
-       "tierlist":0.6,
+       "tierlist":0.4,
        "XPHard":false,
        "ingA":"Greengrass Soybeans",
        "ingB":"Soft Potato",
@@ -494,13 +494,13 @@ const pokemonData = {
     "Doduo":{
        "id":84,
        "specialty":"Berry",
-       "tierlist":0.4,
+       "tierlist":0.6,
        "XPHard":false
     },
     "Dodrio":{
        "id":85,
        "specialty":"Berry",
-       "tierlist":0.4,
+       "tierlist":0.6,
        "XPHard":false
     },
     "Gastly":{
@@ -797,7 +797,7 @@ const pokemonData = {
     "Igglybuff":{
        "id":174,
        "specialty":"Skill",
-       "tierlist":0.4,
+       "tierlist":0.8,
        "XPHard":false
     },
     "Togepi":{
@@ -815,13 +815,13 @@ const pokemonData = {
     "Natu":{
       "id":177,
       "specialty":"Berry",
-      "tierlist":0.6,
+      "tierlist":0.4,
       "XPHard":false
     },
     "Xatu":{
       "id":178,
       "specialty":"Berry",
-      "tierlist":0.6,
+      "tierlist":0.4,
       "XPHard":false
     },
     "Mareep":{
@@ -941,13 +941,13 @@ const pokemonData = {
     "Shuckle":{
       "id":213,
       "specialty":"Skill",
-      "tierlist":0.8,
+      "tierlist":1.0,
       "XPHard":true
     },
     "Heracross":{
        "id":214,
        "specialty":"Skill",
-       "tierlist":0.8,
+       "tierlist":1.0,
        "XPHard":true
     },
     "Sneasel":{
@@ -1064,19 +1064,19 @@ const pokemonData = {
     "Treecko":{
       "id":252,
       "specialty":"Berry",
-      "tierlist":1.0,
+      "tierlist":1.01,
       "XPHard":false
     },
     "Grovyle":{
       "id":253,
       "specialty":"Berry",
-      "tierlist":1.0,
+      "tierlist":1.01,
       "XPHard":false
     },
     "Sceptile":{
       "id":254,
       "specialty":"Berry",
-      "tierlist":1.0,
+      "tierlist":1.01,
       "XPHard":false
     },
     "Torchic":{
@@ -1100,37 +1100,37 @@ const pokemonData = {
     "Mudkip":{
       "id":258,
       "specialty":"Berry",
-      "tierlist":1.0,
+      "tierlist":1.01,
       "XPHard":false
     },
     "Marshtomp":{
       "id":259,
       "specialty":"Berry",
-      "tierlist":1.0,
+      "tierlist":1.01,
       "XPHard":false
     },
     "Swampert":{
       "id":260,
       "specialty":"Berry",
-      "tierlist":1.0,
+      "tierlist":1.01,
       "XPHard":false
     },
     "Ralts":{
        "id":280,
        "specialty":"Skill",
-       "tierlist":1.0,
+       "tierlist":1.01,
        "XPHard":false
     },
     "Kirlia":{
        "id":281,
        "specialty":"Skill",
-       "tierlist":1.0,
+       "tierlist":1.01,
        "XPHard":false
     },
     "Gardevoir":{
        "id":282,
        "specialty":"Skill",
-       "tierlist":1.0,
+       "tierlist":1.01,
        "XPHard":false
     },
     "Slakoth":{
@@ -1382,7 +1382,7 @@ const pokemonData = {
     "Latios":{
        "id":381,
        "specialty":"SkillPower",
-       "tierlist":1.0,
+       "tierlist":1.01,
        "XPHard":true
     },
     "Turtwig":{
@@ -1400,7 +1400,7 @@ const pokemonData = {
     "Torterra":{
       "id":389,
       "specialty":"Skill",
-      "tierlist":0.8,
+      "tierlist":1.0,
       "XPHard":false
     },
     "Chimchar":{
@@ -1424,19 +1424,19 @@ const pokemonData = {
     "Piplup":{
       "id":393,
       "specialty":"Berry",
-      "tierlist":0.8,
+      "tierlist":1.0,
       "XPHard":false
     },
     "Prinplup":{
       "id":394,
       "specialty":"Berry",
-      "tierlist":0.8,
+      "tierlist":1.0,
       "XPHard":false
     },
     "Empoleon":{
       "id":395,
       "specialty":"Berry",
-      "tierlist":0.8,
+      "tierlist":1.0,
       "XPHard":false
     },
     "Shinx":{
@@ -1658,7 +1658,7 @@ const pokemonData = {
     "Cresselia":{
        "id":488,
        "specialty":"SkillPower",
-       "tierlist":1.0,
+       "tierlist":1.01,
        "XPHard":true
     },
     "Darkrai":{
@@ -1694,13 +1694,13 @@ const pokemonData = {
     "Rufflet":{
        "id":627,
        "specialty":"SkillPower",
-       "tierlist":0.4,
+       "tierlist":0.6,
        "XPHard":false
     },
     "Braviary":{
        "id":628,
        "specialty":"SkillPower",
-       "tierlist":0.4,
+       "tierlist":0.6,
        "XPHard":false
     },
     "Tyrunt":{
@@ -1718,7 +1718,7 @@ const pokemonData = {
     "Sylveon":{
        "id":700,
        "specialty":"Skill",
-       "tierlist":0.4,
+       "tierlist":0.8,
        "XPHard":false
     },
     "Hawlucha":{
@@ -1730,7 +1730,7 @@ const pokemonData = {
     "Dedenne":{
        "id":702,
        "specialty":"Skill",
-       "tierlist":1.0,
+       "tierlist":1.01,
        "XPHard":true
     },
     "Pumpkaboo":{
@@ -2093,19 +2093,19 @@ const pokemonData = {
     "Pawmi":{
       "id":921,
       "specialty":"Skill",
-      "tierlist":0.6,
+      "tierlist":0.8,
       "XPHard":false
     },
     "Pawmo":{
        "id":922,
        "specialty":"Skill",
-       "tierlist":0.6,
+       "tierlist":0.8,
        "XPHard":false
     },
     "Pawmot":{
        "id":923,
        "specialty":"Skill",
-       "tierlist":0.6,
+       "tierlist":0.8,
        "XPHard":false
     },
     "Tinkatink":{
