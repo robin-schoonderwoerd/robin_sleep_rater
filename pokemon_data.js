@@ -722,6 +722,12 @@ const pokemonData = {
        "AAC":0.0,
        "ABC":0.6
     },
+    "Mewtwo":{
+      "id":150,
+      "specialty":"SkillPower",
+      "tierlist":0.4,
+      "XPHard":true
+    },
     "Mew":{
       "id":151,
       "specialty":"SkillPower",
