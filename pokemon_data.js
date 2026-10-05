@@ -1697,6 +1697,36 @@ const pokemonData = {
       "tierlist":0.6,
       "XPHard":false
     },
+    "Foongus":{
+       "id":590,
+       "specialty":"Ingredient",
+       "tierlist":0.6,
+       "XPHard":false,
+       "ingA":"Tasty Mushroom",
+       "ingB":"Fancy Egg",
+       "ingC":"Snoozy Tomato",
+       "AAA":1.0,
+       "AAB":0.6,
+       "ABA":0.0,
+       "ABB":0.2,
+       "AAC":0.6,
+       "ABC":0.0
+    },
+    "Amoonguss":{
+       "id":591,
+       "specialty":"Ingredient",
+       "tierlist":0.6,
+       "XPHard":false,
+       "ingA":"Tasty Mushroom",
+       "ingB":"Fancy Egg",
+       "ingC":"Snoozy Tomato",
+       "AAA":1.0,
+       "AAB":0.6,
+       "ABA":0.0,
+       "ABB":0.2,
+       "AAC":0.6,
+       "ABC":0.0
+    },
     "Rufflet":{
        "id":627,
        "specialty":"SkillPower",
