@@ -932,6 +932,12 @@ const pokemonData = {
        "AAC":0.0,
        "ABC":0.4
     },
+    "Misdreavus":{
+       "id":200,
+       "specialty":"Skill",
+       "tierlist":0.6,
+       "XPHard":true
+    },
     "Wobbuffet":{
        "id":202,
        "specialty":"Skill",
@@ -1501,6 +1507,12 @@ const pokemonData = {
        "specialty":"SkillPower",
        "tierlist":0.2,
        "XPHard":false
+    },
+    "Mismagius":{
+       "id":429,
+       "specialty":"Skill",
+       "tierlist":0.6,
+       "XPHard":true
     },
     "Honchkrow":{
       "id":430,
