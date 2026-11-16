@@ -467,13 +467,13 @@ const pokemonData = {
     "Magnemite":{
        "id":81,
        "specialty":"Skill",
-       "tierlist":0.6,
+       "tierlist":0.4,
        "XPHard":false
     },
     "Magneton":{
        "id":82,
        "specialty":"Skill",
-       "tierlist":0.6,
+       "tierlist":0.4,
        "XPHard":false
     },
     "Farfetch'd":{
@@ -1646,7 +1646,7 @@ const pokemonData = {
     "Magnezone":{
        "id":462,
        "specialty":"Skill",
-       "tierlist":0.6,
+       "tierlist":0.4,
        "XPHard":false
     },
     "Togekiss":{
@@ -1696,6 +1696,36 @@ const pokemonData = {
       "specialty":"Berry",
       "tierlist": 0.2,
       "XPHard":false
+    },
+    "Cottonee":{
+       "id":546,
+       "specialty":"Ingredient",
+       "tierlist":1.0,
+       "XPHard":false,
+       "ingA":"Snackable Nuts",
+       "ingB":"Glossy Avocado",
+       "ingC":"Snoozy Tomato",
+       "AAA":1.0,
+       "AAB":0.6,
+       "ABA":0.0,
+       "ABB":0.4,
+       "AAC":0.6,
+       "ABC":0.0
+    },
+    "Whimsicott":{
+       "id":547,
+       "specialty":"Ingredient",
+       "tierlist":1.0,
+       "XPHard":false,
+       "ingA":"Snackable Nuts",
+       "ingB":"Glossy Avocado",
+       "ingC":"Snoozy Tomato",
+       "AAA":1.0,
+       "AAB":0.6,
+       "ABA":0.0,
+       "ABB":0.4,
+       "AAC":0.6,
+       "ABC":0.0
     },
     "Dwebble":{
       "id":557,
