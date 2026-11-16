@@ -1031,7 +1031,7 @@ const pokemonData = {
     "Larvitar":{
        "id":246,
        "specialty":"Ingredient",
-       "tierlist":0.8,
+       "tierlist":1.0,
        "XPHard":true,
        "ingA":"Warming Ginger",
        "ingB":"Greengrass Soybeans",
@@ -1046,7 +1046,7 @@ const pokemonData = {
     "Pupitar":{
        "id":247,
        "specialty":"Ingredient",
-       "tierlist":0.8,
+       "tierlist":1.0,
        "XPHard":true,
        "ingA":"Warming Ginger",
        "ingB":"Greengrass Soybeans",
@@ -1061,7 +1061,7 @@ const pokemonData = {
     "Tyranitar":{
        "id":248,
        "specialty":"Ingredient",
-       "tierlist":0.8,
+       "tierlist":1.0,
        "XPHard":true,
        "ingA":"Warming Ginger",
        "ingB":"Greengrass Soybeans",
@@ -1856,7 +1856,7 @@ const pokemonData = {
     "Grubbin":{
        "id":736,
        "specialty":"Ingredient",
-       "tierlist":1.0,
+       "tierlist":0.8,
        "XPHard":false,
        "ingA":"Rousing Coffee",
        "ingB":"Tasty Mushroom",
@@ -1871,7 +1871,7 @@ const pokemonData = {
     "Charjabug":{
        "id":737,
        "specialty":"Ingredient",
-       "tierlist":1.0,
+       "tierlist":0.8,
        "XPHard":false,
        "ingA":"Rousing Coffee",
        "ingB":"Tasty Mushroom",
@@ -1886,7 +1886,7 @@ const pokemonData = {
     "Vikavolt":{
        "id":738,
        "specialty":"Ingredient",
-       "tierlist":1.0,
+       "tierlist":0.8,
        "XPHard":false,
        "ingA":"Rousing Coffee",
        "ingB":"Tasty Mushroom",
